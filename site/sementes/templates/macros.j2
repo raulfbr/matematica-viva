@@ -26,7 +26,17 @@
     <div class="script-content">
         <div class="script-header">
             <span class="script-name">{{ name }}</span>
-            {% if tone %}<span class="script-tone">({{ tone }})</span>{% endif %}
+            {% if tone %}
+                {# Lógica de Toms Automáticos (SSOT) #}
+                {% if toms and toms.tons and toms.tons[tone] %}
+                    <span class="script-tone tone-tooltip" data-tooltip="{{ toms.tons[tone].desc }}">
+                        <span style="font-style: normal;">{{ toms.tons[tone].icone }}</span> ({{ tone }})
+                    </span>
+                {% else %}
+                    {# Fallback para texto livre #}
+                    <span class="script-tone">({{ tone }})</span>
+                {% endif %}
+            {% endif %}
         </div>
         <div class="script-text">
             {{ text | replace('\n', '<br>') | safe }}
@@ -53,7 +63,17 @@
     <div class="script-content">
         <div class="script-header">
             <span class="script-name">Portador da Tocha</span>
-            {% if tom %}<span class="script-tone">(tom: {{ tom }})</span>{% endif %}
+            {% if tom %}
+                {# Lógica de Toms Automáticos (SSOT) #}
+                {% if toms and toms.tons and toms.tons[tom] %}
+                    <span class="script-tone tone-tooltip" data-tooltip="{{ toms.tons[tom].desc }}">
+                        <span style="font-style: normal;">{{ toms.tons[tom].icone }}</span> ({{ tom }})
+                    </span>
+                {% else %}
+                    {# Fallback para texto livre #}
+                    <span class="script-tone">({{ tom }})</span>
+                {% endif %}
+            {% endif %}
         </div>
         <div class="script-text">
             {{ texto | replace('\n', '<br>') | safe }}

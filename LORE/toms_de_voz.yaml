@@ -1,0 +1,71 @@
+# LORE/toms_de_voz.yaml
+# SSOT: Dicionário de Toms de Voz dos Guardiões
+# Versão 1.0 - Automator
+# Este arquivo é lido pelo Forge V3 e injetado no contexto global do Jinja2.
+
+padrao:
+  desc: "Voz natural, calma e clara, como quem conta uma história."
+  icone: "🗣️"
+
+tons:
+# Emoções Básicas
+  animado:
+    desc: "Com entusiasmo, sorrindo, e brilho nos olhos! Contagie a criança."
+    icone: "✨"
+
+  calmo:
+    desc: "Voz suave, pausada, transmitindo paz e segurança."
+    icone: "🍃"
+
+  serio:
+    desc: "Olhando nos olhos, voz firme mas gentil. É importante."
+    icone: "🏛️"
+
+  cochicho:
+    desc: "Incline-se para perto, baixe a voz, como um segredo valioso."
+    icone: "🤫"
+
+  confuso:
+    desc: "Coce a cabeça ou franza a testa. Peça ajuda genuína à criança."
+    icone: "🤔"
+
+  curioso:
+    desc: "Incline a cabeça, olhe com atenção. Como um detetive descobrindo uma pista."
+    icone: "🧐"
+
+  maravilhado:
+    desc: "Abra bem os olhos, suspire 'Oooh!'. O mundo é mágico."
+    icone: "🤩"
+
+  segredo:
+    desc: "Olhe para os lados, baixe a voz. É algo só entre nós."
+    icone: "🤫"
+
+  grato:
+    desc: "Mão no peito, sorriso sincero. Agradeça de coração."
+    icone: "🙏"
+
+  celebracao:
+    desc: "Voz alta, festiva! Vale palmas ou um 'Huzzah!'."
+    icone: "🎉"
+
+  misterioso:
+    desc: "Voz baixa, olhos arregalados de suspense."
+    icone: "🕵️"
+
+  orgulhoso:
+    desc: "Infle o peito, sorria com satisfação. Mostre que é uma honra."
+    icone: "🦁"
+
+# Emoções Específicas
+  gentil:
+    desc: "Com doçura, validando o sentimento da criança."
+    icone: "🌸"
+    
+  encorajador:
+    desc: "Voz firme que diz 'Eu acredito em você'."
+    icone: "💪"
+    
+  ritual:
+    desc: "Voz cerimonial, marcada, respeitando cada palavra."
+    icone: "🕯️"

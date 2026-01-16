@@ -35,6 +35,7 @@ licao:
     tgtb_ref: '[000-LXX]'
     tgtb_titulo_en: '[Título original em inglês]'
     tgtb_titulo_pt: '[Tradução do tema]'
+    objetivo_pedagogico: '[Discreto: O foco matemático da lição]'
     tempo_licao: '15-20 min'
     tempo_preparo: '≤ 5 min'
     versao: '6.3'

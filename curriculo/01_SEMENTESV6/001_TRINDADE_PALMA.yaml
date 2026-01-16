@@ -22,6 +22,7 @@ licao:
     tgtb_ref: 000-L1
     tgtb_titulo_en: Numbers 1 to 3
     tgtb_titulo_pt: Números 1 a 3
+    objetivo_pedagogico: '[Foco: Números 1 a 3 e Reconhecimento]'
     tempo_licao: '15-20 min'
     tempo_preparo: '≤ 5 min'
     versao: '6.3'

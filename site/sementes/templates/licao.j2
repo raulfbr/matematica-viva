@@ -7,8 +7,42 @@
 
 {% block content %}
 
+{# 1. HEADER DA LIÇÃO COM NAVEGAÇÃO #}
+{# Lógica Hybrida: Prioriza link calculado (auto), fallback para manual (yaml) #}
+{% set nav_prev = licao.navegacao_calculada_prev if licao.navegacao_calculada_prev else licao.navegacao.anterior %}
+{% set nav_next = licao.navegacao_calculada_next if licao.navegacao_calculada_next else licao.navegacao.proxima %}
+
+<div class="lesson-header-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E5E7EB;">
+    <div style="width: 33%;">
+        {% if nav_prev %}
+        <a href="{{ nav_prev.url if nav_prev.url else '#' }}" class="nav-mini-link" style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>←</span> <span>{{ nav_prev.titulo }}</span>
+        </a>
+        {% endif %}
+    </div>
+    
+    <div style="width: 33%; text-align: center;">
+        <img src="../assets/icon-sementes.png" alt="Sementes" style="height: 32px; opacity: 0.8;" onerror="this.style.display='none'">
+    </div>
+    
+    <div style="width: 33%; text-align: right;">
+        {% if nav_next %}
+        <a href="{{ nav_next.url if nav_next.url else '#' }}" class="nav-mini-link" style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
+            <span>{{ nav_next.titulo }}</span> <span>→</span>
+        </a>
+        {% endif %}
+    </div>
+</div>
+
 {# 1. PREPARAÇÃO #}
 {% call scene_card("Preparação do Portador", "👨‍👩‍👧") %}
+    {# SUBTÍTULO: OBJETIVO PEDAGÓGICO #}
+    {% if licao.metadados.objetivo_pedagogico %}
+    <div style="text-align: center; margin-bottom: 1.5rem; color: #6B7280; font-size: 0.9rem; font-style: italic;">
+        {{ licao.metadados.objetivo_pedagogico }}
+    </div>
+    {% endif %}
+
     {% call instruction_box("💡") %}
         <strong>Dica do Coração:</strong> {{ licao.para_portador.dica_coracao | replace('\n', '<br>') | safe }}
     {% endcall %}
@@ -204,7 +238,16 @@
     <p><strong>⬅️ Última Aventura:</strong> {{ licao.linkage.elo_anterior.gancho }}</p>
     {% endif %}
     {% if licao.linkage.proximo %}
-    <p><strong>➡️ Próxima Aventura:</strong> {{ licao.linkage.proximo.gancho }}</p>
+        <div onclick="window.location.href='{{ nav_next.url if nav_next else '#' }}'" style="cursor: pointer;">
+            <p><strong>➡️ Próxima Aventura:</strong> {{ licao.linkage.proximo.gancho }}</p>
+            {% if nav_next %}
+            <div style="margin-top:0.5rem; text-align:right;">
+                <span style="font-size:0.85rem; color:#4B5563; background:#F3F4F6; padding:0.25rem 0.75rem; border-radius:1rem;">
+                    Ir para {{ nav_next.titulo }} →
+                </span>
+            </div>
+            {% endif %}
+        </div>
     {% endif %}
 {% endcall %}
 {% endif %}

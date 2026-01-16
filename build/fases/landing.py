@@ -14,40 +14,65 @@ class LandingDriver:
         self.output_dir = self.config.PROJECT_ROOT / "site"
 
     def scan_sementes(self):
-        """Varre as lições JÁ BUILDADAS em site/sementes."""
-        sementes_dir = self.output_dir / "sementes"
+        """Varre as lições e LÊ O YAML ORIGINAL para metadados ricos."""
+        sementes_yaml_dir = self.config.PROJECT_ROOT / "curriculo/01_SEMENTESV6"
         lessons = []
         
-        if not sementes_dir.exists():
+        # Procura YAMLs, não HTMLs outputados, para garantir Source of Truth
+        if not sementes_yaml_dir.exists():
             return []
-
-        # Procura arquivos HTML reais (exceto index se houver)
-        for f in sorted(sementes_dir.glob("MV-S-*.html")):
-            # Extrai metadados simples do nome ou poderia ler um .meta.json se tivéssemos
-            # Por simplicidade V3: infere do nome MV-S-001_A_TRINDADE...
-            parts = f.stem.split('_')
-            lid = parts[0].replace('MV-S-', '') # 001
             
-            # Tenta mapear Guardião rapidinho (Hardcoded MVP, ideal seria ler YAML original)
-            # Mapa rápido de ID -> Guardião (Baseado no index.html original)
-            guardiao_map = {
-                "000": ("melquior", "leao", "O Início de Tudo"),
-                "001": ("celeste", "raposa", "A Trindade na Palma"),
-                "002": ("bernardo", "urso", "As Pedras da Fortaleza"),
-                "003": ("iris", "passarinho", "A Estrela do Reino"),
-                "004": ("noe", "coruja", "O Ritmo do Criador")
-            }
+        # Importante: GutenbergEngine importado dentro do metodo para evitar ciclo ou duplicar logica simples load_yaml
+        import yaml
+        
+        # Varre YAMLs
+        for f in sorted(sementes_yaml_dir.glob("*.yaml")):
+            if f.name.startswith("_"): continue
             
-            g_data = guardiao_map.get(lid, ("melquior", "leao", "Lição do Reino"))
-            
-            lessons.append({
-                "id": f"LIÇÃO {lid}",
-                "guardiao": g_data[0],
-                "guardiao_animal": g_data[1],
-                "titulo": g_data[2], # Título bonitinho do mapa
-                "desc": "Uma aventura no Reino Contado.", # Placeholder desc
-                "filename": f.name
-            })
+            try:
+                with open(f, 'r', encoding='utf-8') as yf:
+                    data = yaml.safe_load(yf)
+                    
+                meta = data.get('licao', {}).get('metadados', {})
+                if not meta: continue
+                
+                # Mapeia para estrutura do index
+                # Filename esperado: ID_TITULO_SLUG.html ou similar. 
+                # O SementesDriver gera based on ID_TITLE. Vamos reconstruir ou achar o arquivo.
+                # Simplificação V3: O driver gera output com nome baseado no YAML.
+                # Vamos assumir que titulo -> slug.
+                # Mas espera, o index precisa apontar para o arquivo REAL.
+                # Melhor estratégia: Listar HTMLs gerados e casar com YAMLs por ID?
+                # Ou confiar que o nome gerado segue padrão?
+                # Padrão Engine: output_path = output_dir / f"{data['licao']['metadados']['id']}_{slugify(data['licao']['metadados']['titulo'])}.html"
+                
+                # Para MVP rápido e seguro: Vamos listar os HTMLs existentes e tentar extrair ID deles para match.
+                # OU simplesmente confiar pque o build acabou de rodar.
+                
+                # Vamos reconstruir o nome do arquivo da mesma forma que o Engine faz.
+                # Importar slugify é chato aqui.
+                # Vamos usar uma abordagem hibrida: Ler YAML, e procurar arquivo HTML que começa com o ID.
+                
+                lid = meta.get('id')
+                html_candidates = list((self.output_dir / "sementes").glob(f"{lid}*.html"))
+                if not html_candidates:
+                    continue # Lição não foi buildada ainda
+                    
+                filename = html_candidates[0].name
+                
+                lessons.append({
+                    "id": lid,
+                    "titulo": meta.get('titulo', 'Sem Título'),
+                    "desc": data.get('licao', {}).get('para_portador', {}).get('ideia_viva', {}).get('frase', '...'),
+                    "guardiao": meta.get('guardiao_lider', 'melquior'),
+                    "guardiao_animal": "leao", # TODO: Melhorar mapa de animais se necessario ou ler de config
+                    "filename": filename,
+                    "metadados": meta # Passa metadados brutos para template usar objetivo_pedagogico
+                })
+                
+            except Exception as e:
+                ForgeLogger.log(f"Erro lendo metadados de {f.name}: {str(e)}", status="⚠️")
+                continue
             
         return lessons
 

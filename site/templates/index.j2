@@ -94,6 +94,12 @@
                             </div>
                             <h3 class="card-title">{{ licao.titulo }}</h3>
                             <p class="card-desc">“{{ licao.desc }}”</p>
+                            <!-- NOVO: Objetivo Pedagógico Discreto -->
+                            {% if licao.metadados.objetivo_pedagogico %}
+                            <div class="card-objective" style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                                <span>🏷️</span> <em>{{ licao.metadados.objetivo_pedagogico }}</em>
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="card-footer">
                             <a href="sementes/{{ licao.filename }}" class="btn-arr">Abrir Lição <span>→</span></a>

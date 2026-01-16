@@ -57,6 +57,21 @@ class GutenbergEngine:
         try:
             self.env = Environment(loader=FileSystemLoader(self.config.TEMPLATES_DIR))
             
+            # Carregar Dicionário de Toms (SSOT)
+            try:
+                toms_path = self.config.PROJECT_ROOT / "LORE" / "toms_de_voz.yaml"
+                if toms_path.exists():
+                    with open(toms_path, 'r', encoding='utf-8') as f:
+                        toms_data = yaml.safe_load(f)
+                    self.env.globals['toms'] = toms_data
+                    ForgeLogger.log(f"🎭 Dicionário de Toms carregado: {len(toms_data.get('tons', {}))} tons.", status="🎭")
+                else:
+                    ForgeLogger.log("⚠️ LORE/toms_de_voz.yaml não encontrado.", status="⚠️")
+                    self.env.globals['toms'] = {}
+            except Exception as e:
+                ForgeLogger.log(f"❌ Erro ao carregar Toms: {e}", status="❌")
+                self.env.globals['toms'] = {}
+
             # Filtro: Smart Typography (Impecabilidade)
             def smart_typography(text):
                 if not isinstance(text, str): return text
