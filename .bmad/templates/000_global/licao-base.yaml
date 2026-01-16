@@ -1,0 +1,40 @@
+# LIÇÃO BASE GLOBAL — Estrutura Obrigatória Todas Lições
+# YAML Lean v1.0 | Atualização: 13/01/2026
+
+tipo: licao_base_global
+versao: '5.0'
+
+secoes_obrigatorias:
+  - {id: metadados, desc: 'ID titulo fase guardião status', obr: true}
+  - {id: ideia_viva, desc: Frase central conceito vivo, obr: true}
+  - {id: atmosfera, desc: 'Clima local virtude artefato', obr: true}
+  - {id: linkage, desc: Conexão anterior próxima, obr: true}
+  - {id: preparacao, desc: 'Materiais tempo checklist', obr: true}
+  - {id: para_o_portador, desc: Dicas pai mãe, obr: true}
+  - {id: ritual_abertura, desc: Transição Reino, obr: true}
+  - {id: jornada, desc: 'Conteúdo principal CPA', obr: true, subsecoes: [{ concreto: obr_true}, {pictorico: depende_ciclo}, {abstrato: depende_ciclo}]}
+  - {id: narracao, desc: Criança conta aprendeu, obr: true}
+  - {id: ritual_fechamento, desc: 'Retorno Reino fio ouro próxima', obr: true}
+
+secoes_opcionais:
+  - {id: extensao, desc: Atividades extras criança pedir mais}
+  - {id: catedra_pais, desc: Explicação teórica pais}
+  - {id: sugestoes, desc: Dicas Guardiões}
+  - {id: diario_portador, desc: Espaço anotações pai mãe}
+
+referencias_globais_ssot:
+  core_obrigatorios: {indice: LORE/index.yaml, north_star: LORE/north_star.yaml, guardioes: LORE/guardioes.yaml, locais: LORE/locais.yaml, climas: LORE/climas.yaml, padroes_narrativos: LORE/padroes_narrativos.yaml}
+  extensoes_conforme: {evolucao_guardioes: LORE/evolucao_guardioes.yaml, artefatos: LORE/artefatos.yaml, viajante: LORE/viajante.yaml, glossario: LORE/glossario.yaml, ontologia: LORE/ontologia.yaml}
+  nota: 'Toda lição REFERENCIA estes SSóT. Link never duplicate Eric Evans. Navegar por LORE/index.yaml'
+
+regras_universais_cm:
+  - {id: crianca_pessoa, regra: Criança tratada pessoa capaz não recipiente, fonte: Princípio 1 CM}
+  - {id: ideia_viva, regra: Conceito apresentado IDEIA VIVA não dado seco, fonte: Princípio 6 CM}
+  - {id: narracao, regra: Criança narra conta aprendeu fixa conhecimento, fonte: Princípio 14 CM}
+  - {id: habito_atencao, regra: Lições curtas preservam atenção plena, fonte: Princípio 9 CM}
+  - {id: nunca_infantilizar, regra: Nunca estar DENTRO alcance mental criança, fonte: CS Lewis}
+
+adaptacao_bernardo:
+  obrigatorio_em: [concreto, extensao]
+  formato: '💡 Para crianças realidades diferentes: [adaptação 1] [adaptação 2]. Bernardo ensina caminhos diferentes também chegam lá'
+  principio: 'CM Princípio 1 Children born persons. Toda criança merece acesso. Inclusão HONRA não peso'

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    {# MAPEAMENTO GUARDIÃO -> ARQUIVO DE AVATAR (Duplicado aqui para hero) #}
+    {%- set guardian_avatars = {
+        'celeste': 'celeste-raposa.png',
+        'melquior': 'melquior-leao.png',
+        'bernardo': 'bernardo-urso.png',
+        'iris': 'iris-passarinho.png',
+        'noe': 'noe-coruja.png'
+    } -%}
+    {%- set hero_avatar = guardian_avatars.get(licao.metadados.guardiao_lider, 'placeholder.png') -%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ licao.metadados.titulo }} | Matemática Viva</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        /* INLINE STYLES FOR CRITICAL RENDERING PRIORITY */
+        body { background-color: #F8F9FA; color: #374151; }
+        .lesson-container { max-width: 768px; margin: 0 auto; padding-bottom: 4rem; }
+        
+        /* CARD COMPONENT */
+        .scene-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .scene-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 100%);
+            opacity: 0.8;
+        }
+
+        /* HEADER & TYPOGRAPHY */
+        .scene-header {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            color: #111827;
+            margin-bottom: 2rem;
+            display: flex; align-items: center; gap: 0.75rem; font-weight: 600;
+        }
+        .scene-icon { font-size: 1.5rem; }
+        h2 { font-family:'Outfit'; color:#6B7280; font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin: 3rem 0 1rem 0; text-align:center; }
+        strong { font-weight: 600; color: #1F2937; }
+
+        /* COMPONENTS */
+        .script-persona-block {
+            background: #F9FAFB;
+            border: 1px solid #F3F4F6;
+            border-left: 4px solid #10B981;
+            border-radius: 8px;
+            margin-top: 1.5rem; padding: 1.5rem;
+        }
+        .script-avatar { border: 2px solid #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        
+        .instruction-box {
+            background: #FEFCE8; border: 1px solid #FEF9C3; color: #854D0E;
+            border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0;
+            display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .instruction-icon { font-size: 1.5rem; }
+        
+        .portador-block { border-left: 4px solid #10B981 !important; background: #FFFFFF !important; }
+        .script-name { text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            .lesson-container { padding: 0; }
+            .scene-card { border-radius: 0; margin: 0 0 0.5rem 0; box-shadow: none; border-bottom: 1px solid #E5E7EB; }
+            .scene-card::before { height: 3px; }
+            h2 { font-size: 1.4rem; padding: 0 1.5rem; margin-top: 2rem; }
+        }
+    </style>
+</head>
+<body class="clima-{{ licao.metadados.estacao | default('ensolarado') }}">
+    <a href="../index.html" class="home-btn" title="Voltar ao Dashboard">🏡</a>
+
+    <div class="lesson-container">
+        <!-- HERO SECTION -->
+        <header class="lesson-hero">
+            <div class="lesson-meta-tag">{{ licao.metadados.id }} • {{ licao.metadados.tempo_licao }} • {{ licao.metadados.estacao }}</div>
+            <h1 class="hero-title">{{ licao.metadados.titulo }}</h1>
+            <p class="hero-quote">"{{ licao.para_portador.ideia_viva.frase }}"</p>
+            <img src="../assets/cards/guardioes/{{ hero_avatar }}" 
+                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
+                 alt="{{ licao.metadados.guardiao_lider }}" class="hero-guardian">
+        </header>
+
+        <article class="lesson-body">
+            {% block content %}{% endblock %}
+        </article>
+
+        <!-- NAVIGATION FOOTER -->
+        <nav class="lesson-nav">
+            {% if licao.navegacao.anterior %}
+            <a href="{{ licao.navegacao.anterior.id | replace('MV-S-', '') }}_{{ licao.navegacao.anterior.titulo | lower | replace(' ', '_') | replace('ã', 'a') | upper }}.html" class="nav-btn prev">
+                <span class="nav-label">← Anterior</span>
+                <span class="nav-title">{{ licao.navegacao.anterior.titulo }}</span>
+            </a>
+            {% endif %}
+            
+            {% if licao.navegacao.proxima %}
+            <a href="{{ licao.navegacao.proxima.id | replace('MV-S-', '') }}_{{ licao.navegacao.proxima.titulo | lower | replace(' ', '_') | replace('ã', 'a') | upper }}.html" class="nav-btn next">
+                <span class="nav-label">Próxima →</span>
+                <span class="nav-title">{{ licao.navegacao.proxima.titulo }}</span>
+            </a>
+            {% endif %}
+        </nav>
+
+        <footer style="text-align: center; margin-top: 4rem; color: #A8A29E; font-size: 0.8rem;">
+            Matemática Viva • Forjado com Estilo e Propósito
+        </footer>
+    </div>
+</body>
+</html>

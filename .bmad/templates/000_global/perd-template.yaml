@@ -1,0 +1,39 @@
+# PERD TEMPLATE — Pedagogical Requirements Document (YAML Lean)
+# Versão: 1.1 LEAN | 14/01/2026
+# Extends: licao-base.yaml (refs SSOT lá, não duplicar)
+
+meta:
+  licao_id: LXXX
+  ciclo: Sementes
+  tema: "[Título tema]"
+  data: "YYYY-MM-DD"
+  status: RASCUNHO
+
+ideia_viva:
+  frase: "[Captura essência]"
+  fonte_cm: "[Princípio CM]"
+  por_que: "[Valor duradouro 1-2 frases]"
+
+cpa:
+  concreto: {manipulativos: ["[M1]", "[M2]"], atividade: "[Desc]", tempo: 10}
+  pictorico: {status: VETADO_CM, just: "Things before Signs"}
+  abstrato: {nivel: MÍNIMO, simbolos: ["[S1]"], atividade: "[Como usados]", nota: "Traçar ar = ENATIVO"}
+
+guardiao:
+  lider: "[Celeste|Bernardo|Íris|Noé|Melquior]"
+  frase: "[Frase oficial]"
+  tom: "[Curioso|Firme|Suave|Calmo|Acolhedor]"
+  coadj: []
+
+checklist_cm: {crianca_pessoa: false, licao_curta: false, narracao: false, ideia_viva: false}
+
+aprovacao:
+  cm: null
+  cpa: null
+  matriarca: null
+  data: null
+
+notas:
+  decisoes: []
+  refs_anteriores: []
+  proximos: []

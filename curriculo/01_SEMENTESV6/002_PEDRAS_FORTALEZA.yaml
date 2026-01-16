@@ -1,0 +1,270 @@
+# LIÇÃO 002 — AS PEDRAS DA FORTALEZA
+# Template: V6.3 | 15/01/2026 | Status: TESTE
+
+_meta:
+  id: licao-002-pedras-fortaleza
+  versao: '6.3'
+  fase: Sementes
+  status: teste
+
+licao:
+  metadados:
+    id: MV-S-002
+    titulo: As Pedras da Fortaleza
+    fase: Sementes
+    ciclo: K
+    trimestre: 1
+    estacao: 1
+    tipo: Senso Numérico
+    guardiao_lider: bernardo
+    guardiao_secundario: iris
+    guardioes_apresentados: [bernardo, iris]
+    tgtb_ref: 000-L2
+    tgtb_titulo_en: Ten Frames
+    tgtb_titulo_pt: Quadros de Dez
+    tempo_licao: '15-20 min'
+    tempo_preparo: '≤ 5 min'
+    versao: '6.3'
+    status: canonico
+
+  navegacao:
+    anterior: {id: MV-S-001, titulo: A Trindade na Palma}
+    proxima: {id: MV-S-003, titulo: A Estrela do Reino}
+
+  para_portador:
+    ideia_viva:
+      frase: O Urso Bernardo precisa organizar as pedras pesadas em fileiras perfeitas para construir seu muro.
+      conceito: Organização em fileiras (introdução ao conceito de ten frames)
+      intencao_cm: A matemática serve para CONSTRUIR algo real. Bernardo não conta por contar — conta para erguer sua fortaleza.
+    dica_coracao: |
+      Hoje vocês vão ajudar o Urso Bernardo a construir.
+      Ele é gentil e firme. Errou? "Mais uma vez. Comigo."
+      Não tenha pressa. Bernardo também não tem.
+    filho_descobre: |
+      Que organizar em fileiras ajuda a ver "quantos" de uma só vez.
+      Que contar pode servir para construir algo de verdade.
+    protocolo_impecabilidade: |
+      Não corrija — CONVIDE a recontar.
+      "Bernardo quer ter certeza. Vamos contar juntos?"
+      Mão-na-mão: faça COM a criança, não PARA ela.
+    nota_graca: |
+      Se as pedras caírem, Bernardo sorri. "Caiu? Levanta. Mais uma vez."
+      A fortaleza não precisa ficar perfeita hoje.
+    conforto_emocional: |
+      Bernardo tem uma pata manca. Ele sabe o que é tentar e falhar.
+      Quando você erra junto com seu filho, vocês estão em boa companhia.
+    audio_script: |
+      Olá, Portador. Hoje vamos ajudar o Urso Bernardo na Caverna do Recomeço.
+      Separe 5 pedrinhas ou feijões. Respire. Bernardo espera por vocês.
+    preparacao:
+      materiais:
+        - {item: 5 pedrinhas ou feijões, qtd: 5, alt: botões ou tampinhas, essencial: true}
+        - {item: Card Bernardo, qtd: 1, alt: desenho impresso, essencial: true}
+        - {item: Fita ou barbante (fazer 2 fileiras), qtd: 1, alt: riscar no papel, essencial: false}
+        - {item: Base de papelão (10x2 quadrados), qtd: 1, alt: desenhar grade no papel, essencial: false}
+
+  linkage:
+    elo_anterior:
+      licao_id: MV-S-001
+      gancho: Ontem Celeste mostrou as três sementes do Rei. Hoje, Bernardo precisa de pedras para sua construção. Você sabe contar? Então pode ajudar!
+    proximo:
+      licao_id: MV-S-003
+      gancho: Íris encontrou uma flor com cinco pétalas — uma estrela perfeita! Quantas pontas ela tem?
+
+  ritual_abertura:
+    instrucao_ambiente: Tapete do Reino estendido. Luzes diminuídas. Silêncio sagrado.
+    local: caverna_recomeco
+    clima: crepusculo
+    virtude: persistencia
+    artefato: Pedras da Fortaleza
+    transicao_reino: |
+      Feche os olhos. Escute... você ouve passos pesados?
+      É o Urso Bernardo. Ele está trabalhando na Caverna do Recomeço.
+    fala_portador:
+      tom: solene
+      script: |
+        Hoje vamos a um lugar especial — a Caverna de Bernardo.
+        Ele constrói coisas lindas, mesmo com sua pata manca.
+        Vamos ajudá-lo?
+    card_guardiao: 'CARD: BERNARDO'
+    abertura_sensorial: |
+      A luz dourada do crepúsculo entra pela boca da caverna.
+      O ar cheira a terra e pedra. Ouve-se o bater ritmado de martelo.
+      Bernardo vira a cabeça. "Mais uma vez. Comigo." — ele sorri.
+
+  jornada:
+    narrativa_principal:
+      - titulo: Bernardo Precisa de Ajuda
+        local: caverna_recomeco
+        fala_guardiao:
+          tom: firme
+          script: |
+            "Viajante! Que bom que você veio."
+            [Bernardo mostra uma parede de pedras]
+            "Estou construindo um muro. Mas preciso organizar as pedras.
+            Você me ajuda a colocá-las em fileiras?"
+        instrucao_portador: |
+          Mostre as 5 pedrinhas espalhadas.
+          "Bernardo quer organizar. Como podemos ajudar?"
+      - titulo: A Primeira Fileira
+        local: caverna_recomeco
+        fala_guardiao:
+          tom: encorajador
+          script: |
+            "Vamos colocar as pedras uma do lado da outra.
+            Assim consigo ver quantas tenho de uma só vez!"
+            [Bernardo pega UMA pedra]
+            "Uma. Coloca aqui. Agora a próxima."
+        instrucao_portador: |
+          Pegue a primeira pedra com a criança.
+          Coloque na fileira. "Uma."
+          Continue uma a uma até 5.
+      - titulo: Contando a Construção
+        local: caverna_recomeco
+        fala_guardiao:
+          tom: satisfeito
+          script: |
+            "Olha que bonito! Uma fileira perfeita!"
+            [Bernardo passa a pata grande sobre as pedras]
+            "Vamos contar juntos? Uma... duas... três... quatro... CINCO!"
+            "A fortaleza está crescendo!"
+        instrucao_portador: |
+          Passe o dedo na fileira contando cada pedra.
+          "Uma, duas, três, quatro, cinco!"
+          Celebre: "Bernardo está feliz!"
+
+    concreto:
+      desc: Organização de 5 objetos em fileira (preparação para ten frames)
+      card_objeto: 'CARD: PEDRAS'
+      metodo: mao-na-mao
+      instrucoes_portador:
+        - passo: 1
+          acao: Espalhe 5 pedrinhas no tapete sem ordem
+          fala_sugerida: "Bernardo tem pedras, mas estão todas espalhadas. Vamos organizar?"
+        - passo: 2
+          acao: Pegue UMA pedra com a criança e coloque na fileira
+          fala_sugerida: "Uma pedra. O começo da fortaleza."
+        - passo: 3
+          acao: Adicione a segunda pedra ao lado
+          fala_sugerida: "Duas. Uma do lado da outra."
+        - passo: 4
+          acao: Continue até ter 5 pedras na fileira
+          fala_sugerida: "Três... quatro... cinco! Fileira completa!"
+        - passo: 5
+          acao: Conte a fileira toda passando o dedo
+          fala_sugerida: "Vamos conferir: uma, duas, três, quatro, cinco."
+        - passo: 6
+          acao: Misture as pedras e repita (opcional)
+          fala_sugerida: "Caiu a parede! Bernardo não desiste. Mais uma vez?"
+      norte_absoluto: A maior parte da lição acontece aqui. Manipulação é onde a mágica vive.
+      adaptacao_bernardo: |
+        💡 Se a criança tem dificuldade motora, use pedras maiores ou cubos de encaixe.
+        Se não enxerga bem, use texturas diferentes para cada pedra.
+        Bernardo entende — ele também tem uma pata que não funciona como as outras.
+
+    pictorico: {status: VETADO, motivo: 'Sementes = Concreto. CM Things before Signs.', excecao: 'Se Quiser Voar'}
+    
+    abstrato:
+      desc: Reconhecimento visual do numeral 5 (opcional)
+      nota: |
+        Se a criança quiser, mostre o Card com "5".
+        Trace o 5 no AR com o dedo — é ENATIVO, conta como Concreto.
+
+    extensao:
+      titulo: Se Quiser Voar
+      desc: Só continue se os olhos da criança pedirem MAIS
+      sugestoes:
+        - titulo: Duas Fileiras
+          acao: Fazer duas fileiras de 5 (preparação visual para 10)
+        - titulo: Torre de Bernardo
+          acao: Empilhar as pedras e ver "quantas altas"
+      adaptacao_bernardo: |
+        💡 Para crianças com mobilidade reduzida, empilhar pode ser mais divertido que alinhar.
+
+  narracao:
+    instrucao_portador: |
+      Guarde os materiais. Olhe nos olhos do seu filho.
+      Dê tempo. O silêncio é trabalho mental sagrado.
+    pergunta_principal: O que Bernardo estava construindo?
+    perguntas_coracao:
+      - Quantas pedras você colocou na fileira?
+      - Por que Bernardo organiza as pedras assim?
+      - O que você construiria com cinco pedras?
+    nota_cm: |
+      NUNCA interrompa. Espere até ela terminar.
+      Se não quiser falar: "Tudo bem, seu coração guardou."
+
+  ritual_fechamento:
+    fala_guardiao:
+      tom: grato
+      script: |
+        "Viajante, você me ajudou muito hoje!"
+        [Bernardo bate a pata no peito]
+        "A fortaleza vai ficar linda. Volte sempre."
+        [Íris pousa no ombro de Bernardo e pia]
+        "Íris quer te mostrar algo especial amanhã. Uma flor com... quantas pétalas?"
+    fio_ouro: Íris encontrou uma flor misteriosa. Quantas pétalas ela tem? Amanhã descobriremos juntos.
+    transicao_volta:
+      instrucao: Apaguem juntos a luz especial do Reino
+      fala: A Caverna descansa. As cinco pedras guardam a promessa.
+
+  para_familia:
+    titulo: Entendendo a Jornada de Hoje
+    porque_importa: |
+      Esta lição introduz o conceito de ORGANIZAÇÃO visual — fundação dos "Ten Frames"
+      que seu filho usará por anos para ver números rapidamente.
+      
+      Por que fileiras? Porque o cérebro humano reconhece padrões mais rápido que
+      objetos espalhados. Ao alinhar 5 pedras, a criança começa a "ver" o cinco
+      como um TODO, não apenas como "um-e-um-e-um-e-um-e-um".
+      
+      Bernardo, com sua pata manca, ensina que PERSISTÊNCIA vale mais que perfeição.
+      "Caiu? Levanta." — isso é matemática E formação de caráter.
+    metodo_cpa:
+      concreto: Pedras organizadas em fileira, tocadas, contadas
+      pictorico: Vetado em Sementes
+      abstrato: Apenas reconhecimento visual (traçar no ar é ENATIVO)
+      nota: 'CM: Coisas antes de Signos.'
+    principio_cm:
+      numero: 1
+      citacao: "Children are born persons — not blank slates to be written upon."
+      citacao_pt: "Crianças nascem pessoas — não lousas em branco a serem escritas."
+      aplicacao: Bernardo não "ensina" — ele CONVIDA a construir junto. A criança é parceira, não receptora.
+    tgtb_conexao: |
+      Esta lição corresponde a 000-L2 (Ten Frames) do TGTB Kindergarten.
+      O tema original foca em reconhecimento visual de quantidades em grades.
+      Nós adicionamos a narrativa de Bernardo e a fortaleza de pedras.
+    espiral:
+      conceito: Organização visual (Ten Frames)
+      volta_atual: 'Sementes — Fileiras simples, até 5 objetos'
+      proxima_volta: 'Raízes — Frames de 10, subitizing mais rápido'
+      nota: Este conceito será revisitado em ciclos futuros com maior profundidade.
+    reflexao_espiritual: |
+      Bernardo tem uma pata manca — cicatriz da Grande Nevasca.
+      Ele salvou seus amigos segurando uma pedra por três dias.
+      O esforço deixou marca, mas também deixou sabedoria.
+      Quando seu filho erra e tenta de novo, ele honra essa herança.
+    nota_graca: |
+      Se as pedras caíram e a fileira não ficou perfeita, sorria.
+      Bernardo também começou de novo muitas vezes — é o que ele mais sabe fazer.
+      O importante é que seu filho CONSTRUIU junto com você hoje.
+      A fortaleza não precisa ficar pronta agora. Ela cresce um dia de cada vez.
+
+  diario_portador:
+    nota: Suas anotações serão usadas nas revisões trimestrais.
+    perguntas:
+      - Como meu filho reagiu à história de Bernardo?
+      - O que funcionou bem (fileiras, pedras, ritmo)?
+      - O que posso ajustar na próxima lição?
+
+  navegacao_inferior:
+    anterior: {id: MV-S-001, titulo: A Trindade na Palma}
+    proxima: {id: MV-S-003, titulo: A Estrela do Reino}
+
+  auditoria_qa:
+    cm: [true, true, true, true, true]
+    cpa: [true, true, true]
+    narrativa: [true, true, true, true]
+    template: [true, true, true]
+    triade: [true, true, true]
+    inclusao: [true, true]

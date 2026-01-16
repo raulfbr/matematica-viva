@@ -1,0 +1,35 @@
+# REVISAR LIÇÃO AUTO — Workflow (YAML Lean)
+# v1.1 LEAN | 14/01/2026
+# SSOT: .bmad/experts/*.yaml
+
+id: revisar_licao_auto
+tipo: workflow
+versao: '1.1'
+trilha: qa
+coord: charlotte_mason
+desc: Revisão automática 14 experts paralelo. Gera relatório aprovações/vetos.
+
+experts:
+  modo: DINAMICO
+  fonte: .bmad/experts/*/*.yaml
+  total: 14
+
+fases:
+  - {n: 1, acao: "Carregar lição YAML + contexto."}
+  - {n: 2, acao: "14 Experts paralelo: Pergunta North Star → APROVADO/RESSALVA/VETO."}
+  - {n: 3, acao: "Consolidar respostas. Agrupar por status."}
+  - {n: 4, acao: "CM decide: VETO (bloqueia), RESSALVAS (ok com obs), APROVADO."}
+
+vetos:
+  - {nivel: ABSOLUTO, quem: [charlotte_mason], ef: BLOQUEIA}
+  - {nivel: ALTA, quem: [maes_personas], ef: "Bloqueia até resolver"}
+  - {nivel: DOMINIO, quem: [jerome_bruner, cs_lewis, jrr_tolkien, engenharia], ef: "Requer correção"}
+  - {nivel: CONSULTIVO, quem: [outros], ef: "Observação (não bloqueia)"}
+
+output:
+  arquivo: 'logs/{data}_REVISAO_AUTO_{id}.md'
+  template: "# REVISÃO {id}\n## Aprovados ({n})\n## Ressalvas ({n})\n## Vetos ({n})\n## Veredito CM"
+
+trigger:
+  pos_criar: Sim
+  pre_publicar: Obrigatório

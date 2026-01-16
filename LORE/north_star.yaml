@@ -1,0 +1,319 @@
+# NORTH STAR — Matemática Viva
+# YAML Lean v1.0 | Atualização: 13/01/2026
+#
+# ⚠️ IMPORTANTE: Este arquivo usa FORMATO YAML LEAN v1.0
+# Todos os EXPERTS (.bmad/experts/) devem seguir este padrão:
+# - Inline objects: {key: val, key2: val2}
+# - Inline arrays: [item1, item2, item3]
+# - Sem separadores decorativos (═══)
+# - Texto condensado (sem multi-line desnecessário)
+# - Preservar TODA semântica essencial
+#
+# Use este north_star.yaml como REFERÊNCIA de formatação.
+
+# Dicionário de abreviações (keys descritivas)
+_dict:
+  desc: descricao
+  apply: aplicacao
+  q: pergunta
+  n: numero
+  msg: mensagem
+  ref: referencia
+  req: requerido
+  opt: opcional
+
+purpose:
+  motto: Matemática Viva existe para ajudar famílias a amarem matemática juntas
+  essence: MOVIMENTO de famílias que descobriram que matemática pode ser viva
+
+mission:
+  one_liner: Infraestrutura Educacional K-12 — Aberta no Saber, Premium na Experiência
+  
+  components:
+    infra:
+      desc: Sistema completo (não só currículo)
+      includes: [Lições estruturadas, Guardiões narrativos, Cards físicos, Pipeline]
+    k12:
+      desc: Cobertura 0-18 anos, jornada conectada
+      cycles:
+        - {name: Berço, range: 0-4, viajante: Broto}
+        - {name: Sementes, range: K/4-6, viajante: Herdeiro}
+        - {name: Raízes, range: 1-5ano/6-10, viajante: Construtor}
+        - {name: Lógica, range: 6-8ano/11-14, viajante: Explorador}
+        - {name: Legado, range: 9-12ano/14-18, viajante: Portador da Tocha}
+    open:
+      desc: Conteúdo CC BY 4.0
+      license: CC BY 4.0
+      what: [Lições, Narrativas, Metodologia]
+    premium:
+      desc: Valor na curadoria, não exclusividade
+      value: [Qualidade impecável, Comunidade, Conveniência 5min, Cards físicos]
+
+principios_fundamentais:
+  - id: 1
+    name: Qualidade Não é Negociável
+    desc: O difícil é distinguir BOM do ÓTIMO. Buscamos IMPECÁVEL sempre.
+    apply: [3 lições impecáveis > 10 boas, Experts deliberam, Qualidade percebida no 1º contato]
+    q: Isso é BOM ou ÓTIMO?
+
+  - id: 2
+    name: A Família é o Centro
+    desc: Currículo serve à família. Cada família tem história, contexto, ritmo únicos.
+    apply: [Flexibilidade SEM perder norte da Tríade, Linguagem de CONVITE, Alternativas sem julgamento]
+    q: Isso ajuda a família ou complica?
+
+  - id: 3
+    name: Foco no Positivo
+    desc: Para IA regras claras. Para famílias convites e embasamento.
+    tone: {ai: Veto se violar X, family: Experimente e veja o que funciona}
+    apply: [Alertar COM GENTILEZA, Mostrar PORQUÊ (Tríade), Incentivar persistência]
+    q: Isso encoraja ou desanima?
+
+  - id: 4
+    name: Cada Criança é Pessoa
+    desc: CM - Children are born persons. Toda criança tem dignidade. Inclusão é HONRA.
+    cm: Princípio 1
+    apply: [Linguagem neutra, Notas adaptação, Bernardo valoroso, OBJETIVO importa não o COMO]
+    q: Criança com realidade diferente consegue participar?
+
+  - id: 5
+    name: Jornada Completa 0-18
+    desc: Aos 14 reconhece - mesma ideia mais profundo. Conexão, evolução, alegria de padrões.
+    spiral: Bruner - tema volta mais complexo. CM - Education is Science of Relations.
+    apply: [LORE único toda jornada, Guardiões crescem com criança, Base prepara próximo ciclo]
+    q: Cria conexão com antes e depois?
+
+  - id: 6
+    name: Identidade Tribal
+    desc: Não é suporte técnico. É PERTENCER. Famílias trocam experiências e crescem.
+    godin: This is for people like us
+    apply: [Identidade tribal (pai intencional), Troca experiências, Comunidade encoraja]
+    q: Fortalece ou fragmenta tribo?
+
+  - id: 7
+    name: Narração Imersiva
+    desc: Diferencial único. Criança VIVE ideia dentro da história.
+    diff: Tríade (CM+Singapore+TGTB) poderosa. Mas NARRAÇÃO IMERSIVA ninguém faz.
+    apply: [Ideia Viva via narrativa, Guardiões conduzem, Matemática emerge da história]
+    q: Criança está VIVENDO ou só recebendo info?
+
+  - id: 8
+    name: Norte Seguro + Flexibilidade
+    desc: Atividade CORE (mínimo impecável) + alternativas. Alerta gentil se sair do mínimo.
+    structure: {core: Inegociável aprendizado, alt: Outras formas mesmo objetivo, alert: Gentil com fundamento}
+    apply: [Template padrão lição única, LORE todas idades, Realidade ano respeitada]
+    q: Pai sabe mínimo e como adaptar?
+
+metricas:
+  escopo: {meta: 1200+ ativos modulares, indicador: Lições produzidas}
+  qualidade: {meta: Compliance CM + CPA, indicador: Aprovação QA 100%}
+  experiencia: {meta: 5 min preparo, indicador: Teste Café aprovado}
+  acesso: {meta: CC BY 4.0, indicador: Licença aplicada}
+
+validacao:
+  q: Isso nos aproxima ou afasta do North Star?
+  when: ["Nova feature?", "Mudança arquitetura?", "Novo workflow?", "Decisão negócio?"]
+
+# VOCABULÁRIO REINANÊS E TÉCNICO — SSOT
+# Consolidado de glossario.yaml e ontologia.yaml
+
+vocabulario:
+  reino_nobres:
+    - {termo: Viajante, sistema: Aluno, razao: "Dignidade: descobre, não recebe."}
+    - {termo: Portador da Tocha, sistema: Professor, razao: "Apresenta o banquete."}
+    - {termo: Jornada, sistema: Aula, razao: "Processo vivo."}
+    - {termo: Pergaminho, sistema: Lição/Deliverable, razao: "Artefato de valor."}
+    - {termo: Cicatriz de Glória, sistema: Erro, razao: "Prova de esforço."}
+  
+  tecnico_sistema:
+    - {bmad: Orchestrator, forja: Orchestrator, desc: "Coordenador IA"}
+    - {bmad: PRD, forja: PRD, desc: "Requisitos de Produto"}
+    - {bmad: Story, forja: Story, desc: "Especificação Lição"}
+    - {bmad: ENACTIVE, forja: Concreto, desc: "CPA Fase 1"}
+    - {bmad: ICONIC, forja: Pictórico, desc: "CPA Fase 2"}
+    - {bmad: SYMBOLIC, forja: Abstrato, desc: "CPA Fase 3"}
+
+atores_sistema:
+  maestro: {nome: Raul, papel: Diretor Executivo, autoridade: DECISÃO_FINAL}
+  matriarca: {nome: Marina, papel: Curadora, autoridade: VETO_SENSIBILIDADE}
+  familia_rodrigues: {papel: Selo Gold+, funcao: Validação Final}
+  orchestrator: {tipo: IA, papel: Coordenador, regra: "Conselheiro, nunca Rei"}
+
+# ARTEFATOS SIMBÓLICOS — VER SSOT
+# LORE/artefatos.yaml é a fonte única (6 artefatos completos)
+artefatos_simbolicos:
+  ref: LORE/artefatos.yaml
+  nota: "6 artefatos com descrições completas e rituais de transição."
+  resumo:
+    - {id: diario_do_reino, guardiao: Melquior, ciclo: Raízes}
+    - {id: bussola_celeste, guardiao: Celeste, ciclo: Lógica}
+    - {id: martelo_bernardo, guardiao: Bernardo, ciclo: Quando frustrado}
+    - {id: pena_iris, guardiao: Íris, ciclo: Descobertas estéticas}
+    - {id: ampulheta_noe, guardiao: Noé, ciclo: Lógica→Legado}
+    - {id: tocha_melquior, guardiao: Melquior, ciclo: Encerramento}
+
+diretrizes_operacionais:
+  - {id: 1, name: Zero Tela até 10 anos, desc: Material físico criança, digital pai}
+  - {id: 2, name: Não criticar concorrentes, desc: Foco no positivo que oferecemos}
+  - {id: 3, name: Preço por Família, desc: Valoriza famílias múltiplos filhos}
+  - {id: 4, name: Orientação não Imposição, desc: Norte seguro com espaço adaptar}
+  - {id: 5, name: Imago Dei, desc: Toda criança imagem de Deus merece respeito}
+
+negocio:
+  precos_2026:
+    pioneiros: {val: 1197, moeda: BRL, acesso: anual, benef: [Currículo completo, Comunidade WhatsApp, Acesso Maestro, Co-criação]}
+    mentoria: {val: 4397, moeda: BRL, vagas: 10, benef: [Tudo Pioneiro, 4 encontros vivo, Maestro+Marina, Acompanhamento]}
+    preco_cheio: {val: 2397, moeda: BRL, acesso: anual, disponivel: após pioneiro}
+  licenciamento: {tipo: CC BY 4.0, pode: Copiar/adaptar/comercializar com atribuição, premium: Curadoria+Comunidade+Conveniência}
+
+sistema_agentes:
+  conceito: Especialistas simulados (pensadores REAIS) para decisão/criação/QA. CM coordena.
+  formato: YAML
+  loc: .bmad/experts/
+  coord: {nome: Charlotte Mason, role: Veto final, princip: Children are born persons}
+  conselhos:
+    pedagogia: [Charlotte Mason, Susan Macaulay]
+    matematica: [Jerome Bruner (CPA), Lev Vygotsky (Scaffolding)]
+    narrativa: [CS Lewis (Dignidade), Tolkien (Consistência), Potter (Estética), Fujimura (Kintsugi)]
+    negocios: [Seth Godin, Alex Hormozi, Peter Thiel]
+    ux: [5 Mães Personas]
+    eng: [Clean Code, QA Quíntupla, BMAD, Eric Evans (DDD/SSOT)]
+  modos:
+    reuniao: {desc: Deliberação réplica/tréplica, cmd: /reuniao}
+    criar_licao: {desc: Workflow produção alta qualidade, cmd: /criar-licao}
+    revisao: {desc: QA Quíntupla, cmd: /revisar}
+  regra: CM veto final. Children are born persons = lei suprema
+  extensivel: true
+
+propositos_por_ano:
+  K_sementes:
+    ciclo: Sementes
+    viajante: Herdeiro
+    idade: 4-6 anos
+    phrase: Os números são promessas do Rei
+    elab: Cada quantidade guarda segredo sagrado. Mundo encantado, tesouros escondidos. Herdeira de algo maior. Maravilhamento puro.
+
+  1_raizes:
+    ciclo: Raízes
+    viajante: Construtor
+    idade: 6-7 anos
+    phrase: Sou o Construtor da Vila
+    elab: Usa promessas para CONSTRUIR. Número serve propósito - medir, contar, organizar. Sai jardim, entra oficina Bernardo. AVENTURA CONSTRUTIVA.
+
+  2_raizes:
+    ciclo: Raízes
+    viajante: Construtor
+    idade: 7-8 anos
+    phrase: O Mercado me ensina justiça
+    elab: Troca, compara, equilibra. Matemática = moeda de relação. Zelo e honestidade. TROCAS JUSTAS.
+
+  3_raizes:
+    ciclo: Raízes
+    viajante: Construtor
+    idade: 8-9 anos
+    phrase: Exploro a Vastidão do Reino
+    elab: Expande horizontes. Números maiores, operações combinadas, geometria espaço. Mundo cresce, ela cresce. EXPLORAÇÃO CORAJOSA.
+
+  4_raizes:
+    ciclo: Raízes
+    viajante: Construtor
+    idade: 9-10 anos
+    phrase: Ordeno o que descobri
+    elab: Sistematiza. Frações, decimais, proporções. Intuição vira estrutura. Vê PADRÕES e organiza. DOMÍNIO E ORGANIZAÇÃO.
+
+  5_raizes:
+    ciclo: Raízes
+    viajante: Construtor
+    idade: 10-11 anos
+    phrase: A linguagem dos padrões se revela
+    elab: Tudo se conecta. Multiplicação e divisão = danças inversas. Frações/decimais/porcentagens = faces mesma moeda. PRONTA abstração.
+
+  6_logica:
+    ciclo: Lógica
+    viajante: Explorador
+    idade: 11-12 anos
+    phrase: A matemática é a linguagem do universo
+    elab: (Galileu) Números não inventados - DESCOBERTOS. Álgebra = poesia codificada. Vê mão Criador na ordem. REVERÊNCIA INTELECTUAL.
+
+  7_logica:
+    ciclo: Lógica
+    viajante: Explorador
+    idade: 12-13 anos
+    phrase: O raciocínio é uma forja
+    elab: Aprende PROVAR. Não basta sentir verdade - demonstrar. Lógica formal entra. Bernardo - Aqui cada argumento testado.
+
+  8_logica:
+    ciclo: Lógica
+    viajante: Explorador
+    idade: 13-14 anos
+    phrase: O abstrato ilumina o concreto
+    elab: Usa álgebra resolver problemas reais. Abstrato não fuga - FERRAMENTA poder. Equações modelam realidade. PODER APLICADO.
+
+  9_legado:
+    ciclo: Legado
+    viajante: Portador da Tocha
+    idade: 14-15 anos
+    phrase: O que descobri é usado pelo mundo
+    elab: Vê matemática em engenharia, economia, ciência. Não estuda - APLICA. Conhecimento serve propósitos reais. VOCAÇÃO NASCENTE.
+
+  10_legado:
+    ciclo: Legado
+    viajante: Portador da Tocha
+    idade: 15-16 anos
+    phrase: Sou aprendiz dos mestres antigos
+    elab: Estuda história matemática. Pitágoras, Euclides, Arquimedes não nomes - MENTORES. Herda tradição milênios. HUMILDADE ERUDITA.
+
+  11_legado:
+    ciclo: Legado
+    viajante: Portador da Tocha
+    idade: 16-17 anos
+    phrase: A matemática me prepara para servir
+    elab: Cálculo, estatística, geometria resolvem problemas REAIS. Conhecimento para BEM do próximo. SERVIÇO VOCACIONAL.
+
+  12_legado:
+    ciclo: Legado
+    viajante: Portador da Tocha
+    idade: 17-18 anos
+    phrase: Sou mordomo do saber
+    elab: Pronta universidade/vida. Aprendeu não é SEU - herança PASSAR ADIANTE. Ciclo completa. Portador Tocha. MORDOMIA E LEGADO.
+    ritual: Melquior - Entrou Herdeiro. Cresceu Construtor. Brilhou Explorador. Sai Portador Tocha. Vá - acenda outras vidas.
+
+fase_berco:
+  nome: Fase Berço
+  idade: 0-4 anos
+  viajante: Broto
+  cm: CM - antes 6 anos ênfase NATUREZA/HÁBITOS/IDEIAS VIVAS. Não lições. Children brought up country, live outdoors.
+  nao_fazer:
+    - {d: NÃO matemática formal, cm: Direct teaching little need}
+    - {d: NÃO exercícios estruturados, cm: Knowledge not sole aim}
+    - {d: NÃO apressar, cm: Development natural process}
+  fazer:
+    natureza:
+      title: Natureza é Sala Aula
+      ativ: [Passeios 2h diárias, Observar insetos/plantas/nuvens, Brincar terra/água/areia, Plantas cuidar]
+      prop: Natureza ensina padrões/sequências/contagem sem perceber. 3 formigas, 4 pétalas, sol volta.
+    habitos:
+      title: Hábitos Antes Lições
+      ativ: [{aten: Olhar REAL 60s}, {obed: Responder 1ª vez alegria}, {rot: Sono/alimentação/higiene}, {ord: Cada brinquedo lugar}]
+      prop: Hábitos cedo = 2ª natureza. CM - Habit is ten natures.
+    ideias:
+      title: Ideias Via Histórias
+      ativ: [Histórias narradas pais, Canções/rimas, Conversas ricas, Perguntas mundo]
+      prop: Mente alimenta ideias vivas, não info seca. Histórias veículo.
+    contagem:
+      title: Matemática Surge Natural
+      ex: [Quantos dedos?, 3 maçãs você 3 papai, 2 meias pé quantas?, Degraus 1-5]
+      warn: NUNCA lição. Não quer OK. Objetivo EXPOSIÇÃO não instrução.
+  guardioes: {papel: Personagens histórias dormir opcional, abord: Podem aparecer SEM estrutura lição, nao: NÃO ensinar - conhecerá formal Sementes K}
+  frases: [Não atrasado protegendo infância, Menos estrutura agora mais fundação depois, Tempo natureza melhor preparação, Filho precisa você não exercícios]
+
+onboarding:
+  principio: Não perdeu nada - chegou hora certa. Reino sempre existiu, só descobriu.
+  cenarios:
+    entrada_raizes: {ciclo: Raízes, idade: 6-10, steps: [L000 adaptada, Apresentar 5 Guardiões, Viajante Construtor, Ponto curricular], tom: Já sabe! Dar NOME ao que faz. Bem-vindo Reino.}
+    entrada_logica: {ciclo: Lógica, idade: 10-14, steps: [Reino versão madura, Explicar jornada rápido, Explorador busca verdade, Conteúdo ano adequado], tom: Muita gente descobre tarde. Pronto explorar profundo.}
+    entrada_legado: {ciclo: Legado, idade: 14-18, steps: [Apresentação breve não infantil, Foco aplicação serviço, Guardiões mentores, Conteúdo direto], tom: Portador Tocha - usar para servir outros.}
+    irmao_novo: {cen: Irmão novo começa velho avançado, abord: Novo faz jornada completa. Velho ajuda novo FORTALECE aprendizagem. CM - best way learn is teach.}
+  guia_rapido: {title: Guia Início Rápido Famílias, content: [O que é MatViva 5min, 5 Guardiões, Lição típica, FAQs], onde: Site/app Novos Portadores}
+  licao_vindas: {desc: Cada ciclo Lição Boas-Vindas quem entra tarde, struct: [Apresentação Reino, Conhecer Guardião ciclo, Primeiro artefato, Convite jornada], note: Desenvolver ao criar lições}
+

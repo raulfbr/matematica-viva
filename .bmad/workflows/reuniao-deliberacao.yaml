@@ -1,0 +1,35 @@
+# REUNIÃO DELIBERAÇÃO — Workflow (YAML Lean)
+# v2.1 LEAN | 14/01/2026
+# SSOT: .bmad/experts/*.yaml
+
+id: reuniao_deliberacao
+tipo: workflow
+versao: '2.1'
+trilha: pedagogia
+coordenadora: charlotte_mason
+desc: Deliberação estruturada experts. Réplica/Tréplica/Síntese.
+
+modos:
+  todos: {cmd: '/reuniao-todos [TEMA]', desc: "Todos 14 experts", experts: [charlotte_mason, susan_macaulay, jerome_bruner, lev_vygotsky, cs_lewis, jrr_tolkien, beatrix_potter, makoto_fujimura, seth_godin, alex_hormozi, peter_thiel, maes_personas, design, engenharia]}
+  tema: {cmd: '/reuniao [TEMA]', desc: "CM seleciona experts relevantes"}
+
+fases:
+  - {n: 1, nome: ABERTURA, resp: charlotte_mason, acao: "CM apresenta tema e convoca."}
+  - {n: 2, nome: POSIÇÕES, acao: "Cada expert: Posição + Embasamento (3 parágrafos max)."}
+  - {n: 3, nome: RÉPLICA, acao: "Questionar outros. Respeito + Ponto específico."}
+  - {n: 4, nome: TRÉPLICA, acao: "Responder, ajustar ou defender."}
+  - {n: 5, nome: SÍNTESE, resp: charlotte_mason, acao: "CM organiza convergência/divergência."}
+  - {n: 6, nome: DECISÃO, resp: charlotte_mason, acao: "CM decide (veto). Registra log.", out: "Log final"}
+
+output:
+  arquivo: 'logs/{data}_REUNIAO_{tema}.md'
+  template: |
+    # REUNIÃO {tema}
+    **Data:** {data} | **Coord:** CM
+    ## Posições
+    ...
+    ## Decisão Final
+    ...
+
+ex:
+  - {caso: "Pictórico Sementes", q: "Incluir?", part: [cm, cpa, eng], dec: "Não (Opção D)", log: "...DELIBERACAO_CM_VS_CPA.md"}

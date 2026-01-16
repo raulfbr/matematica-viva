@@ -1,0 +1,129 @@
+# REGRAS SEMENTES — Ciclo K (4-6 anos) YAML Lean
+# Versão: 2.0 LEAN | 14/01/2026
+# Extends: .bmad/templates/000_global/licao-base.yaml
+
+id: regras-sementes-v2
+versao: "2.0"
+ciclo: Sementes
+idade: "4-6 anos"
+viajante: Herdeiro
+frase_ciclo: "Os números são promessas do Rei"
+
+# TRÍADE PEDAGÓGICA (Ordem hierárquica)
+triade:
+  coordenador: Charlotte Mason
+  hierarquia: [CM (veto final), CPA (propositivo), TGTB (referência)]
+  refs: LORE/north_star.yaml#triade
+
+# REFERÊNCIAS SSOT (herda de licao-base.yaml)
+refs: {extends: .bmad/templates/000_global/licao-base.yaml#referencias_globais_ssot}
+
+# ATMOSFERA (LORE)
+atmosfera:
+  climas: [ensolarado, nublado, ventoso, chuvoso, outonal, primaveril, crepusculo, estrelado]
+  locais: [jardim_central, arvore_silencio, clareira_perguntas, caverna_recomeco, ninho_mirante]
+  virtudes: [curiosidade, persistencia, atencao, paciencia, sabedoria, coragem, gratidao]
+  ref: LORE/climas.yaml
+
+# CPA (Jerome Bruner) — OPÇÃO D APROVADA 14/01/2026
+# Deliberação: logs/2026-01-14_0930_DELIBERACAO_CM_VS_CPA.md
+cpa:
+  filosofia: "CM LIDERA. Concreto NORTE absoluto. 'Se Quiser Voar' convite. Traçar no ar = ENATIVO."
+  concreto:
+    minimo: 80
+    maximo: 100
+    desc: "NORTE ABSOLUTO. Manipulativos reais, toque, movimento."
+    obrigatorio: true
+    exemplos: [Sementes/feijões/pedrinhas, Dedos/brinquedos, Objetos ambiente]
+    tracar_no_ar: {permitido: true, tipo: ENATIVO, nota: "Traçar ar = concreto. Escrever papel = vetado."}
+    nota_cm: "CM lidera 'Things before Signs'. Bruner concorda: Enativo predomina 0-6."
+  pictorico:
+    status: VETADO_PADRAO
+    excecao: "'Se Quiser Voar' — apenas se criança pedir espontâneo"
+    just: "CM 'Things before Signs'. Pai NÃO oferece pictórico. Criança PEDIR = bônus."
+  abstrato:
+    maximo: 20
+    tipo: "Reconhecimento visual + traçar ar (enativo)"
+    permitido: [Traçar número ar (ENATIVO), Reconhecer símbolo visualmente, Ouvir nome número]
+    proibido: [Escrever papel, Contas escritas, Memorização forçada]
+  se_quiser_voar:
+    titulo: "Se Quiser Voar"
+    regra: "APENAS se olhos criança pedem MAIS. Pai NÃO sugere."
+    bonus: [Desenhar (se quiser), Traçar areia/mesa, Contar extras]
+    nota_cm: "Não force. Interesse espontâneo = prontidão."
+
+# TEMPO (Charlotte Mason)
+tempo:
+  licao: {min: 10, max: 20, ideal: 15, un: min, just: "CM Hábito Atenção. Lições curtas preservam atenção."}
+  preparo: {max: 5, un: min, just: "Hormozi: Esforço baixo alta adesão. >5min mãe desiste."}
+
+# SCAFFOLDING (Vygotsky)
+scaffolding:
+  tipo: "Mão-na-mão"
+  desc: "Portador FALA JUNTO. Modela → faz junto → deixa tentar."
+  exemplos: ["Vamos contar JUNTOS: um, dois, três", "Segure minha mão contamos", "Olhe como faço, agora você"]
+  proibido: [Esperar descobra sozinha, Dar instruções deixar fazer, Productive struggle prolongado]
+  erro: "'Mais uma vez. Comigo.' (Bernardo). Nunca 'errado'. Sempre 'Vamos de novo.'"
+
+# TOM (C.S. Lewis)
+tom:
+  principal: "Encantamento mágico"
+  check_lewis: "Never be within child's mental range. NUNCA infantilizar."
+  proibido: ["Muito bem!", "Que fofo!", "Agora tia ensina...", Explicações excessivas]
+  permitido: ["Quer descobrir segredo?", "Vem comigo Herdeiro", "Olha o que Rei deixou..."]
+
+# DENSIDADE SENSORIAL (Beatrix Potter)
+sensorial:
+  elementos_paragrafo: 1
+  desc: "Em Sementes, UMA coisa sensorial por vez. Criança processa devagar."
+  ordem: [Cheiro (evocativo), Luz/Cor (visual), Temperatura (corporal), Som (relevante)]
+  correto: "O ar cheira a musgo fresco."
+  errado: "O ar cheira musgo enquanto vento frio toca rosto e água corre longe."
+
+# MATERIAIS (Mães Personas)
+materiais:
+  regra: "Materiais devem estar NA COZINHA da mãe."
+  permitidos:
+    - {cat: Cozinha, ex: [Feijões, Macarrão, Colheres, Pratos]}
+    - {cat: Jardim, ex: [Pedrinhas, Folhas, Gravetos, Flores]}
+    - {cat: Casa, ex: [Botões, Moedas, Brinquedos, Meias]}
+    - {cat: Corpo, ex: [Dedos, Mãos, Pés, Olhos]}
+  evitar: [Materiais caros loja educação, Impressões coloridas obrigatórias, Kits especiais]
+  selos: [📱 Mobile-Friendly, 🫘 Materiais Caseiros, 🗣️ Linguagem Clara, ⏱️ 5min Preparo, ♿ Acessíveis, 💡 Nota Adaptação]
+
+# NARRAÇÃO (Charlotte Mason)
+narracao:
+  obrigatorio: true
+  metodo: "Final lição criança CONTA o que descobriu. CM Princípio 14."
+  perguntas: ["O que descobriu hoje?", "O que contaria para [pessoa]?", "Qual parte mais legal?"]
+  regras: [NUNCA interrompa, Espere terminar, "Se não quiser: 'Tudo bem coração guardou'"]
+  tempo_espera: "Conte até 10 interno. Silêncio = processamento."
+
+# ADAPTAÇÃO BERNARDO (Inclusão)
+adaptacao_bernardo:
+  obrigatorio: true
+  locais: [concreto, extensao]
+  formato: "💡 Para crianças realidades diferentes: [adapt]. Bernardo ensina caminhos diferentes também chegam."
+  exemplos:
+    - {orig: "Pegue sementes", adapt: "Se não segura, aponte"}
+    - {orig: "Pule 3 vezes", adapt: "Faça 3 sons (voz, palma, mesa)"}
+    - {orig: "Desenhe", adapt: "Você desenha enquanto ela olha"}
+
+# GUARDIÕES (Tolkien)
+guardioes:
+  regra: "Em Sementes, Guardiões apresentados PRIMEIRA VEZ. Tom encantamento."
+  frequencias:
+    - {id: celeste, freq: Alta, uso: "Exploração, contagem, padrões"}
+    - {id: bernardo, freq: Alta, uso: "Erro produtivo, adaptações"}
+    - {id: melquior, freq: Media, uso: "Rituais, transições, sabedoria"}
+    - {id: noe, freq: Baixa-Media, uso: "Espera, respiração"}
+    - {id: iris, freq: Baixa-Media, uso: "Observação, beleza, padrões visuais"}
+  ref: LORE/guardioes.yaml
+
+# CHECKLIST QA
+checklist:
+  cm: [Criança pessoa?, Lição ≤20min?, Narração?, Ideia Viva?]
+  cpa: [Concreto ≥80%?, Pictórico VETADO?, Abstrato mínimo?]
+  ux: [Preparo ≤5min?, Materiais caseiros?, Mobile?, Sem jargão?]
+  inclusao: [Adaptação Bernardo?, Instruções acessíveis?]
+  narrativa: [Transição sensorial?, Tom indicado?, Pausas?, Frase canônica Guardião?]

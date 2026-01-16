@@ -1,0 +1,127 @@
+# TEMPLATE V6.3 SEMENTES — YAML Lean Otimizado para IA
+# Versão: 6.3 | 15/01/2026 | Refs: LORE/index.yaml, triade.yaml
+# Evolução: Sementes(K) → Raízes(1-5) → Lógica(6-8) → Legado(9-12)
+# Este template é base evolutiva: Sementes → gera Raízes → gera Lógica → gera Legado
+
+_meta:
+  id: template-v6.3-sementes
+  versao: '6.3'
+  fase: Sementes
+  status: canonico
+  refs:
+    lore: LORE/index.yaml
+    triade: .bmad/expansion-packs/matematica-viva/triade.yaml
+    curriculo: curriculo/_SISTEMA/CURRICULOS_MESTRE/000_K_SEMENTES_CURRICULO_MESTRE.md
+  regras_ia:
+    guardioes: {fonte: LORE/guardioes.yaml, opcoes: [melquior, noe, celeste, bernardo, iris]}
+    locais: {fonte: LORE/locais.yaml, opcoes: [jardim_central, arvore_silencio, clareira_perguntas, caverna_recomeco, ninho_mirante]}
+    climas: {fonte: LORE/climas.yaml, opcoes: [ensolarado, nublado, ventoso, chuvoso, outonal, primaveril, crepusculo, estrelado]}
+    virtudes: {fonte: LORE/guardioes.yaml#semente, evolucao: LORE/evolucao_guardioes.yaml}
+    cpa: {fonte: .bmad/expansion-packs/matematica-viva/triade.yaml#ciclos.sementes.cpa}
+    limites: {tempo_licao: '15-20 min', tempo_preparo: '≤ 5 min', fala_max: 50}
+
+licao:
+  metadados:
+    id: '[MV-S-XXX]'
+    titulo: '[Título Poético da Lição]'
+    fase: Sementes
+    ciclo: K
+    trimestre: '[1, 2 ou 3]'
+    estacao: '[1-8]'
+    tipo: '[Senso Numérico, Operações, Geometria, Medidas]'
+    guardiao_lider: '[ver LORE/guardioes.yaml]'
+    guardiao_secundario: '[opcional]'
+    guardioes_apresentados: []
+    tgtb_ref: '[000-LXX]'
+    tgtb_titulo_en: '[Título original em inglês]'
+    tgtb_titulo_pt: '[Tradução do tema]'
+    tempo_licao: '15-20 min'
+    tempo_preparo: '≤ 5 min'
+    versao: '6.3'
+    status: rascunho
+
+  navegacao:
+    anterior: {id: '[MV-S-XXX]', titulo: '[Título lição anterior]'}
+    proxima: {id: '[MV-S-XXX]', titulo: '[Título próxima lição]'}
+
+  para_portador:
+    ideia_viva: {frase: '[Frase poética — máx 2 linhas]', conceito: '[O que criança descobre]', intencao_cm: '[Por que é viva segundo CM]'}
+    dica_coracao: '[2-3 frases que acalmam o Portador]'
+    filho_descobre: '[O que a criança vai descobrir — 1-2 frases]'
+    protocolo_impecabilidade: '[NÃO EXPLIQUE, MOSTRE. Método mão-na-mão]'
+    nota_graca: '[Se algo sair diferente, sorria. Semente plantada]'
+    conforto_emocional: '[Validação do medo do Portador]'
+    audio_script: '[30 segundos para ouvir antes]'
+    preparacao:
+      materiais:
+        # IA: adicione quantos materiais necessários. Estrutura:
+        # - {item: nome, qtd: numero, alt: alternativa, essencial: true/false}
+
+  linkage:
+    elo_anterior: {licao_id: '[MV-S-XXX]', gancho: '[O que aprendemos antes e conecta com hoje]'}
+    proximo: {licao_id: '[MV-S-XXX]', gancho: '[Antecipação — cria expectativa]'}
+
+  ritual_abertura:
+    instrucao_ambiente: '[Tapete do Reino, luzes diminuídas, silêncio]'
+    local: '[ver LORE/locais.yaml]'
+    clima: '[ver LORE/climas.yaml]'
+    virtude: '[mesma semente do guardião — ver LORE/guardioes.yaml]'
+    artefato: '[Objeto especial da lição]'
+    transicao_reino: '[Instrução olhos fechados, luz especial, respiração]'
+    fala_portador: {tom: '[segredo, animado, solene, misterioso]', script: '[máx 50 palavras]'}
+    card_guardiao: '[CARD: NOME_GUARDIAO]'
+    abertura_sensorial: '[VÊ, OUVE, CHEIRA, SENTE — 2-3 frases poéticas]'
+
+  jornada:
+    narrativa_principal:
+      # IA: adicione quantas cenas necessárias. Estrutura:
+      # - {titulo: nome, local: LORE, fala_guardiao: {tom: tipo, script: texto}, instrucao_portador: acao}
+    concreto:
+      desc: '[Descrição da atividade concreta]'
+      card_objeto: '[CARD: NOME_OBJETO]'
+      metodo: mao-na-mao
+      instrucoes_portador:
+        # IA: adicione quantos passos necessários (mínimo 2). Estrutura:
+        # - {passo: numero, acao: texto, fala_sugerida: texto}
+      norte_absoluto: A maior parte da lição acontece aqui. Manipulação é onde a mágica vive.
+      adaptacao_bernardo: '[💡 Para crianças com realidades diferentes]'
+    pictorico: {status: VETADO, motivo: 'Sementes = Concreto. CM Things before Signs.', excecao: 'Se Quiser Voar'}
+    abstrato: {desc: '[Reconhecimento visual apenas]', nota: 'Traçar no AR = ENATIVO, conta como Concreto.'}
+    extensao: {titulo: 'Se Quiser Voar', desc: '[Só se olhos pedirem MAIS]', sugestoes: [], adaptacao_bernardo: '[Variações inclusivas]'}
+
+  narracao:
+    instrucao_portador: 'Guarde materiais. Olhe nos olhos. Dê tempo. Silêncio é trabalho mental.'
+    pergunta_principal: '[Pergunta aberta para criança recontar o que viveu]'
+    perguntas_coracao: []
+    nota_cm: 'NUNCA interrompa. Espere. Se não quiser falar: Tudo bem, seu coração guardou.'
+
+  ritual_fechamento:
+    fala_guardiao: {tom: '[grato, acolhedor, esperançoso]', script: '[Reconhecimento + gancho — máx 50 palavras]'}
+    fio_ouro: '[Conexão explícita com próxima jornada]'
+    transicao_volta: {instrucao: '[Apagar luz especial juntos]', fala: '[Frase de encerramento]'}
+
+  para_familia:
+    titulo: Entendendo a Jornada de Hoje
+    porque_importa: '[2-3 parágrafos explicando por que lição foi desenhada assim]'
+    metodo_cpa: {concreto: '[O que criança tocou/manipulou]', pictorico: 'Vetado em Sementes', abstrato: '[O que reconheceu visualmente]', nota: 'CM: Coisas antes de Signos.'}
+    principio_cm: {numero: '[1-20]', citacao: '[Citação original CM]', aplicacao: '[Como foi aplicado]'}
+    tgtb_conexao: '[Esta lição corresponde a tgtb_ref — tema original + narrativa imersiva]'
+    espiral: {conceito: '[contagem, adição, etc]', volta_atual: '[Sementes — intuição]', proxima_volta: '[Raízes — operações]', nota: 'Conceito revisitado em ciclos futuros com maior profundidade.'}
+    reflexao_espiritual: '[Conexão matemática com verdade maior — opcional]'
+    nota_graca: '[Personalizar por lição — conectar com o conceito ou guardião. Ex: "Se as sementes não foram contadas, Celeste entende. Ela também perde a trilha às vezes."]'
+
+  diario_portador:
+    nota: 'Anotações usadas nas revisões trimestrais.'
+    perguntas: ['Como meu filho reagiu?', 'O que funcionou?', 'O que ajustar?']
+
+  navegacao_inferior:
+    anterior: {id: '[MV-S-XXX]', titulo: '[Título lição anterior]'}
+    proxima: {id: '[MV-S-XXX]', titulo: '[Título próxima lição]'}
+
+  auditoria_qa:
+    cm: [Criança pessoa?, Ideia Viva?, Narração?, Lição ≤20min?, Hábito Atenção?]
+    cpa: [Concreto presente?, Pictórico vetado?, Abstrato mínimo?]
+    narrativa: [Frase canônica guardião?, Tom Lewis?, Consistência Tolkien?, Cores Potter?]
+    template: [Seções obrigatórias?, Linkage?, Atmosfera única?]
+    triade: [CM OK?, CPA OK?, TGTB ref válida?]
+    inclusao: [Adaptação Bernardo?, Instruções acessíveis?]

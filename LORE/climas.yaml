@@ -1,0 +1,159 @@
+# CLIMAS NARRATIVOS — SSOT
+# YAML Lean v1.0 | 14/01/2026
+# Alinhamento: Ideias Vivas (Imersão Sensorial)
+
+id: climas_lore
+versao: '1.0'
+tipo: lore_entity
+ref_locais: LORE/locais.yaml
+
+climas:
+  ensolarado:
+    nome: Ensolarado
+    emoji: "☀️"
+    atmosfera: "Alegria, claridade, descoberta"
+    uso: [Introdução, Conceitos novos, Energia alta]
+    desc: "A luz dourada banha o jardim, aquecendo com promessa de novo dia."
+    sensorial: {luz: Dourada/brilhante, temp: Quente, energia: Alta}
+    tom_guardiao: "Vibrante, alegre"
+
+  nublado:
+    nome: Nublado
+    emoji: "☁️"
+    atmosfera: "Reflexão, mistério suave"
+    uso: [Consolidação, Revisão, Abstratos]
+    desc: "Uma névoa suave envolve a clareira, misterioso e calmo."
+    sensorial: {luz: Difusa/suave, temp: Fresca, energia: Média}
+    tom_guardiao: "Sereno, misterioso"
+
+  ventoso:
+    nome: Ventoso
+    emoji: "🌬️"
+    atmosfera: "Movimento, ação, dinâmica"
+    uso: [Atividade física, Contagem movimento, Cinética]
+    desc: "As folhas dançam ao redor, o vento brinca com seus cabelos."
+    sensorial: {luz: Variável, temp: Fresca, energia: Alta/movimento}
+    tom_guardiao: "Rápido, brincalhão"
+
+  chuvoso:
+    nome: Chuvoso
+    emoji: "🌧️"
+    atmosfera: "Aconchego, interioridade"
+    uso: [Contemplação, Histórias longas, Foco]
+    desc: "O som da chuva embala o Reino, gotas desenham padrões."
+    sensorial: {luz: Cinza/suave, temp: Quente/interno, energia: Baixa/focada}
+    tom_guardiao: "Suave, íntimo"
+
+  outonal:
+    nome: Outonal
+    emoji: "🍂"
+    atmosfera: "Transição, amadurecimento"
+    uso: [Fechamento, Síntese, Reflexão aprendizado]
+    desc: "Folhas caem suavemente, pintando chão de dourado."
+    sensorial: {luz: Baixa/tarde, temp: Fresca, energia: Nostálgica}
+    tom_guardiao: "Sábio, retrospectivo"
+
+  primaveril:
+    nome: Primaveril
+    emoji: "🌸"
+    atmosfera: "Renovação, novos começos"
+    uso: [Início fases, Primeiro contato, Possibilidade]
+    desc: "Flores desabrocham, ar traz promessa de crescimento."
+    sensorial: {luz: Clara/fresca, temp: Amena, energia: Crescente}
+    tom_guardiao: "Esperançoso, entusiasmado"
+
+  crepusculo:
+    nome: Crepúsculo
+    emoji: "🌅"
+    atmosfera: "Encerramento, gratidão"
+    uso: [Celebração, Revisão final, Fim de ciclo]
+    desc: "O sol se despede pintando céu de rosa e laranja."
+    sensorial: {luz: Dourada/suave, temp: Morna, energia: Gratidão}
+    tom_guardiao: "Grato, acolhedor"
+
+  estrelado:
+    nome: Estrelado
+    emoji: "⭐"
+    atmosfera: "Maravilhamento, infinitude"
+    uso: [Números grandes, Grandeza, Infinito]
+    desc: "Estrelas brilham como promessas infinitas esperando ser conhecidas."
+    sensorial: {luz: Escura/pontos, temp: Fresca/noturna, energia: Maravilhada}
+    tom_guardiao: "Reverente"
+
+regras:
+  coerencia: "Clima = Coerência Sensorial. Lição movimento = dinâmico. Reflexão = calmo."
+  aplicacao: {metadado: obrigatório, narrativa: coerente, tom: ajustado}
+
+desafios_atmosfericos:
+  vento_gelado:
+    nome: "O Vento Gelado"
+    emoji: "❄️"
+    significado: "Frustração/Dificuldade"
+    quando: [Dificuldade alta, Erros repetidos, Quer desistir]
+    atmosfera: |
+      Um vento frio começa a soprar. As folhas tremem.
+      Bernardo levanta a gola e olha para o Viajante.
+      "Este é o Vento Gelado. Todo construtor conhece."
+    superacao:
+      guardiao: Bernardo
+      fala: |
+        "Sente o frio? Eu também sinto. Na Grande Nevasca, pensei em parar.
+        Mas olha — ainda estou aqui. Uma martelada de cada vez.
+        Vamos tentar mais uma vez?"
+    cm_note: "Criança precisa sentir dificuldade para crescer. Protegê-la é enfraquecê-la."
+
+  nevoa_vale:
+    nome: "A Névoa do Vale"
+    emoji: "🌫️"
+    significado: "Confusão/Abstração"
+    quando: [Transição C→A, Conceitos novos, Não entendo]
+    atmosfera: |
+      Uma névoa suave sobe do vale e cobre a clareira.
+      Celeste pisca os olhos, tentando ver através.
+      "A névoa veio. Às vezes o caminho some mesmo."
+    superacao:
+      guardiao: Celeste
+      fala: |
+        "Olha devagar. A névoa não é sua inimiga.
+        Ela só diz: vá mais devagar. O caminho está lá.
+        Vamos procurar juntos?"
+    cm_note: "Confusão é estágio normal. Normalizar não entender. Clareza vem com paciência."
+
+  relogio_apressado:
+    nome: "O Relógio Apressado"
+    emoji: "⏰"
+    significado: "Pressa/Desatenção"
+    quando: [Quer terminar rápido, Erros bobos]
+    atmosfera: |
+      Um tique-taque começa a ecoar na clareira.
+      Noé fecha os olhos e suspira.
+      "O Relógio Apressado chegou. Ele sempre quer correr."
+    superacao:
+      guardiao: Noé
+      fala: |
+        "Shhh... ouve o silêncio? É mais poderoso que o relógio.
+        Não precisa correr. O tempo caminha contigo.
+        Vamos de novo, devagar desta vez."
+    cm_note: "Qualidade > Velocidade. Lições curtas, mas com atenção total."
+
+  sombra_cinza:
+    nome: "A Sombra Cinza"
+    emoji: "🌑"
+    significado: "Desânimo/Baixa estima"
+    quando: [Eu não consigo, Fracasso repetido]
+    atmosfera: |
+      Uma sombra leve passa sobre a clareira.
+      As cores parecem menos vibrantes.
+      Íris pousa no ombro do Viajante em silêncio.
+    superacao:
+      guardiao: Íris
+      fala: |
+        "Olha... você vê essa sombra? Ela passa.
+        Mas veja — a luz ainda está lá, esperando.
+        Vamos olhar para o que você JÁ conseguiu?"
+    cm_note: "Reconhecer desânimo + foco no progresso feito."
+
+regras_desafios:
+  escassez: "Só usar quando faz sentido real."
+  nao_viloes: "São climas, não inimigos. Travessia, não guerra."
+  superacao: "Sempre superados com ajuda do Guardião."

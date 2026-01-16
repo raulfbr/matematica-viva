@@ -1,0 +1,39 @@
+# RESUMO-MEMÓRIA — Template Blocos 5 Lições (YAML Lean)
+# Versão: 1.2 LEAN | 14/01/2026
+# Usado por: Mordomo/SM após completar 5 lições
+# Extends: licao-base.yaml (refs SSOT lá)
+
+meta:
+  ciclo: Sementes
+  range: "L001-L005"
+  data: "YYYY-MM-DD"
+  autor: Mordomo
+
+conceitos:
+  - {licao: L001, conceito: "[Nome]", guardiao: "[Quem]", tipo: NOVO}
+  - {licao: L002, conceito: "[Nome]", guardiao: "[Quem]", tipo: NOVO}
+  - {licao: L003, conceito: "[Nome]", guardiao: "[Quem]", tipo: REVISÃO}
+
+decisoes_pedagogicas:
+  - {licao: L003, decisao: "[O que decidido]", just: "[Ref CM/CPA/TGTB]", tipo: VETO_CM}
+
+guardioes:
+  - {licao: L001, lider: Celeste, coadj: []}
+  - {licao: L002, lider: Bernardo, coadj: [Íris]}
+
+arcos:
+  - {id: ARCO-001, titulo: "[Nome arco]", inicio: L001, fim: L005, desc: "[O que acontece]", guardioes: [Celeste, Bernardo]}
+
+refs_futuras:
+  - {para: L006, tipo: CALLBACK, desc: "[O que referenciar]", guardiao: Celeste}
+
+metricas:
+  total_licoes: 5
+  tempo_total: 90
+  manipulativos: [Cubos contagem, Pedrinhas]
+  novos_simbolos: 0
+
+observacoes:
+  padroes: "[O que funcionou bem]"
+  ajustes: "[O que melhorar]"
+  feedback_piloto: null

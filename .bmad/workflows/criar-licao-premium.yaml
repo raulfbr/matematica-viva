@@ -1,0 +1,25 @@
+# CRIAR LIÇÃO PREMIUM — Workflow Completo Alta Qualidade
+# YAML Lean v1.1 | Atualização: 14/01/2026
+# Ref: .bmad/expansion-packs/matematica-viva/triade.yaml (SSOT)
+
+id: criar_licao_premium
+tipo: workflow  
+versao: '1.1'
+coordenadora: charlotte_mason
+desc: Workflow completo criar lição alta qualidade. CM coordena especialistas contribuem QA valida
+triade_ref: .bmad/expansion-packs/matematica-viva/triade.yaml
+
+fases:
+  - {fase: 1, nome: PLANEJAMENTO, experts: [charlotte_mason, jerome_bruner, lev_vygotsky], passos: [{p: 1, acao: Receber tema consultar TGTB, resp: orchestrator, fonte: curriculo/_SISTEMA/CURRICULOS_MESTRE/, arquivos: {sementes: 000_K_SEMENTES_CURRICULO_MESTRE.md, raizes_1: 001_1ANO_RAIZES-1_CURRICULO_MESTRE.md, raizes_2: 002_2ANO_RAIZES-2_CURRICULO_MESTRE.md}, regra: SEMPRE consultar currículo mestre obter tgtb_ref}, {p: 2, acao: Definir Ideia Viva, resp: charlotte_mason, q: Qual verdade viva criança vai descobrir?}, {p: 3, acao: Propor estrutura CPA, resp: jerome_bruner, regras: [Concreto ≥ 80% (OPÇÃO D), Pictórico vetado Sementes, Abstrato ≤20%, Traçar ar = ENATIVO]}, {p: 4, acao: Definir ZPD scaffolding, resp: lev_vygotsky, q: Qual andaime criança precisa?}, {p: 5, acao: CM valida ou veta, resp: charlotte_mason, poder: Veto absoluto}], output: perd.yaml, checkpoint: true}
+  
+  - {fase: 2, nome: DESENVOLVIMENTO, experts: [cs_lewis, jrr_tolkien, beatrix_potter], passos: [{p: 6, acao: Escrever narrativa guardião, resp: cs_lewis, crit: Tom nobre não condescendente}, {p: 7, acao: Validar consistência Reino, resp: jrr_tolkien, q: Contradição lições anteriores?}, {p: 8, acao: Escolher paleta cores ilustrações, resp: beatrix_potter, regra: Cores naturais nunca neon}], output: narrativa.md, checkpoint: false}
+  
+  - {fase: 3, nome: VALIDAÇÃO, experts: [qa, engenharia], passos: [{p: 9, acao: Rodar 5-Point Verification, resp: qa, checks: [TGTB ref válido?, CPA estrutura correta?, Tom CM nobre?, Cores naturais?, Sem chartjunk?]}, {p: 10, acao: Verificar SSOT DRY, resp: engenharia, q: Duplicação desnecessária?}, {p: 11, acao: CM aprovação final, resp: charlotte_mason, poder: Veto absoluto}], output: licao_completa.md, checkpoint: true}
+
+checkpoints:
+  - {id: CP1, após_fase: 1, aprovador: humano, pergunta: PERD pedagógico sólido aprovar desenvolvimento?}
+  - {id: CP2, após_fase: 3, aprovador: charlotte_mason, pergunta: Lição impecável publicar?}
+
+validacao_final:
+  criterios: [TGTB alinhado?, Ideia Viva clara?, CPA bem estruturado?, Tom nobre não condescendente?, Consistência Reino preservada?, 5-Point Verification passed?, CM aprovou?]
+  output: {sucesso: licao_premium_aprovada.md, falha: retornar_fase_indicada}

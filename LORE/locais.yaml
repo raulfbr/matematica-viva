@@ -1,0 +1,75 @@
+# LOCAIS DO REINO CONTADO — SSOT
+# YAML Lean v1.0 | 14/01/2026
+# Alinhamento: Imersão Sensorial
+
+id: locais_lore
+versao: '1.0'
+tipo: lore_entity
+ref_guardioes: LORE/guardioes.yaml
+ref_climas: LORE/climas.yaml
+
+locais:
+  jardim_central:
+    nome: Jardim Central
+    guardiao: Melquior
+    desc_curta: "Onde tudo começa, sol dourado."
+    desc: |
+      O Jardim Central é o coração do Reino Contado. Quatro plantinhas
+      crescem em vasos de barro antigo, brilhando suavemente como se
+      guardassem um segredo. O ar cheira a terra molhada e musgo fresco.
+    atmosfera: {luz: Dourada, cheiro: Terra/Musgo, som: Pássaros/Água, temp: Quente}
+    uso: [Abertura, Encontro Melquior, Ritual entrada]
+    img: "assets/img/local-jardim-central.webp"
+
+  arvore_do_silencio:
+    nome: Árvore do Silêncio
+    guardiao: Noé
+    desc_curta: "Árvore antiga, galhos tocam céu."
+    desc: |
+      Uma árvore tão antiga que parece tocar o céu. Nos galhos mais altos,
+      Noé espera com seus olhos como duas luas amarelas. O ar esfria um pouco
+      na sombra, e o silêncio é quase palpável.
+    atmosfera: {luz: Filtrada/Sombra, cheiro: Casca/Folhas, som: Silêncio, temp: Fresca}
+    uso: [Tempo/sequência, Pausa, Reflexão]
+    img: "assets/img/local-arvore-silencio.webp"
+
+  clareira_das_perguntas:
+    nome: Clareira das Perguntas
+    guardiao: Celeste
+    desc_curta: "Banhada de sol, flores silvestres."
+    desc: |
+      Uma clareira aberta banhada de sol. O ar é quente e cheira a flores
+      silvestres. Celeste fareja o ar com o focinho erguido, captando
+      segredos que o vento traz. É o lugar das descobertas.
+    atmosfera: {luz: Sol pleno, cheiro: Flores/Aventura, som: Vida/Vento, temp: Quente}
+    uso: [Exploração, Padrões, Curiosidade]
+    img: "assets/img/local-clareira-perguntas.webp"
+
+  caverna_do_recomeco:
+    nome: Caverna do Recomeço
+    guardiao: Bernardo
+    desc_curta: "Forja de Bernardo, calor das brasas."
+    desc: |
+      A trilha desce para uma caverna fresca. O ar muda: cheira a pedra,
+      terra e madeira de cedro. Lá dentro, iluminado por fogueira baixa,
+      Bernardo poli ferramentas. É onde erros viram aprendizado.
+    atmosfera: {luz: Laranja/Brasas, cheiro: Pedra/Cedro/Metal, som: Fogo/Martelo, temp: Contraste}
+    uso: [Erro/Persistência, Construção, Trabalho manual]
+    img: "assets/img/local-caverna-recomeco.webp"
+
+  ninho_mirante:
+    nome: Ninho Mirante
+    guardiao: Íris
+    desc_curta: "Alto, visão ampla do Reino."
+    desc: |
+      No topo da Árvore do Silêncio, num galho especial, está o Ninho
+      Mirante. Daqui se vê todo o Reino. Íris observa tudo com seu colar
+      de contas brilhando. Lugar dos detalhes e da visão ampla.
+    atmosfera: {luz: Clara/Ampla, cheiro: Ar puro, som: Vento/Asas, temp: Ventosa}
+    uso: [Atenção, Visão geral, Detalhes]
+    img: "assets/img/local-ninho-mirante.webp"
+
+regras:
+  transicoes: "Sempre descrever mudança sensorial ao mudar local."
+  associacao: "Usar local do Guardião quando ele lidera (recomendado)."
+  imersao: "Mínimo: Luz + Cheiro + Som."

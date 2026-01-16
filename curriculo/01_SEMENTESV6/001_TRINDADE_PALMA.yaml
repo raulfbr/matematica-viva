@@ -1,0 +1,254 @@
+# LIÇÃO 001 — A TRINDADE NA PALMA
+# Template: V6.3 | 15/01/2026 | Status: TESTE
+
+_meta:
+  id: licao-001-trindade-palma
+  versao: '6.3'
+  fase: Sementes
+  status: teste
+
+licao:
+  metadados:
+    id: MV-S-001
+    titulo: A Trindade na Palma
+    fase: Sementes
+    ciclo: K
+    trimestre: 1
+    estacao: 1
+    tipo: Senso Numérico
+    guardiao_lider: celeste
+    guardiao_secundario: melquior
+    guardioes_apresentados: [celeste, melquior]
+    tgtb_ref: 000-L1
+    tgtb_titulo_en: Numbers 1 to 3
+    tgtb_titulo_pt: Números 1 a 3
+    tempo_licao: '15-20 min'
+    tempo_preparo: '≤ 5 min'
+    versao: '6.3'
+    status: canonico
+
+  navegacao:
+    anterior: {id: MV-S-000, titulo: O Portal do Reino}
+    proxima: {id: MV-S-002, titulo: As Pedras da Fortaleza}
+
+  para_portador:
+    ideia_viva:
+      frase: Três sementes de carvalho encontradas pela Raposa — uma para cada promessa do Rei.
+      conceito: Contagem de 1 a 3 com correspondência um-a-um
+      intencao_cm: Cada número é uma criatura viva, não um signo morto. A criança toca, conta e VIVE os números.
+    dica_coracao: |
+      Hoje você vai apresentar os números 1, 2 e 3.
+      Respire. A magia está no encontro, não na performance.
+      Seu filho não precisa "acertar" — precisa sentir.
+    filho_descobre: Que os números são REAIS — você pode tocá-los, guardá-los na palma, contá-los um por um.
+    protocolo_impecabilidade: |
+      NÃO EXPLIQUE os números. MOSTRE-OS.
+      Coloque 1 semente na mão. Diga "Um". Espere.
+      Método mão-na-mão — faça JUNTO, não PARA.
+    nota_graca: Se contar errado, sorria. A semente já foi plantada. O Rei não tem pressa.
+    conforto_emocional: |
+      Você não é avaliador. É companheiro de viagem.
+      Se seu filho se distrair, Celeste também se distrai às vezes.
+      O Reino não julga. O Reino acolhe.
+    audio_script: |
+      Olá, Portador. Hoje Celeste vai mostrar três tesouros que o Rei deixou no jardim.
+      Pegue 3 sementes (feijões servem). Respire. Vamos juntos.
+    preparacao:
+      materiais:
+        - {item: 3 sementes ou feijões, qtd: 3, alt: pedrinhas ou botões, essencial: true}
+        - {item: Card Celeste, qtd: 1, alt: desenho impresso, essencial: true}
+        - {item: Cestinho ou pote pequeno, qtd: 1, alt: mão do Portador, essencial: false}
+
+  linkage:
+    elo_anterior:
+      licao_id: MV-S-000
+      gancho: Na lição anterior, Melquior abriu as portas do Reino e você conheceu os cinco Guardiões. Hoje, Celeste vai te mostrar os primeiros tesouros!
+    proximo:
+      licao_id: MV-S-002
+      gancho: Bernardo vai precisar de ajuda para organizar as pedras da sua fortaleza. Quantas cabem em cada fileira?
+
+  ritual_abertura:
+    instrucao_ambiente: Tapete do Reino estendido. Luzes diminuídas. Silêncio sagrado.
+    local: clareira_perguntas
+    clima: ensolarado
+    virtude: curiosidade
+    artefato: Três sementes de carvalho
+    transicao_reino: |
+      Feche os olhos. Respire fundo três vezes.
+      Quando abrir, estaremos na Clareira das Perguntas.
+    fala_portador:
+      tom: segredo
+      script: |
+        Hoje vamos encontrar alguém muito especial. Ela fareja segredos.
+        Você consegue ouvir as patinhas no chão? É Celeste, a Raposa.
+    card_guardiao: 'CARD: CELESTE'
+    abertura_sensorial: |
+      O sol da manhã aquece a clareira. O ar cheira a folhas secas e terra quente.
+      Entre os carvalhos, um vulto cor de fogo aparece. Olhos brilhantes.
+      Celeste levanta o focinho e sorri. "Sente esse cheiro? É aventura."
+
+  jornada:
+    narrativa_principal:
+      - titulo: Celeste Encontra um Tesouro
+        local: clareira_perguntas
+        fala_guardiao:
+          tom: animado
+          script: |
+            "Viajante! Olha o que eu achei debaixo do carvalho mais velho!"
+            [Celeste mostra UMA semente na pata]
+            "Quantas sementes eu tenho aqui? Conta comigo!"
+        instrucao_portador: |
+          Mostre 1 semente na palma. Espere a criança olhar.
+          Diga "Uma semente" com reverência.
+      - titulo: O Segundo Tesouro
+        local: clareira_perguntas
+        fala_guardiao:
+          tom: curioso
+          script: |
+            "Espera... tem mais alguma coisa aqui!"
+            [Celeste fareja e encontra OUTRA semente]
+            "Agora temos... quantas?"
+        instrucao_portador: |
+          Adicione a segunda semente. Conte junto: "Uma... duas."
+          Use os dedos da criança para tocar cada semente.
+      - titulo: A Terceira Promessa
+        local: clareira_perguntas
+        fala_guardiao:
+          tom: maravilhado
+          script: |
+            "Olha ali! A terceira semente! O Rei deixou três promessas!"
+            [Celeste recolhe a última]
+            "Uma... duas... TRÊS! A trindade está completa!"
+        instrucao_portador: |
+          Terceira semente. Conte devagar os três tesouros.
+          Coloque na palma da criança. "Quantas promessas o Rei deixou?"
+
+    concreto:
+      desc: Contagem tátil de 1 a 3 com correspondência um-a-um
+      card_objeto: 'CARD: SEMENTES'
+      metodo: mao-na-mao
+      instrucoes_portador:
+        - passo: 1
+          acao: Coloque UMA semente na palma da criança
+          fala_sugerida: "Uma. Sente o peso? É uma promessa do Rei."
+        - passo: 2
+          acao: Adicione a SEGUNDA semente
+          fala_sugerida: "Duas. Agora são duas promessas. Conta comigo."
+        - passo: 3
+          acao: Adicione a TERCEIRA semente
+          fala_sugerida: "Três! A trindade está completa. Uma... duas... três."
+        - passo: 4
+          acao: Guarde as sementes no cestinho, contando
+          fala_sugerida: "Vamos guardar os tesouros. Uma... duas... três."
+        - passo: 5
+          acao: Tire as sementes do cestinho, contando novamente
+          fala_sugerida: "E trazer de volta! Uma... duas... três."
+      norte_absoluto: A maior parte da lição acontece aqui. Manipulação é onde a mágica vive.
+      adaptacao_bernardo: |
+        💡 Se a criança tem dificuldade motora, use sementes maiores.
+        Se não enxerga bem, escolha sementes com texturas diferentes.
+        O toque é o caminho — encontre o toque que funciona.
+
+    pictorico: {status: VETADO, motivo: 'Sementes = Concreto. CM Things before Signs.', excecao: 'Se Quiser Voar'}
+    
+    abstrato:
+      desc: Reconhecimento visual dos algarismos 1, 2, 3
+      nota: |
+        Se a criança quiser, trace os números no AR com o dedo.
+        Traçar no AR = ENATIVO, conta como Concreto.
+
+    extensao:
+      titulo: Se Quiser Voar
+      desc: Só continue se os olhos da criança pedirem MAIS
+      sugestoes:
+        - titulo: Caça às Trindades
+          acao: Procurar pela casa coisas que vêm em 3 (pés de banquinho, cores do semáforo)
+        - titulo: Desenho Livre
+          acao: Desenhar 3 coisas que ama (opcional, não forçar)
+      adaptacao_bernardo: |
+        💡 Para crianças com mobilidade reduzida, traga os objetos até ela.
+
+  narracao:
+    instrucao_portador: |
+      Guarde os materiais. Olhe nos olhos do seu filho.
+      Dê tempo. O silêncio é trabalho mental sagrado.
+    pergunta_principal: O que Celeste encontrou debaixo do carvalho?
+    perguntas_coracao:
+      - Quantas promessas o Rei deixou?
+      - O que você sentiu na sua mão?
+      - Qual foi a sua semente preferida?
+    nota_cm: |
+      NUNCA interrompa. Espere até ela terminar.
+      Se não quiser falar: "Tudo bem, seu coração guardou."
+
+  ritual_fechamento:
+    fala_guardiao:
+      tom: grato
+      script: |
+        "Viajante, você contou comigo! Agora você sabe o segredo da trindade."
+        [Celeste pisca] "Amanhã, Bernardo vai precisar de ajuda.
+        Ele está construindo algo grande. Será que você pode ajudar?"
+    fio_ouro: Bernardo está empilhando pedras. Quantas cabem em cada fileira? Vamos descobrir juntos.
+    transicao_volta:
+      instrucao: Apaguem juntos a luz especial do Reino
+      fala: O Reino adormece, mas as três promessas ficam em seu coração.
+
+  para_familia:
+    titulo: Entendendo a Jornada de Hoje
+    porque_importa: |
+      Esta lição apresenta os números 1, 2 e 3 através do TOQUE.
+      
+      Por que não começamos "ensinando" os numerais? Porque Charlotte Mason
+      nos lembra: "Coisas antes de Signos" (Things before Signs). A criança
+      precisa SENTIR que "três" é algo real — três sementes na palma, três
+      passos, três respirações — antes de ver o símbolo "3".
+      
+      O método Singapore Math (CPA) confirma: a fase CONCRETO deve vir primeiro.
+      80% ou mais da lição em Sementes deve ser manipulação física.
+    metodo_cpa:
+      concreto: Sementes tocadas, contadas, guardadas, trazidas de volta
+      pictorico: Vetado em Sementes
+      abstrato: Apenas reconhecimento visual (traçar no ar é ENATIVO)
+      nota: 'CM: Coisas antes de Signos.'
+    principio_cm:
+      numero: 10
+      citacao: "Ideas conveyed through living books and firsthand experiences."
+      citacao_pt: "Ideias transmitidas através de livros vivos e experiências diretas."
+      aplicacao: A semente na palma é experiência direta. O número "vive" no toque.
+    tgtb_conexao: |
+      Esta lição corresponde a 000-L1 (Numbers 1 to 3) do TGTB Kindergarten.
+      O tema original foca em reconhecimento numérico básico.
+      Nós adicionamos a narrativa imersiva de Celeste e as sementes do Rei.
+    espiral:
+      conceito: Contagem
+      volta_atual: 'Sementes — Intuição numérica, correspondência 1-a-1'
+      proxima_volta: 'Raízes — Operações com números maiores, valor posicional'
+      nota: Este conceito será revisitado em ciclos futuros com maior profundidade.
+    reflexao_espiritual: |
+      Três é um número sagrado em muitas tradições.
+      A trindade aparece na natureza como símbolo de completude.
+      Quando seu filho conta "um, dois, três", ele toca algo antigo e belo.
+    nota_graca: |
+      Se as sementes não foram contadas "direito", respire.
+      Celeste também perde a trilha às vezes — é por isso que fareja!
+      O importante é que seu filho TOCOU os números hoje.
+      A trindade ficou na palma. O coração guardou.
+
+  diario_portador:
+    nota: Suas anotações serão usadas nas revisões trimestrais.
+    perguntas:
+      - Como meu filho reagiu ao tocar as sementes?
+      - O que funcionou bem (narrativa, materiais, ritmo)?
+      - O que posso ajustar na próxima lição?
+
+  navegacao_inferior:
+    anterior: {id: MV-S-000, titulo: O Portal do Reino}
+    proxima: {id: MV-S-002, titulo: As Pedras da Fortaleza}
+
+  auditoria_qa:
+    cm: [true, true, true, true, true]
+    cpa: [true, true, true]
+    narrativa: [true, true, true, true]
+    template: [true, true, true]
+    triade: [true, true, true]
+    inclusao: [true, true]

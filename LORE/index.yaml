@@ -1,0 +1,82 @@
+# LORE INDEX — Arquivo Central de Navegação e Arquitetura
+# YAML Lean v3.1 | 14/01/2026 | Ponto de Entrada Único
+
+id: indice_lore
+versao: "3.1"
+tipo: indice
+nota: "Consolidado: navegação + diretrizes + mapa SSOT. Sem separadores visuais."
+
+# ESTRUTURA (3 Camadas)
+estrutura:
+  indice: {arquivo: index.yaml, desc: "Este arquivo"}
+  core:
+    - {arquivo: north_star.yaml, desc: "Propósito, princípios, vocabulário, ciclos K12"}
+    - {arquivo: guardioes.yaml, desc: "5 Guardiões dados visuais fixos"}
+    - {arquivo: locais.yaml, desc: "5 Locais atmosferas sensoriais"}
+    - {arquivo: climas.yaml, desc: "8 Climas + 4 Desafios atmosféricos"}
+    - {arquivo: origem_guardioes.yaml, desc: "Nevasca canonizada (SSOT Bernardo)"}
+    - {arquivo: padroes_narrativos.yaml, desc: "Regras narração (YAML Lean)"}
+    - {arquivo: curriculo_espiral.yaml, desc: "Progressão espiral K-12 (Bruner)"}
+  extensoes:
+    - {arquivo: evolucao_guardioes.yaml, desc: "Guardiões por ciclo K12"}
+    - {arquivo: artefatos.yaml, desc: "6 objetos simbólicos rituais"}
+    - {arquivo: viajante.yaml, desc: "Títulos Viajante por ciclo"}
+
+# NAVEGAÇÃO POR TAREFA
+navegacao:
+  criar_licao:
+    sempre: [guardioes.yaml, locais.yaml, padroes_narrativos.yaml]
+    por_ciclo:
+      sementes: [evolucao_guardioes.yaml#sementes, viajante.yaml#herdeiro]
+      raizes: [evolucao_guardioes.yaml#raizes, artefatos.yaml#diario_do_reino]
+      logica: [evolucao_guardioes.yaml#logica, artefatos.yaml#bussola_celeste]
+      legado: [evolucao_guardioes.yaml#legado, artefatos.yaml#tocha_melquior]
+  revisar_licao: {sempre: [north_star.yaml, padroes_narrativos.yaml]}
+  entender_sistema: {ordem: [index.yaml, north_star.yaml, guardioes.yaml, locais.yaml]}
+
+# DIRETRIZES ARQUITETURA
+diretrizes:
+  tamanho:
+    - {regra: "Coesão Semântica (Eric Evans)", principio: "Se mudam juntas, vivem juntas"}
+    - {regra: "Limite Linhas", ideal: 100-150, max: 200, excecao: "north_star até 350"}
+    - {regra: "Frequência Consulta", alta: "guardioes ~100 linhas", baixa: "padroes ~200"}
+  ssot:
+    - {regra: "Single Source of Truth", principio: "Cada dado em UM arquivo. Outros usam ref."}
+    - {regra: "Link don't duplicate", ex: "Template ref guardioes.yaml, não duplica dados"}
+  yaml_lean:
+    - {regra: "Inline objects", fmt: "{key: val, key2: val2}"}
+    - {regra: "Inline arrays", fmt: "[a, b, c]"}
+    - {regra: "ZERO separadores visuais", proibido: "═══, ───, ****"}
+
+# MAPA SSOT (Quem é Dono de Quê)
+mapa_ssot:
+  lore:
+    north_star: {dono: [Propósito, Princípios, Vocabulário, Ciclos K12], linhas: ~350}
+    guardioes: {dono: [Dados visuais 5 Guardiões], linhas: ~100}
+    origem_guardioes: {dono: [Nevasca, Lei Cicatriz, Evolução K12], linhas: ~130}
+    climas: {dono: [8 Climas, 4 Desafios atmosféricos], linhas: ~160}
+    locais: {dono: [5 Locais sensoriais], linhas: ~76}
+    artefatos: {dono: [6 Artefatos + Rituais transição], linhas: ~219}
+    padroes_narrativos: {dono: [Regras narração, Tom, Stage Directions], linhas: ~90}
+  bmad:
+    orchestrator: {path: .bmad/orchestrator.yaml, dono: [Modos, Vetos, Comandos]}
+    triade: {path: .bmad/expansion-packs/matematica-viva/triade.yaml, dono: [CM/CPA/TGTB, Ciclos CPA]}
+    workflows: {path: .bmad/workflows/, dono: [Fluxos trabalho]}
+  curriculo:
+    mestres: {path: curriculo/_SISTEMA/CURRICULOS_MESTRE/, dono: [Scope Sequence TGTB], status: IMUTAVEL}
+
+# REFERÊNCIAS CRUZADAS
+referencias_cruzadas:
+  triade.yaml: {ref_por: [orchestrator, north_star, workflows, regras]}
+  guardioes.yaml: {ref_por: [locais, climas, origem, padroes]}
+  north_star.yaml: {ref_por: [TODOS]}
+  CURRICULOS_MESTRE: {ref_por: [workflows], principio: "Não duplicar conteúdo"}
+
+# CHECKLIST REVISÃO
+checklist: [Sintaxe YAML válida?, SSOT respeitado?, YAML Lean aplicado?, North Star alinhado?]
+
+# PENDENTES
+pendentes:
+  - {arquivo: north_star.yaml, acao: "Remover separadores visuais", prioridade: ALTA}
+  - {arquivo: artefatos.yaml, acao: "Remover separadores visuais", prioridade: ALTA}
+  - {arquivo: templates, acao: "Verificar se precisam update Lean", prioridade: MEDIA}

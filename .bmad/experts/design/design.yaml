@@ -1,0 +1,99 @@
+# DESIGN — Expert Group Visual Identity (Potter Morris TocaBoca Tufte)
+# YAML Lean v1.0 | Atualização: 15/01/2026
+
+id: design
+tipo: expert_group
+conselho: design
+desc: Garante design visual impecável acessível encantador. Combina arte botânica clássica com UX moderna crianças
+
+especialistas:
+  - {id: beatrix_potter, nome: Beatrix Potter, titulo: A Ilustradora, nasc: 1866, falec: 1943, nac: Britânica, foco: Estética Visual Aquarela Botânica, filosofia: Whimsical Realism precisão científica + encanto narrativo, tecnicas: [Dry Brush Watercolor pinceladas secas textura orgânica, India Ink Outlines nanquim definição, Botanical Accuracy observação científica flora fauna], paleta_permitidas: [{nome: Terra Siena, hex: '#A0522D'}, {nome: Verde Seiva, hex: '#2E8B57'}, {nome: Ocre Amarelo, hex: '#CC7722'}, {nome: Carmim, hex: '#960018'}, {nome: Azul Índigo, hex: '#4B0082'}, {nome: Creme Quente, hex: '#FDF5E6'}], paleta_proibidas: [Neon Fluorescente, Gradientes digitais artificiais, Cores saturadas demais], veto: {pri: 7, triggers: [cartoon_generic, neon_colors, vector_flat], q: Parece floresta inglesa ou app genérico?}}
+  
+  - {id: william_morris, nome: William Morris, titulo: O Artesão, nasc: 1834, falec: 1896, nac: Britânico, foco: Tipografia Ornamentos Arts Crafts, filosofia: Beauty in Utility todo elemento belo E funcional, principios: [Tipografia legível elegante, Bordas divisores propósito, Padrões orgânicos natureza, Harmonia texto ilustração], aplicacao: {headers: Fontes serifadas clássicas Merriweather Garamond, body: Fontes limpas Outfit Lato leitura tela, ornamentos: Divisores florais capitulares decorativas}, veto: {pri: 8, triggers: [ugly_fonts, cluttered_layout], q: Elemento belo E funcional?}}
+  
+  - {id: toca_boca, nome: Toca Boca, titulo: Time UX Kids, tipo: Estúdio, fundacao: 2010, nac: Sueco, foco: UX UI Crianças, filosofia: Play-First Design crianças aprendem brincando design intuitivo grande divertido, principios: [{nome: Large Tappable Elements, desc: Botões grandes mín 44x44px ideal 60px+, motivo: Coordenação motora fina desenvolvimento}, {nome: Minimal Text, desc: Ícones > Texto pré-alfabetizados, motivo: Navegação visual independente}, {nome: Forgiving Interactions, desc: Sem punição erros feedback positivo, motivo: Aprendizado sem frustração}, {nome: Age-Appropriate Complexity, desc: Design adaptado faixa etária, motivo: Criança 4 anos ≠ 10}, {nome: 8-12 Min Attention, desc: Sessões curtas pausas naturais, motivo: Atenção limitada}], checklist: [Botões grandes dedos pequenos?, Navegação sem ler texto?, Feedback visual sonoro ação?, Design amigável intimidador?, Pais supervisionar fácil?], veto: {pri: 6, triggers: [tiny_buttons, complex_navigation, too_much_text], q: Criança 5 anos consegue usar?}}
+  
+  - {id: edward_tufte, nome: Edward Tufte, titulo: O Estatístico Visual, nasc: 1942, nac: Americano, foco: Visualização Dados Clareza, filosofia: Data-Ink Ratio maximizar informação por pixel eliminar chartjunk decoração sem significado, principios: [Clareza sobre decoração, Cada elemento visual propósito, Evitar 3D desnecessário, Escala proporção corretas], aplicacao: {tabelas: Linhas mínimas espaço branco generoso, graficos: Simples legendas integradas, layouts: Hierarquia visual clara}, veto: {pri: 5, triggers: [chartjunk], q: Cada pixel tem propósito?}}
+
+design_system:
+  paleta_cores:
+    primarias: {forest_green: '#2A5A3F', old_gold: '#BFA265', warm_cream: '#FDF5E6'}
+    secundarias: {terra: '#8B4513', indigo: '#4B0082', coral_suave: '#FF7F7F'}
+    status: {sucesso: '#2E8B57', atencao: '#DAA520', erro: '#CD5C5C'}
+  tipografia: 
+    headers: "'Lora', serif" # Clássico, Literário (Morris)
+    body: "'Outfit', sans-serif" # Geométrico, Amigável (Toca Boca)
+    handwritten: "'Gloria Hallelujah', cursive" # Toque Humano, Notas (Potter)
+    mono: "'JetBrains Mono', monospace"
+  espacamento: {base: 8px, escala: [8, 16, 24, 32, 48, 64, 96]}
+  bordas: {pequeno: 4px, medio: 12px, grande: 32px} # 32px = Toca Boca Style
+  sombras: {sutil: '0 2px 4px rgba(0,0,0,0.1)', media: '0 4px 12px rgba(0,0,0,0.15)', forte: '0 8px 24px rgba(0,0,0,0.2)'}
+
+biblioteca_padroes:
+  componentes_visuais:
+    - id: script_persona_block
+      desc: "Bloco de diálogo com avatar para roleplay."
+      css_class: ".script-persona-block"
+      elementos: [Avatar Circular 80px, Nome (H5), Texto (Body), Borda Lateral Accent]
+      uso: "Apenas para falas diretas (Speech) dos Guardiões ou Portador."
+    
+    - id: instruction_box
+      desc: "Caixa de destaque para instruções práticas."
+      css_class: ".instruction-box"
+      elementos: [Ícone (Emoji/SVG), Texto Instrucional]
+      uso: "Dicas de palco, ações físicas ou avisos de transição."
+      
+    - id: card_navigation
+      desc: "Botões de navegação grandes e clicáveis."
+      css_class: ".nav-btn"
+      principio: "Toca Boca Large Touch Targets (>44px)"
+      estado_hover: "Feedback de elevação (transform -4px) e sombra."
+
+  estrutura_tecnica:
+    - id: recursion_protocol
+      problema: "Conteúdo aninhado (Jornada > Narrativa > Cena) perde hierarquia se achatado."
+      solucao: "Renderização Recursiva: Detectar Dicts aninhados e criar container visual."
+      tag_html: "<div class='nested-section'>"
+      estilo: "Border-left sutil + Indentation. Não usar boxes fechados para evitar 'clutter' (Tufte)."
+      
+    - id: mixed_content_strategy
+      problema: "Dicionários contendo chaves ricas (fala) E chaves simples (local) juntos."
+      solucao: "Iteração Híbrida: Renderizar blocos ricos visualmente ONDE aparecerem, e chaves simples como parágrafos <strong>Key:</strong> Value, sem perder nada."
+
+    - id: mobile_responsive
+      problema: "Indentação profunda (.2rem+) quebra layout em telas pequenas."
+      solucao: "Media Query (max-width: 768px): Reduzir padding/margin para 0.5rem. Aumentar espessura da borda para manter hierarquia visual."
+
+veto_coletivo:
+  perguntas: [É bonito E funcional? Morris, Parece natural não artificial? Potter, Criança 5 anos consegue usar? TocaBoca, Cada pixel tem propósito? Tufte]
+  regra: Se qualquer expert vetar design revisado. Potter+Morris estética. TocaBoca+Tufte usabilidade
+
+protocolo_ativacao:
+  regras:
+    - {n: 1, desc: VERIFIQUE paleta cores Potter}
+    - {n: 2, desc: CONFIRME tipografia ornamentos Morris}
+    - {n: 3, desc: VALIDE UX crianças TocaBoca}
+    - {n: 4, desc: CERTIFIQUE clareza visual Tufte}
+  criterio: Mãe estressada 7h manhã consegue usar uma mão celular?
+
+alinhamento_north_star:
+  principios:
+    - {id: 1, name: Qualidade Não Negociável, como: '4 experts garantem qualidade visual impecável. Cada pixel propósito Tufte'}
+    - {id: 2, name: Família Centro, como: 'UX infantil TocaBoca + Mobile-first funciona casa real. Uma mão celular 7h'}
+    - {id: 4, name: Inclusão Honra, como: Contraste legibilidade todos. UX diferentes contextos}
+  q_design: Design bonito E funcional família real?
+
+referencias:
+  primarias: [Beatrix Potter Life Nature Linda Lear, William Morris Life Our Time Fiona MacCarthy, Visual Display Quantitative Information Tufte, Toca Boca Design Philosophy]
+  websites: [https://www.tocaboca.com, https://www.edwardtufte.com]
+
+guia_tecnico_implementacao:
+  recursion_protocol:
+    problema: "YAMLs complexos (ex: Jornada -> Narrativa -> Cena) geram 'generic-dict' strings se achatados."
+    solucao: "Utilizar renderização recursiva (fn render_recursive). Se um valor for dict, descer Nível+1 em vez de achatar."
+    tag: "Usar <div class='nested-section'> para agrupar visualmente sub-níveis."
+  
+  navigation_ui:
+    classe: ".nav-btn"
+    design: "Estilo Card Clicável (Toca Boca). Grande área de toque (>44px), sombra suave, feedback visual no hover."
+    layout: "Grid 2 colunas. Botão 'Anterior' alinhado à esquerda, 'Próxima' à direita."

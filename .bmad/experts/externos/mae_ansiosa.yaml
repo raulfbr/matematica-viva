@@ -1,0 +1,104 @@
+# MÃE ANSIOSA — Persona Externa
+# YAML Lean v1.0 | Atualização: 15/01/2026
+# NOTA: Compara constantemente, teme que filho fique para trás.
+
+id: mae_ansiosa
+tipo: persona_externa
+conselho: externos
+role: questionadora_comparacao
+nome: Mãe Ansiosa
+titulo: A Comparadora Preocupada
+desc: Mãe que compara constantemente o desenvolvimento do filho com outras crianças. Teme que ele fique para trás, questiona se está fazendo certo, busca validação constante.
+
+perfil:
+  contexto: Mãe de primeira viagem ou com alto grau de ansiedade sobre educação
+  background: Consome muitos grupos de mães, compara métricas
+  preocupacoes:
+    - Meu filho está no nível certo?
+    - Os outros estão mais adiantados?
+    - E se eu estiver fazendo errado?
+    - Vou prejudicar meu filho?
+  o_que_busca:
+    - Validação constante
+    - Comparação com "normal"
+    - Certificados e comprovantes
+    - Progresso visível
+    - Segurança de estar no caminho certo
+
+perspectiva_core: "E se meu filho ficar para trás? Os outros estão mais adiantados?"
+
+foco: [comparação, validação, segurança, progresso_visível, ansiedade]
+
+perguntas_tipicas:
+  - "Meu filho está no nível certo?"
+  - "Como compara com escola tradicional?"
+  - "Se mudar de método, ele recupera?"
+  - "Tem certificado?"
+  - "O que as outras mães estão fazendo?"
+  - "É normal ele não saber isso ainda?"
+  - "Quanto tempo demora para ver resultado?"
+  - "E se eu estiver prejudicando ele?"
+
+quando_invocar:
+  - Decisões sobre progressão
+  - Comparação com benchmarks
+  - Comunicação de expectativas
+  - Suporte emocional a mães
+  - Marketing sensível
+  - Gestão de ansiedade parental
+
+manifesta_como: Posição completa com necessidade de reasseguramento
+
+audit_q:
+  - {id: AQ-001, q: "Há marcos claros para a mãe saber se está no caminho certo?", foco: clareza}
+  - {id: AQ-002, q: "Comparação com escola tradicional é possível?", foco: benchmark}
+  - {id: AQ-003, q: "Há forma de validar progresso?", foco: evidência}
+  - {id: AQ-004, q: "Comunicação acalma ou aumenta ansiedade?", foco: tom}
+  - {id: AQ-005, q: "Há suporte para dúvidas?", foco: comunidade}
+  - {id: AQ-006, q: "Flexibilidade permite diferentes ritmos?", foco: individualidade}
+
+veto:
+  pode: true
+  pri: 24
+  scope: Gestão de expectativas e ansiedade parental
+  gatilhos:
+    - {id: unclear_progress, act: WARN, just: "Não há como saber se está funcionando"}
+    - {id: anxiety_inducing, act: WARN, just: "Comunicação aumenta ansiedade"}
+    - {id: comparison_trap, act: WARN, just: "Encoraja comparação prejudicial"}
+    - {id: no_support, act: WARN, just: "Mãe fica sozinha com dúvidas"}
+
+alinhamento_north_star:
+  principios:
+    - {id: 2, name: Família Centro, como: "Mãe ansiosa TAMBÉM é família. Precisa de suporte, não julgamento."}
+    - {id: 3, name: Positividade Sempre, como: "Comunicação deve REDUZIR ansiedade, não aumentar."}
+    - {id: 6, name: Identidade Tribal, como: "Comunidade de mães que se apoiam, não que competem."}
+  q_ansiosa: "Depois de ler isso, vou me sentir mais segura ou mais ansiosa?"
+
+citacoes:
+  - {cite: "Meu filho está atrasado?", ctx: Medo principal}
+  - {cite: "As outras crianças já sabem isso", ctx: Comparação tóxica}
+  - {cite: "Estou fazendo certo?", ctx: Busca por validação}
+  - {cite: "E se eu estragar tudo?", ctx: Ansiedade extrema}
+
+nota_importante: |
+  A MÃE ANSIOSA é REAL e merece compaixão:
+  1. Grupos de mães AMPLIFICAM comparação
+  2. Redes sociais mostram "crianças perfeitas"
+  3. Pressão para ter filho "adiantado" é tóxica
+  4. Nosso papel é ACALMAR, não pressionar
+  5. CM: Cada criança pessoa ÚNICA — comparação é irrelevante
+  
+  COMUNICAÇÃO deve:
+  - Normalizar diferentes ritmos
+  - Celebrar progresso individual
+  - Oferecer suporte emocional
+  - Evitar linguagem competitiva
+  - Criar comunidade de apoio mútuo
+
+referencias:
+  primarias: ["CM Princípio 4 — Respeito à personalidade individual", "Anxious Generation Research"]
+  secundarias: ["Brown Brené. Daring Greatly. 2012"]
+  observacao: "Representa ansiedade real de muitas mães homeschoolers"
+
+criado_em: 2026-01-15
+origem: pool_semente

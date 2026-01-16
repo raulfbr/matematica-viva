@@ -1,0 +1,36 @@
+# REVISAR PONTOS — Workflow (YAML Lean)
+# v1.1 LEAN | 14/01/2026
+# SSOT: LORE/climas.yaml (cores), triade.yaml (CPA)
+
+id: revisar_pontos
+tipo: workflow
+versao: '1.1'
+trilha: qa
+coord: charlotte_mason
+desc: Auditoria profunda pontos críticos (Pedagogia/Narrativa/Estética/UX).
+
+pontos:
+  pedagogia:
+    - {id: P1, o_que: Ideia Viva, quem: charlotte_mason, crit: "Evidente? Experienciável?"}
+    - {id: P2, o_que: ZPD Scaffolding, quem: lev_vygotsky, crit: "Andaime suficiente?"}
+    - {id: P3, o_que: CPA Sequência, quem: jerome_bruner, crit: "C80%+ (Opção D)? P vetado?"}
+  narrativa:
+    - {id: N1, o_que: Tom Nobre, quem: cs_lewis, crit: "Dignidade? Sem 'talking down'?"}
+    - {id: N2, o_que: Consistência, quem: jrr_tolkien, crit: "Sem contradição lore/guardião?"}
+    - {id: N3, o_que: Beleza/Kintsugi, quem: makoto_fujimura, crit: "Beleza generativa?"}
+  estetica:
+    - {id: E1, o_que: Paleta Cores, quem: beatrix_potter, crit: "Naturais? Sem neon?", ref: LORE/climas.yaml}
+    - {id: E2, o_que: Tipografia, quem: william_morris, crit: "Legível? Hierarquia?"}
+    - {id: E3, o_que: UX Criança, quem: toca_boca, crit: "Intuitivo? Botões grandes?"}
+  usabilidade:
+    - {id: U1, o_que: Mãe consegue?, quem: maes_personas, crit: "5 personas aprovam?"}
+    - {id: U2, o_que: Tempo ≤20m, quem: qa, crit: "Realista?"}
+    - {id: U3, o_que: Materiais casa, quem: qa, crit: "Acessíveis?"}
+
+fases:
+  - {n: 1, acao: "Revisar 12 pontos sequencial."}
+  - {n: 2, acao: "Expert APROVA/REJEITA/SINALIZA."}
+  - {n: 3, acao: "CM consolida. Veto absoluto."}
+
+output: {aprovado: licao_impecavel.md, rejeitado: correcoes_obrigatorias.md}
+metrica: "95% aprovação pós-correção"

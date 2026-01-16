@@ -1,0 +1,693 @@
+# DELIBERAÇÃO AUTÔNOMA: Template Ideal de Lição
+**Data:** 15/01/2026 17:48 | **Modo:** DELIBERACAO_AUTONOMA | **Tema:** Definir Template V6 Canônico
+**Status:** EM_ANDAMENTO | **Max Rodadas:** 5
+
+---
+
+## INICIALIZAÇÃO
+
+### Tema
+Definir a estrutura ideal do template de lição que atenda a todos os requisitos do Maestro e seja sustentável para produção em escala (120+ lições/ano).
+
+### Requisitos do Maestro (Literais)
+1. ✅ **Preparação para os pais** — explicando o que vai ser aprendido com dicas
+2. ✅ **Conexão com lição anterior** — o que foi aprendido para continuidade
+3. ✅ **Ritual de abertura padronizado por idade**
+4. ✅ **Imersão bem imersiva** — usando LORE/climas.yaml
+5. ✅ **Atividade principal + atividades extras**
+6. ✅ **Narração como ponto auge** (Charlotte Mason)
+7. ✅ **Ritual de fechamento**
+8. ✅ **Conexão com próxima lição** — usando Currículo Mestre
+9. ✅ **Explicação baseada na Tríade** (CM + CPA + TGTB)
+10. ✅ **Diário do Portador** — para anotações dos pais (usado em revisões)
+
+### Experts Convocados
+**14 Internos + 3 Externos** (decisão estratégica)
+
+---
+
+## RODADA 1: POSIÇÕES INICIAIS
+
+### Charlotte Mason (Coordenadora) — Pri: 1
+> "O template deve refletir meus princípios fundamentais:
+>
+> **Obrigatórios:**
+> 1. **Ideia Viva** — Cada lição precisa de uma ideia que capture a imaginação
+> 2. **Tempo ≤20min** — Hábito da Atenção (Princípio 15)
+> 3. **Narração** — O ponto auge (Princípio 11)
+> 4. **Criança como pessoa** — Linguagem de respeito (Princípio 1)
+>
+> **Estrutura que proponho:**
+> ```
+> 1. Preparação Portador (para o pai)
+> 2. Conexão (elo anterior)
+> 3. Ritual Abertura (transição para Reino)
+> 4. Imersão + Atividade (80%+ Concreto)
+> 5. NARRAÇÃO (ponto auge — silêncio sagrado)
+> 6. Fechamento (fio de ouro → próxima)
+> 7. Cátedra Pais (explicação pedagógica)
+> 8. Diário Portador (anotações)
+> ```
+>
+> **Veto:** Template sem narração = REJEITADO."
+
+---
+
+### Jerome Bruner (CPA) — Pri: 7
+> "A progressão CPA DEVE estar explícita no template.
+>
+> **Proposta Sementes:**
+> - **Concreto:** 80%+ (NORTE ABSOLUTO)
+> - **Pictórico:** VETADO padrão (exceto Se Quiser Voar)
+> - **Abstrato:** ≤20% (reconhecimento visual apenas)
+>
+> **Para o template, sugiro:**
+> ```yaml
+> jornada:
+>   concreto:      # OBRIGATÓRIO em Sementes
+>     atividade_principal: ...
+>     tempo_minimo: '80%'
+>   pictorico:
+>     status: VETADO  # ou opcional para ciclos avançados
+>   abstrato:
+>     status: reconhecimento_apenas
+> ```
+>
+> **Observação crítica:** L002 usa 'passos' em vez de 'instrucoes_portador'.
+> Precisamos PADRONIZAR para que IA e humanos falem a mesma língua."
+
+---
+
+### JRR Tolkien (Consistência) — Pri: 4
+> "A consistência do LORE é inegociável.
+>
+> **Cada lição DEVE ter:**
+> 1. `clima` — de LORE/climas.yaml (8 opções)
+> 2. `local` — de LORE/locais.yaml (5 opções)
+> 3. `guardiao_lider` — com frases canônicas
+>
+> **O clima define:**
+> - Classe CSS do body
+> - Tom do guardião
+> - Energia da narrativa
+>
+> **Proposta:**
+> ```yaml
+> atmosfera:
+>   clima: ensolarado  # OBRIGATÓRIO
+>   local: clareira_das_perguntas  # OBRIGATÓRIO
+>   clima_sensorial:  # EXPANDIDO de climas.yaml
+>     luz: Dourada/brilhante
+>     temp: Quente
+>     energia: Alta
+>   virtude: curiosidade
+> ```
+>
+> Assim garantimos que toda lição RESPIRA o Reino."
+
+---
+
+### CS Lewis (Tom) — Pri: 3
+> "A dignidade da narrativa é crucial.
+>
+> **Regra de Ouro:**
+> > 'Never be within a child's mental range.'
+> > Nunca fale de cima para baixo.
+>
+> **No template:**
+> - `abertura_sensorial` deve ser POÉTICA, não didática
+> - Falas do guardião com TOM indicado
+> - Pausas marcadas para respiração
+>
+> **Proposta de bloco narrativo:**
+> ```yaml
+> narrativa:
+>   abertura_sensorial: |
+>     [Descrição VÊ, OUVE, CHEIRA, SENTE]
+>   fala_guardiao:
+>     tom: animado|misterioso|solene|grato
+>     script: |
+>       \"Fala do guardião...\"
+> ```"
+
+---
+
+### Beatrix Potter (Sensorial) — Pri: 5
+> "Uma coisa sensorial de cada vez.
+>
+> **Regra Sementes:**
+> - 1 elemento sensorial por parágrafo
+> - Ordem: Cheiro → Luz → Temperatura → Som
+>
+> **Exemplo BOM:**
+> > 'O ar cheira a folhas secas.'
+>
+> **Exemplo RUIM:**
+> > 'O ar cheira a folhas secas enquanto o vento frio toca o rosto e a água corre ao longe.'
+>
+> Template deve ter check para isso."
+
+---
+
+### Alex Hormozi (Velocidade) — Pri: 12
+> "Se o pai demora mais de 5 minutos preparando, ele desiste.
+>
+> **Preparo ≤5min é LEI.**
+>
+> **No template:**
+> ```yaml
+> preparacao:
+>   tempo_preparo: '≤ 5 min'
+>   materiais:
+>     # Apenas essenciais
+>   audio_script: |
+>     [30 segundos para o pai ouvir antes]
+> ```
+>
+> **A seção 'para_o_portador' é OURO.**
+> Ela deve ter:
+> - dica_coracao (acalma o pai)
+> - protocolo_impecabilidade (método Vygotsky)
+> - nota_graca (se errar tá tudo bem)
+> - audio_script (preparo rápido)"
+
+---
+
+### Seth Godin (Tribo) — Pri: 11
+> "Template deve criar PERTENCIMENTO.
+>
+> **Vocabulário tribal:**
+> - Viajante (não aluno)
+> - Portador da Tocha (não professor)
+> - Jornada (não aula)
+> - Herdeiro (Sementes)
+>
+> **O 'Diário do Portador' é estratégico:**
+> - Pai anota o que funcionou
+> - Serve para revisões
+> - Cria senso de progresso
+> - É PROVA SOCIAL futura
+>
+> **Proposta:**
+> ```yaml
+> diario_portador:
+>   perguntas:
+>     - 'Como meu filho reagiu?'
+>     - 'O que funcionou bem?'
+>     - 'O que ajustar na próxima?'
+>   nota: 'Suas anotações serão usadas nas revisões trimestrais.'
+> ```"
+
+---
+
+### Engenharia — Pri: 10
+> "Padronização é vida.
+>
+> **Problemas encontrados:**
+> - L001 usa `conceito_matematico`, L002 usa `conceito`
+> - L001 usa `clima_descricao`, template usa `clima_desc`
+> - L001 usa `proximo_passo`, template usa `proximo`
+>
+> **PROPOSTA: Nomes SSOT**
+>
+> | Campo | Nome Canônico | Evitar |
+> |-------|---------------|--------|
+> | Conceito | `conceito` | conceito_matematico |
+> | Clima descrição | `clima_desc` | clima_descricao |
+> | Próxima lição | `proximo` | proximo_passo |
+> | Instruções | `instrucoes_portador` | passos |
+> | Filho aprende | `filho_descobre` | o_que_seu_filho_vai_descobrir |
+>
+> **O template V6 deve usar APENAS os nomes canônicos.**"
+
+---
+
+### Susan Macaulay (Prática CM) — Pri: 8
+> "Mães reais precisam de CLAREZA.
+>
+> **A seção 'para_o_portador' é a mais importante.**
+>
+> **Deve ter:**
+> 1. `dica_coracao` — 2-3 frases que acalmam
+> 2. `filho_descobre` — O que esperar
+> 3. `protocolo_impecabilidade` — NÃO EXPLIQUE, MOSTRE
+> 4. `nota_graca` — Se errar, tudo bem
+> 5. `conforto_emocional` — Validação do medo do pai
+>
+> **Exemplo:**
+> ```yaml
+> para_o_portador:
+>   dica_coracao: |
+>     Hoje você vai apresentar os números 1, 2 e 3.
+>     Respire. A magia está no encontro, não na performance.
+>   filho_descobre: |
+>     Que os números são REAIS — você pode tocá-los.
+>   protocolo_impecabilidade: |
+>     NÃO EXPLIQUE os números. MOSTRE-OS.
+>     Método: Mão-na-mão (Vygotsky).
+>   nota_graca: |
+>     Se contar errado, sorria. A semente foi plantada.
+>   conforto_emocional: |
+>     Você não é avaliador. É companheiro de viagem.
+> ```"
+
+---
+
+### Lev Vygotsky (ZPD) — Pri: 9
+> "Scaffolding precisa estar EXPLÍCITO.
+>
+> **Em Sementes:**
+> - Tipo: 'Mão-na-mão'
+> - Portador faz JUNTO, não PARA
+>
+> **No template:**
+> ```yaml
+> concreto:
+>   metodo: mao-na-mao
+>   instrucoes_portador:
+>     - passo: 1
+>       acao: 'Descrição do que fazer'
+>       fala_sugerida: 'O que dizer'
+>   adaptacao_bernardo: |
+>     💡 Para crianças com realidades diferentes...
+> ```"
+
+---
+
+### Makoto Fujimura (Kintsugi) — Pri: 14
+> "A beleza NÃO é opcional.
+>
+> **Desafios atmosféricos (climas.yaml) são ouro.**
+> 
+> Erros podem ter suporte narrativo:
+> - Vento Gelado (frustração)
+> - Névoa do Vale (confusão)
+> - Relógio Apressado (pressa)
+>
+> **Proposta:** Incluir no template:
+> ```yaml
+> adaptacao_emocional:
+>   desafio: nevoa_vale  # se criança confundir
+>   guardiao: Celeste
+>   fala: |
+>     'A névoa veio. Vamos procurar juntos?'
+> ```"
+
+---
+
+### Design — Pri: 13
+> "O HTML final precisa ser previsível.
+>
+> **Cada seção YAML = 1 tipo de card HTML.**
+>
+> **Mapeamento:**
+> | YAML Section | HTML Component |
+> |--------------|----------------|
+> | preparacao | Card 'Preparação do Portador' |
+> | ritual_abertura | Card 'Ritual de Abertura' |
+> | jornada.cena_N | Cards de cena |
+> | concreto | Card 'Atividade Concreta' |
+> | narracao | Card 'Narramos Juntos' |
+> | fechamento | Card 'Ritual de Fechamento' |"
+
+---
+
+### Embaixador — Pri: 16
+> "Linguagem é conversão.
+>
+> **Nomes das seções devem ser HUMANOS:**
+> - 'para_o_portador' é ótimo
+> - 'catedra_pais' é estranho → sugiro 'para_familia'
+> - 'auditoria_qa' é técnico → esconder do usuário final"
+
+---
+
+### TGTB Reference
+> "A sequência curricular vem do Currículo Mestre.
+>
+> **Cada lição DEVE ter:**
+> ```yaml
+> tgtb_ref: '000-L1 - Numbers 1 to 3'
+> ```
+>
+> **E linkage para anterior/próxima:**
+> ```yaml
+> linkage:
+>   elo_anterior:
+>     licao_id: MV-S-000
+>     gancho: 'Na lição anterior, você conheceu os Guardiões...'
+>   proximo:
+>     licao_id: MV-S-002
+>     gancho: 'Bernardo vai precisar de ajuda na Forja...'
+> ```"
+
+---
+
+## RODADA 1: SÍNTESE PARCIAL (Charlotte Mason)
+
+### Consenso Emergente
+
+| Seção | Status | Responsável |
+|-------|--------|-------------|
+| para_o_portador | ✅ Consenso | Susan Macaulay |
+| linkage | ✅ Consenso | TGTB |
+| atmosfera | ✅ Consenso | Tolkien |
+| ritual_abertura | ✅ Consenso | CM |
+| jornada.concreto | ✅ Consenso | Bruner |
+| narracao | ✅ Consenso | CM (PONTO AUGE) |
+| ritual_fechamento | ✅ Consenso | CM |
+| diario_portador | ✅ Consenso | Godin |
+| Nomenclatura | ⚠️ RESOLVER | Engenharia |
+
+### Questões Abertas
+1. Nomenclatura precisa ser padronizada
+2. `catedra_pais` renomear para `para_familia`?
+3. Incluir `adaptacao_emocional`?
+
+---
+
+## RODADA 2: CONSULTA EXTERNA
+
+### Externos Selecionados
+
+#### 1. Mãe Veterana (Prova Social)
+> "Eu uso Matemática Viva há 3 anos.
+> 
+> **O que funciona:**
+> - Preparo rápido (≤5min é REAL)
+> - Saber o que esperar (filho_descobre)
+> - Nota de graça (me acalma quando erro)
+>
+> **O que falta:**
+> - Diário é ótimo MAS precisa ser SIMPLES
+> - 3 perguntas máximo
+> - Espaço para uma linha de resposta
+>
+> **Pergunta:** A seção 'catedra_pais' realmente é lida? Eu pulo."
+
+#### 2. Pai Montessoriano (Questionador)
+> "Por que CPA e não materiais Montessori?
+>
+> **Pergunta:** O template permite usar materiais Montessori?
+> Os 'materiais caseiros' são limitantes.
+>
+> **Sugestão:** Adicionar:
+> ```yaml
+> materiais:
+>   sugeridos: [Feijões, pedrinhas]
+>   montessori_alternativa: 'Réguas Cuisenaire, Material Dourado'
+> ```"
+
+#### 3. Criança 8 Anos (Cliente Final)
+> "Eu gosto quando a Celeste faz perguntas.
+> Eu NÃO gosto quando o pai fala MUITO.
+>
+> **Pergunta:** (tradução) As falas do guardião são curtas?
+> Parágrafos longos = criança perde interesse."
+
+---
+
+## RODADA 2: RESPOSTAS
+
+### CM → Mãe Veterana
+> "'Catedra_pais' é para quem quer entender o PORQUÊ.
+> Pode ser opcional — no HTML, um 'ler mais' colapsável.
+> Mas NÃO remover. Algumas mães QUEREM saber a teoria."
+
+### Bruner → Pai Montessoriano
+> "CPA não exclui Montessori. Material Montessori É concreto.
+> Podemos adicionar campo 'alternativa_montessori' quando relevante.
+> Mas 'materiais caseiros' é prioridade para acessibilidade (Pai Classe C)."
+
+### Lewis → Criança 8 Anos
+> "Falas curtas. Parágrafos NUNCA mais de 3 linhas.
+> Se precisa explicar mais, quebrar em cenas.
+> O template deve ter LIMITE de palavras por fala."
+
+---
+
+## RODADA 2: SÍNTESE PARCIAL
+
+### Ajustes Incorporados
+
+1. **Diário simplificado:** 3 perguntas máximo, resposta curta
+2. **Catedra como 'Ler Mais':** Opcional, colapsável no HTML
+3. **Alternativa Montessori:** Campo opcional
+4. **Limite falas:** Máximo 50 palavras por parágrafo de fala
+
+---
+
+## RODADA 3: DECISÃO LOOP
+
+### Consenso Alcançado?
+**SIM — 95%+ convergência.**
+
+Único ponto pendente: nomenclatura (Engenharia define).
+
+---
+
+## DECISÃO FINAL
+
+### TEMPLATE V6 — ESTRUTURA CANÔNICA
+
+```yaml
+# TEMPLATE V6 — LIÇÃO SEMENTES (YAML Lean Canônico)
+# Versão: 6.0 | Data: 15/01/2026
+# SSOT: Este template governa TODAS as lições Sementes
+
+id: template-v6-sementes
+versao: '6.0'
+tipo: template
+fase: Sementes
+status: canonico
+
+licao:
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 1: METADADOS
+  # ═══════════════════════════════════════════════════════
+  metadados:
+    id: MV-S-XXX
+    titulo: '[Título Poético]'
+    fase: Sementes
+    trimestre: 1
+    guardiao_lider: '[celeste|bernardo|noe|iris|melquior]'
+    guardiao_secundario: null
+    tgtb_ref: '000-LXX - [Descrição EN]'
+    status: rascunho
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 2: IDEIA VIVA (Charlotte Mason)
+  # ═══════════════════════════════════════════════════════
+  ideia_viva:
+    frase: '[Uma frase que captura a essência — máximo 2 linhas]'
+    conceito: '[O que a criança descobre matematicamente]'
+    intencao_cm: '[Por que é "viva" segundo CM — citação se possível]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 3: ATMOSFERA (Tolkien + Potter)
+  # ═══════════════════════════════════════════════════════
+  atmosfera:
+    clima: '[ensolarado|nublado|ventoso|chuvoso|outonal|primaveril|crepusculo|estrelado]'
+    clima_desc: '[Luz, temperatura, energia — 1-2 frases sensoriais]'
+    local: '[jardim_central|arvore_silencio|clareira_perguntas|caverna_recomeco|ninho_mirante]'
+    local_desc: '[Luz, cheiro, som, textura — 1-2 frases]'
+    virtude: '[curiosidade|persistencia|atencao|paciencia|sabedoria|coragem|gratidao]'
+    artefato: '[Objeto concreto especial da lição]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 4: LINKAGE (Conexão Curricular)
+  # ═══════════════════════════════════════════════════════
+  linkage:
+    elo_anterior:
+      licao_id: MV-S-XXX
+      gancho: '[O que aprendemos antes — 1-2 frases]'
+    proximo:
+      licao_id: MV-S-XXX
+      gancho: '[Antecipação da próxima — 1-2 frases]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 5: PREPARAÇÃO (Hormozi + Susan)
+  # ═══════════════════════════════════════════════════════
+  preparacao:
+    tempo_licao: '15-20 min'
+    tempo_preparo: '≤ 5 min'
+    materiais:
+      - item: '[Material 1]'
+        qtd: 1
+        alt: '[Alternativa caseira]'
+        essencial: true
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 6: PARA O PORTADOR (Susan Macaulay)
+  # ═══════════════════════════════════════════════════════
+  para_o_portador:
+    dica_coracao: '[2-3 frases que acalmam o pai]'
+    filho_descobre: '[O que a criança vai descobrir — 1-2 frases]'
+    protocolo_impecabilidade: '[NÃO EXPLIQUE. MOSTRE. Método Vygotsky]'
+    nota_graca: '[Se errar, tudo bem — 1-2 frases]'
+    conforto_emocional: '[Validação do medo do pai — 2-3 frases]'
+    audio_script: '[30 segundos para o pai preparar o coração]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 7: RITUAL DE ABERTURA
+  # ═══════════════════════════════════════════════════════
+  ritual_abertura:
+    instrucao_ambiente: '[Tapete, luzes, silêncio — 1-2 frases]'
+    transicao_reino: '[Fechar olhos, luz especial — 1-2 frases]'
+    fala_portador:
+      tom: '[segredo|animado|solene|misterioso]'
+      script: '[Fala de transição — máximo 50 palavras]'
+    card_guardiao: '[CARD: NOME_GUARDIAO]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 8: JORNADA (Lewis + Bruner + Potter)
+  # ═══════════════════════════════════════════════════════
+  jornada:
+    abertura_sensorial: '[VÊ, OUVE, CHEIRA, SENTE — 2-3 frases poéticas]'
+    
+    narrativa_principal:
+      cena_1:
+        titulo: '[Título da cena]'
+        local: '[Local do LORE]'
+        fala_guardiao:
+          tom: '[animado|curioso|firme|acolhedor]'
+          script: '[Máximo 50 palavras por parágrafo]'
+        instrucao_portador: '[O que o pai faz fisicamente]'
+      # Adicionar cenas conforme necessário
+
+    concreto:
+      desc: '[Descrição da atividade concreta]'
+      card_objeto: '[CARD: NOME_OBJETO]'
+      metodo: mao-na-mao
+      instrucoes_portador:
+        - passo: 1
+          acao: '[O que fazer]'
+          fala_sugerida: '[O que dizer]'
+      tempo_minimo: '80%+ lição (NORTE ABSOLUTO)'
+      adaptacao_bernardo: '[💡 Para crianças com realidades diferentes...]'
+
+    pictorico:
+      status: VETADO
+      motivo: 'Sementes = Concreto. CM: Things before Signs.'
+      excecao: 'Se Quiser Voar (criança pede espontâneo)'
+
+    abstrato:
+      desc: '[Reconhecimento visual apenas — NÃO operar]'
+      nota: 'Traçar no AR = ENATIVO (conta como Concreto)'
+
+    extensao:
+      titulo: 'Se Quiser Voar'
+      desc: '[Só se olhos da criança pedirem MAIS]'
+      sugestoes: ['[Atividade extra 1]', '[Atividade extra 2]']
+      adaptacao_bernardo: '[💡 Variações inclusivas]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 9: NARRAÇÃO (Charlotte Mason — PONTO AUGE)
+  # ═══════════════════════════════════════════════════════
+  narracao:
+    instrucao_portador: '[Guarde materiais. Olhe nos olhos. Dê tempo. Silêncio é trabalho mental.]'
+    pergunta_principal: '[Pergunta aberta para recontar]'
+    perguntas_coracao:
+      - '[Alternativa 1]'
+      - '[Alternativa 2]'
+    nota_cm: 'NUNCA interrompa. Espere. Conte até 10 internamente se precisar.'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 10: RITUAL DE FECHAMENTO
+  # ═══════════════════════════════════════════════════════
+  ritual_fechamento:
+    fala_guardiao:
+      tom: '[grato|acolhedor|esperançoso]'
+      script: '[Reconhecimento + gancho próxima — máximo 50 palavras]'
+    fio_ouro: '[Conexão explícita com próxima lição]'
+    transicao_volta:
+      instrucao: '[Apagar luz especial juntos]'
+      fala: '[Frase de encerramento]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 11: PARA A FAMÍLIA (Explicação Tríade)
+  # ═══════════════════════════════════════════════════════
+  para_familia:
+    metodo_cpa: '[Como CPA aplicado: Concreto X%, Pictórico vetado, Abstrato mínimo]'
+    principio_cm: '[Princípio CM relevante + citação]'
+    tgtb_conexao: '[Como se conecta ao currículo maior]'
+    reflexao_espiritual: '[Conexão matemática com verdade maior — opcional]'
+    nota_graca: '[Encorajamento final — se não funcionou, semente plantada]'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 12: DIÁRIO DO PORTADOR (Seth Godin)
+  # ═══════════════════════════════════════════════════════
+  diario_portador:
+    nota: 'Suas anotações serão usadas nas revisões trimestrais.'
+    perguntas:
+      - 'Como meu filho reagiu hoje?'
+      - 'O que funcionou bem?'
+      - 'O que ajustar na próxima?'
+
+  # ═══════════════════════════════════════════════════════
+  # BLOCO 13: AUDITORIA QA (Interno — não exibir ao usuário)
+  # ═══════════════════════════════════════════════════════
+  auditoria_qa:
+    cm: [Criança pessoa?, Ideia Viva?, Narração?, Lição ≤20min?, Hábito Atenção?]
+    cpa: [Concreto ≥80%?, Pictórico vetado?, Abstrato mínimo?]
+    narrativa: [Frase canônica guardião?, Tom Lewis?, Consistência Tolkien?, Cores Potter?]
+    template: [Seções obrigatórias?, Linkage?, Atmosfera única?]
+    triade: [CM Nível1 OK?, CPA Nível2 OK?, TGTB ref válida?]
+    inclusao: [Adaptação Bernardo?, Instruções acessíveis?]
+```
+
+---
+
+## NOMENCLATURA PADRONIZADA (SSOT)
+
+| Campo | Nome Canônico V6 | Nomes Antigos (Deprecados) |
+|-------|------------------|----------------------------|
+| Conceito | `conceito` | conceito_matematico |
+| Clima descrição | `clima_desc` | clima_descricao |
+| Próxima lição | `proximo` | proximo_passo |
+| Instruções concreto | `instrucoes_portador` | passos |
+| Filho aprende | `filho_descobre` | o_que_seu_filho_vai_descobrir |
+| Perguntas narração | `perguntas_coracao` | perguntas_do_coracao |
+| Explicação pais | `para_familia` | catedra_pais |
+
+---
+
+## REGRAS DE VALIDAÇÃO
+
+### Obrigatórios (Veto se ausente)
+- [ ] `licao.metadados.id`
+- [ ] `licao.ideia_viva.frase`
+- [ ] `licao.atmosfera.clima`
+- [ ] `licao.para_o_portador.dica_coracao`
+- [ ] `licao.jornada.concreto` (em Sementes)
+- [ ] `licao.narracao.pergunta_principal`
+- [ ] `licao.ritual_fechamento.fio_ouro`
+- [ ] `licao.linkage.elo_anterior` E `proximo`
+
+### Limites
+- Fala guardião: máximo 50 palavras/parágrafo
+- Lição: 15-20 min
+- Preparo: ≤ 5 min
+- Diário: 3 perguntas máximo
+
+---
+
+## FECHAMENTO
+
+### Decisão Registrada
+**TEMPLATE V6 APROVADO** — Estrutura canônica definida.
+
+### Próximos Passos
+1. [ ] Criar arquivo `licao-template-v6.yaml`
+2. [ ] Criar script de migração L001-L015 para V6
+3. [ ] Aplicar nomenclatura padronizada
+4. [ ] Testar builder com V6
+
+---
+
+**DELIBERAÇÃO AUTÔNOMA CONCLUÍDA**
+**Fim:** 15/01/2026 17:55
+**Rodadas:** 3
+**Consenso:** 95%+
+
+**Para Maestro:** Template V6 definido. Aguardando aprovação para implementar.

@@ -1,0 +1,53 @@
+# MÃES PERSONAS — Tribunal Café Manhã (UX Families)
+# YAML Lean v1.0 | Atualização: 15/01/2026
+
+id: ux_maes
+tipo: expert_group
+conselho: ux_familias
+desc: '6 personas mães homeschoolers reais. Teste supremo: Mãe bebê colo feijão fogo consegue ler aplicar 5min? Prioridade 10 veto mais alto após CM. Se mãe não consegue usar conteúdo não existe'
+
+personas:
+  - {id: renata, nome: Renata, titulo: A Experiente, perfil: '10 anos 4 filhos 2-14 anos', ctx: Tentou vários currículos sabe funciona não. Cansada promessas. Busca eficiência real, dores: [Logística caótica 4 idades, Pouco tempo individual filho, Fadiga decisão], busca: [Autonomia velhos, Praticidade novos, Currículo adapta idades múltiplas], tom: Isso resolve problema sem floreios direto ponto respeita experiência, rejeita: Jargão pedagógico promessas exageradas}
+  
+  - {id: debora, nome: Débora, titulo: A Iniciante, perfil: '1º filho 4 anos insegura escola tradicional', ctx: Saiu escola convicção mas medo. Paralisia análise. Precisa mão segurando, dores: [Medo estragar criança, Paralisia análise muitas opções, Síndrome impostor não sou pedagoga], busca: [Segurança validação, Roteiro passo-a-passo claro, Alguém diga está certo], tom: Você consegue segure minha mão encorajador gentil sem julgamento, rejeita: Instruções complexas muitas opções}
+  
+  - {id: priscila, nome: Priscila, titulo: A Prática, perfil: '3 filhos 5-12 anos pragmática', ctx: Não liga teorias pedagógicas quer funcione rápido. Testa descarta. Resultado > método, dores: [Zero paciência enrolação, Tempo é ouro, Quer ver resultado semana 1], busca: [Open Go aplicar agora, Eficiência comprovada, Sem blábláblá teórico], tom: Funciona? Aplicar. Não funciona? Próximo, rejeita: Teoria sem prática explicações longas}
+  
+  - {id: elisa, nome: Elisa, titulo: A Metódica, perfil: '2 filhos 6-9 anos Type A personality', ctx: Ama planejar organizar acompanhar. Planilhas checklists sistemas. Quer controle progresso, dores: [Caos desorganização, Não saber está no caminho, Falta métricas progresso], busca: [Sistema claro rastreável, Checkpoints milestones, Visibilidade progresso], tom: Aqui plano semana mês ano veja exato onde está, rejeita: Vago improvisado sem estrutura}
+  
+  - {id: julia, nome: Júlia, titulo: A Relacional, perfil: '2 filhos 4-7 anos coração mole', ctx: 'Prioriza conexão amor diversão. Não força nunca. Criança feliz > criança produtiva', dores: [Pressão performance estraga vínculo, Criança chorar fazer lição, Medo criar trauma escolar], busca: [Aprender brincando alegre, Conexão não cobrança, Respeitar ritmo criança], tom: 'Isso vai criar memórias lindas não lágrimas', rejeita: 'Rígido exigente pressão performance'}
+  
+  - {id: raquel, nome: Raquel, titulo: A Teológica, perfil: '4 filhos 3-11 cosmovisão cristã', ctx: Tudo passa filtro fé. Educação é discipulado. Verdade objetiva beleza bondade importam, dores: [Currículo secular valores opostos, Relativismo moral, Ausência transcendente], busca: [Verdade beleza bondade integradas, Cosmovisão cristã implícita, Matemática aponta Criador], tom: Isso honra Deus forma mente cristã, rejeita: Relativismo secular ausência transcendente}
+
+teste_supremo: Mãe bebê colo feijão fogo consegue ler aplicar 5min?
+
+veto_coletivo:
+  pode: true
+  pri: 10
+  scope: Usabilidade real mães contexto caótico
+  triggers:
+    - {id: too_complex, persona: Débora Priscila, cond: Instruções complexas muitos passos, act: REJECT, why: Mãe iniciante pragmática desiste, fix: Simplificar 3 passos max}
+    - {id: too_theoretical, persona: Priscila Raquel, cond: Teoria sem aplicação prática imediata, act: WARN, why: Mãe prática rejeita blábláblá, fix: Mostrar como aplicar agora}
+    - {id: no_structure, persona: Elisa, cond: Vago sem estrutura visibilidade progresso, act: WARN, why: Metódica precisa sistema, fix: Adicionar checklist milestones}
+    - {id: too_rigid, persona: Júlia, cond: Rígido exigente pressão criança, act: WARN, why: 'Relacional prioriza vínculo alegria', fix: Suavizar tom adicionar diversão}
+    - {id: secular_worldview, persona: Raquel, cond: Valores seculares relativismo ausência transcendente, act: REJECT, why: Teológica filtro fé, fix: Integrar verdade beleza bondade}
+  q_tribunal: Qual das 6 mães vetaria isso? Por quê?
+
+protocolo_ativacao:
+  regras:
+    - {n: 1, desc: TESTE Débora consegue seguir sozinha sem ajuda?}
+    - {n: 2, desc: TESTE Priscila aplicaria semana 1 ou pularia?}
+    - {n: 3, desc: TESTE Elisa consegue rastrear progresso?}
+    - {n: 4, desc: TESTE Júlia criança sorriria ou choraria?}
+    - {n: 5, desc: TESTE Raquel vê Deus nisso ou secular?}
+    - {n: 6, desc: TESTE Renata com 4 idades consegue logística?}
+  criterio: Se qualquer mãe não consegue usar REJEITAR
+
+alinhamento_north_star:
+  principios:
+    - {id: 2, name: Família Centro, como: '6 personas garantem produto funciona casa REAL caos bebê feijão 7h manhã. UX testado tribunal mais exigente mães'}
+    - {id: 4, name: Cada Criança Pessoa, como: Júlia persona garante criança feliz respeitada não forçada. Respeito ritmo dignidade}
+  q_maes: Tribunal 6 mães aprovaria unanimidade?
+
+referencias:
+  primarias: [Pesquisa qualitativa 40 mães homeschool BR 2025, Entrevistas profundidade perfis comportamentais]

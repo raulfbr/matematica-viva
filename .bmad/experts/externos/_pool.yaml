@@ -1,0 +1,134 @@
+# Pool de Experts Externos — SSOT
+# YAML Lean v1.0 | Atualização: 15/01/2026
+# NOTA: Índice centralizado de todas as personas externas para Outside Voice
+
+id: pool_externos
+tipo: indice
+desc: Registro SSOT de todas as personas externas criadas para o protocolo anti-viés "Always One Outside". Cada persona questiona decisões de fora do contexto primário.
+
+algoritmo:
+  K: 0.5
+  formula_criar: "P = 1 / (1 + K * N)"
+  comportamento: "Nunca zero — sempre alguma chance de criar novo externo"
+  selecao_origem: {semente: 60, contextual: 40}
+  cap_externo: 50%
+  boost_crianca_8_anos: 10%
+
+fluxo:
+  1_calcular_P: "P = 1 / (1 + 0.5 * N) onde N = externos existentes"
+  2_sortear: "random() < P → CRIAR novo externo"
+  3_origem: "60% pool semente, 40% geração contextual"
+  4_persistir: "Salvar em experts/externos/{id}.yaml"
+  5_manifestar: "Outside voice faz posição COMPLETA"
+
+personas_semente:
+  - id: crianca_8_anos
+    arquivo: crianca_8_anos.yaml
+    titulo: O Cliente Real
+    perspectiva: engajamento/clareza
+    boost: true
+    boost_valor: 10%
+    pri: 15
+    
+  - id: pai_cetico
+    arquivo: pai_cetico.yaml
+    titulo: O Questionador Secular
+    perspectiva: secular/universal
+    pri: 16
+    
+  - id: mae_secular
+    arquivo: mae_secular.yaml
+    titulo: A Cientista Prática
+    perspectiva: evidência/moderno
+    pri: 17
+    
+  - id: professor_tradicional
+    arquivo: professor_tradicional.yaml
+    titulo: O Guardião da Métrica
+    perspectiva: resultados/avaliação
+    pri: 18
+    
+  - id: avo_tradicional
+    arquivo: avo_tradicional.yaml
+    titulo: A Guardiã da Tradição
+    perspectiva: tradição/simplicidade
+    pri: 19
+    
+  - id: pai_tech
+    arquivo: pai_tech.yaml
+    titulo: O Nativo Digital
+    perspectiva: tecnologia/gamificação
+    pri: 20
+    
+  - id: mae_workaholic
+    arquivo: mae_workaholic.yaml
+    titulo: A Executiva com Pressa
+    perspectiva: tempo/eficiência
+    pri: 21
+    
+  - id: adolescente_entediado
+    arquivo: adolescente_entediado.yaml
+    titulo: O Crítico Implacável
+    perspectiva: coolness/relevância
+    pri: 22
+    
+  - id: pai_classe_c
+    arquivo: pai_classe_c.yaml
+    titulo: O Guardião do Orçamento
+    perspectiva: valor/acessibilidade
+    pri: 23
+    
+  - id: mae_ansiosa
+    arquivo: mae_ansiosa.yaml
+    titulo: A Comparadora Preocupada
+    perspectiva: validação/segurança
+    pri: 24
+
+  # NOVOS — Expansão 15/01/2026 17:05
+  - id: pai_montessoriano
+    arquivo: pai_montessoriano.yaml
+    titulo: O Defensor do Método Alternativo
+    perspectiva: montessori/autonomia
+    pri: 25
+    sugerido_por: jerome_bruner
+    
+  - id: mae_veterana
+    arquivo: mae_veterana.yaml
+    titulo: A Prova Social Viva
+    perspectiva: longevidade/realismo
+    pri: 26
+    sugerido_por: seth_godin
+
+personas_criadas: []
+
+metricas:
+  total_internos: 14
+  total_externos_semente: 12
+  total_externos_criados: 0
+  total_externos: 12
+  linhas_por_persona: "~100 (formato impecável)"
+  ultima_atualizacao: 2026-01-15
+
+estrutura_persona:
+  obrigatorio:
+    - id
+    - tipo
+    - conselho
+    - role
+    - nome
+    - titulo
+    - desc
+    - perfil
+    - perspectiva_core
+    - foco
+    - perguntas_tipicas
+    - quando_invocar
+    - manifesta_como
+    - audit_q
+    - veto
+    - alinhamento_north_star
+    - citacoes
+    - referencias
+  opcional:
+    - boost
+    - nota_importante

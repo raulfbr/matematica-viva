@@ -1,0 +1,83 @@
+# PADRÕES NARRATIVOS — Guia de Estilo Imersivo
+# YAML Lean v2.0 | 14/01/2026
+# SSOT: Regras de narração imersiva no Reino Contado
+
+id: padroes_narrativos
+tipo: lore_reference
+versao: "2.0"
+descricao: "Padrões de narração imersiva extraídos de L000 e canonizados."
+
+transicoes_sensoriais:
+  regra: "Descrever clima, cheiro e som ANTES de apresentar personagem. Criança 'entra' antes."
+  exemplos: [
+    {ciclo: sementes, ex: "O ar cheira a pedra e terra. Fogueira ilumina urso polindo bronze."},
+    {ciclo: raizes, ex: "Vento traz sal e mar. Horizonte azul. Celeste fareja o ar."},
+    {ciclo: logica, ex: "Silêncio de biblioteca. Cheiro de papel antigo. Noé ajusta óculos."}
+  ]
+  elementos:
+    - {el: Clima, desc: temp/vento, ex: "Ar esfria"}
+    - {el: Cheiro, desc: aroma natural, ex: "Musgo fresco"}
+    - {el: Som, desc: audição/silêncio, ex: "Água correndo"}
+    - {el: Luz, desc: qualidade luz, ex: "Dourado morno"}
+
+falas_com_tom:
+  regra: "Sempre indicar [tom] antes do script para guiar Portador."
+  tons:
+    - {tom: segredo, desc: "Voz baixa grave", guardiao: Melquior}
+    - {tom: curioso, desc: "Rápida animada", guardiao: Celeste}
+    - {tom: calmo, desc: "Pausada serena", guardiao: Noé}
+    - {tom: firme, desc: "Grave estável", guardiao: Bernardo}
+    - {tom: encantado, desc: "Leve cristalina", guardiao: Íris}
+    - {tom: nobre, desc: "Autoridade gentil", guardiao: Melquior}
+  exemplo: "[tom de segredo]\n\"Sente o calor? É o sol do primeiro dia.\""
+
+pausas:
+  regra: "Pausas EXPLÍCITAS marcam respiração. Silêncio é lição."
+  tipos:
+    - {tag: "[pausa]", tempo: "2-3s", uso: "Transição ideias"}
+    - {tag: "[Pausa. Respire com a criança.]", tempo: "5-7s", uso: "Absorção profunda"}
+    - {tag: "[pausa 3s — deixe silêncio pesar]", tempo: "3s", uso: "Ritual entrada"}
+    - {tag: "[pausa — respeite o tempo da criança]", tempo: "Indefinido", uso: "Narração"}
+
+frases_canonicas:
+  ssot: "LORE/guardioes.yaml"
+  regra: "Não duplicar. Consultar campo 'frase' no arquivo guardioes.yaml."
+  exemplo_uso: {Melquior: "O Rei sorriu...", Celeste: "Sente esse cheiro?..."}
+
+virtude_encarnada:
+  ssot: "LORE/guardioes.yaml"
+  regra: "Virtude manifesta na AÇÃO do Guardião, não só palavras."
+  acoes:
+    - {guardiao: Melquior, acao: Perguntas abrem perspectiva}
+    - {guardiao: Noé, acao: Espera, respira, não apressa}
+    - {guardiao: Celeste, acao: Fareja, explora, pergunta}
+    - {guardiao: Bernardo, acao: Encoraja tentativa, não critica}
+    - {guardiao: Íris, acao: Aponta detalhe invisível}
+
+scaffolding_por_ciclo:
+  regra: "Apoio DIMINUI com idade."
+  citacao: "Vygotsky: Você é o andaime, não a escada."
+  evolucao:
+    - {ciclo: sementes, tipo: "Mão-na-mão", ex: "Vamos contar JUNTOS", acao: "Fala junto"}
+    - {ciclo: raizes_1, tipo: "Pergunta guiada", ex: "O que vem depois?", acao: "Espera"}
+    - {ciclo: raizes_2, tipo: "Pista sutil", ex: "Lembra dos padrões?", acao: "Aponta direção"}
+    - {ciclo: logica, tipo: "Luta produtiva", ex: "Descubra você.", acao: "Silêncio"}
+    - {ciclo: legado, tipo: "Autonomia", ex: "Pesquise e conte.", acao: "Ouve"}
+
+tom_por_ciclo:
+  regra: "Tom EVOLUI, Dignidade CONSTANTE."
+  citacao: "Lewis: Never be within the child's mental range."
+  evolucao:
+    - {ciclo: sementes, tom: "Encantamento mágico", key: Maravilha}
+    - {ciclo: raizes_1, tom: "Aventura exploratória", key: Descoberta}
+    - {ciclo: raizes_2, tom: "Investigação corajosa", key: Desafio}
+    - {ciclo: logica, tom: "Exploração intelectual", key: Profundidade}
+    - {ciclo: legado, tom: "Maestria vocacional", key: Aplicação}
+
+densidade_sensorial:
+  regra: "Elementos sensoriais por parágrafo AUMENTAM com idade."
+  citacao: "Potter: Comece simples, termine rico."
+  evolucao: {sementes: 1, raizes_1: 2, raizes_2: 3, logica: 4}
+
+uso:
+  checklist_qa: [Transição sensorial?, Tom indicado?, Pausas explícitas?, Frase canônica?, Virtude na ação?, Scaffolding correto?, Densidade correta?]
