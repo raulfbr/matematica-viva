@@ -15,7 +15,7 @@
             <img src="assets/cards/guardioes/melquior-leao.png" alt="Logo" style="width: 32px; height: 32px;"> Matemática Viva
         </div>
         
-        <div class="nav-section">Reino Contado</div>
+        <div class="nav-section">Família Pioneira</div>
         
         <!-- CICLO BROTOS -->
         <a href="{{ navegacao.brotos.link }}" class="nav-link {{ 'active' if navegacao.brotos.ativo else '' }}">
@@ -36,11 +36,15 @@
         <a href="{{ navegacao.logica.link }}" class="nav-link {{ 'active' if navegacao.logica.ativo else '' }}">
             <span>🦉</span> Lógica & Retórica {{ '<small>(Em breve)</small>' if not navegacao.logica.ativo }}
         </a>
-        
-        <div class="nav-section">Acervo Público</div>
+
+        <!-- LIVROS DOURADOS (Agora exclusivo) -->
         <a href="#livros" class="nav-link"><span>🏆</span> Livros Dourados</a>
-        <a href="#blog" class="nav-link"><span>📝</span> Biblioteca & Ensaios</a>
+        
+        <!-- LEGADO (Agora exclusivo) -->
         <a href="{{ navegacao.legado.link }}" class="nav-link"><span>🏺</span> O Legado</a>
+        
+        <div class="nav-section">Acervo Aberto</div>
+        <a href="#blog" class="nav-link"><span>📝</span> Blog & Ensaios</a>
         
         <div class="nav-section">Sistema</div>
         <a href="#" class="nav-link"><span>⚙️</span> Configurações</a>
