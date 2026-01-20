@@ -6,18 +6,14 @@
 
 ---
 
-> **Prático para você. Profundo para seu filho.**
+> **E se matemática fosse a melhor parte do dia?**
 >
 > **Para você:** 5 minutos de preparo. Abra e faça.
-> Notas pedagógicas explicam o porquê — você aprende Charlotte Mason e Bruner *enquanto ensina*.
+> Notas pedagógicas te guiam — você aprende enquanto ensina.
 >
 > **Para seu filho:** Histórias onde matemática emerge naturalmente.
-> Ele ouve, conta o que descobriu, e reencontra conceitos em camadas mais profundas.
+> Conceitos que ele reencontra — cada vez mais profundos.
 >
-> Cada lição planta uma semente. Cada ano, ela cresce.
-> O que aprende aos 5 será reconhecido aos 12 — e dominado aos 16.
->
-> *Isso não é repetição. É crescimento.*
 > *O que planta hoje, floresce amanhã.*
 
 [**Ver Lição Exemplo**](https://matematicavivav4.vercel.app/sementes/MV-S-001_A_TRINDADE_NA_PALMA) | [**Entrar na Tribo**](#-oferta-pioneira-2026)
@@ -30,11 +26,11 @@
 
 Isso **não é uma empresa vendendo produto**.
 
-Somos **Raul e Marina**, pais de Raulzito (5) e Mel.
+Somos **Raul e Marina**, pais de Raulzito (5) e Mel (2).
 Queríamos um currículo de matemática que **respeitasse nossos filhos como pessoas**.
 Não encontramos. Então **criamos** — e agora **compartilhamos**.
 
-> *"Matemática Viva existe para ajudar famílias a amarem matemática juntas."*
+> *"Matemática Viva existe para famílias que acreditam que aprender pode ser uma aventura."*
 
 ---
 
@@ -46,7 +42,7 @@ Um currículo completo (0-18 anos) que une três metodologias comprovadas:
 
 | Pilar | O Que Faz | Por Que Importa |
 |-------|-----------|-----------------|
-| **Charlotte Mason** | Criança como pessoa, lições curtas (15-20min), narração | A filosofia que respeita a inteligência do seu filho |
+| **Filosofia Clássica** | Criança como pessoa, lições curtas (15-20min), narração | Respeita a inteligência do seu filho |
 | **Jerome Bruner (CPA)** | Concreto → Pictórico → Abstrato | O método que tornou Singapura #1 no mundo |
 | **Currículo Espiral** | Conceitos retornam cada vez mais profundos | Crescimento real, não repetição mecânica |
 
@@ -98,13 +94,13 @@ Matemática Viva **NÃO** é para quem:
 
 > **Slogan:** *Seu filho OUVE, CONTA, e REENCONTRA.*
 
-| Princípio | O Que Significa | Origem | Como Aplicamos |
-|---|---|---|---|
-| **DIGNIDADE** | "Crianças são pessoas capazes" | CM Princípio 1 | Respeitamos a inteligência do seu filho |
-| **DESCOBERTA** | "Mãos primeiro, mente depois" | Jerome Bruner CPA | Concreto → Pictórico → Abstrato |
-| **ESPIRAL** | "O que planta hoje, floresce amanhã" | Bruner Spiral | Conceitos retornam mais profundos |
-| **NARRAÇÃO** | "Conta o que aprendeu — sem provas" | CM Princípio 11 | Seu filho reconta em suas palavras |
-| **RITMO** | "Lição no tempo certo para cada idade" | CM Princípio 15 | 15-20min por dia. Sem pressa. |
+| Princípio | O Que Significa | Como Aplicamos |
+|---|---|---|
+| **DIGNIDADE** | "Crianças são pessoas capazes" | Respeitamos a inteligência do seu filho |
+| **DESCOBERTA** | "Mãos primeiro, mente depois" | Concreto → Pictórico → Abstrato |
+| **ESPIRAL** | "O que planta hoje, floresce amanhã" | Conceitos retornam mais profundos |
+| **NARRAÇÃO** | "Conta o que aprendeu — sem provas" | Seu filho reconta em suas palavras |
+| **RITMO** | "Lição no tempo certo para cada idade" | 15-20min por dia. Sem pressa. |
 
 **Para você (pai/mãe):**
 > ✅ **ABRA E FAÇA** — 5 minutos de preparo. Pronto para usar.
@@ -158,7 +154,7 @@ A criança não pensa "estou fazendo conta." Ela pensa **"estou ajudando a Celes
 |-----------|-----------|
 | 📚 **+1200 Lições** | Jornada completa 0-18 anos, conectada por uma narrativa |
 | 🦁 **Reino Contado** | Mundo narrativo imersivo com 5 Guardiões |
-| 📖 **Notas Pedagógicas** | Aprenda Charlotte Mason + Bruner CPA *enquanto ensina* |
+| 📖 **Notas Pedagógicas** | Aprenda a filosofia e o método *enquanto ensina* |
 | ⏱️ **Abra e Faça** | 5 minutos de preparo. Pronto para usar |
 | 🖨️ **Cards dos Guardiões** | Visuais prontos para imprimir |
 | 👥 **Comunidade** | Famílias que pensam como você, crescendo juntas |
@@ -252,7 +248,7 @@ Se você chegou até aqui, **você já é um de nós**.
 **CC BY-NC 4.0** — Conteúdo aberto. O valor é a **experiência completa**: comunidade, curadoria, conveniência.
 
 **Créditos:**
-- **Charlotte Mason** — Filosofia educacional (20 Princípios)
+- **Charlotte Mason** — Filosofia Clássica (20 Princípios)
 - **Jerome Bruner** — Método CPA e Currículo Espiral
 - **C.S. Lewis & Tolkien** — Inspiração narrativa
 - **TGTB** — Sequência curricular
