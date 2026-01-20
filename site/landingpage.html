@@ -7,64 +7,330 @@
     <title>Matemática Viva — Histórias que Ensinam</title>
     <meta name="description"
         content="Currículo de matemática com narrativa. Prático para você. Profundo para seu filho.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* Reset básico */
+        /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Variáveis de cor (Paleta Potter) */
+        /* Paleta Potter */
         :root {
             --dourado: #D4A574;
             --verde: #2D5A41;
             --creme: #FAF6F0;
             --texto: #3D2E1E;
+            --cinza: #6B7280;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: var(--creme);
             color: var(--texto);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
+        /* Seções */
         section {
-            padding: 3rem 1.5rem;
-            max-width: 600px;
+            padding: 4rem 1.5rem;
+            max-width: 640px;
             margin: 0 auto;
         }
 
+        /* Tipografia */
         h1,
         h2,
         h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', Georgia, serif;
         }
 
-        .btn-primary {
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Botão CTA */
+        .btn-cta {
+            display: block;
             background: var(--verde);
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
+            padding: 1.25rem 2rem;
+            border-radius: 12px;
             font-size: 1.1rem;
-            cursor: pointer;
-            display: block;
-            width: 100%;
+            font-weight: 600;
             text-align: center;
+            text-decoration: none;
+            margin: 1.5rem 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 90, 65, 0.3);
+        }
+
+        /* ==================== SEÇÃO 1: HERO ==================== */
+        #hero {
+            text-align: center;
+            padding-top: 5rem;
+            padding-bottom: 4rem;
+        }
+
+        #hero .slogan {
+            font-style: italic;
+            color: var(--cinza);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        #hero .familia {
+            font-size: 0.9rem;
+            color: var(--cinza);
+            margin-bottom: 2rem;
+        }
+
+        #hero .pergunta {
+            background: white;
+            border-left: 4px solid var(--dourado);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* ==================== SEÇÃO 2: DOR ==================== */
+        #dor {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        #dor ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        #dor li {
+            padding: 1rem;
+            margin: 0.75rem 0;
+            background: var(--creme);
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        #dor .conclusao {
+            font-weight: 600;
+            color: var(--verde);
+            font-size: 1.1rem;
+        }
+
+        /* ==================== SEÇÃO 3: SOLUÇÃO ==================== */
+        #solucao .pilares {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .pilar {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .pilar-icon {
+            font-size: 2rem;
+            background: var(--creme);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .pilar-titulo {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .pilar-desc {
+            font-size: 0.9rem;
+            color: var(--cinza);
+        }
+
+        /* ==================== SEÇÃO 4: PRICING ==================== */
+        #pricing {
+            text-align: center;
+        }
+
+        .preco-tabela {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .preco-linha {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--creme);
+        }
+
+        .preco-linha:last-child {
+            border-bottom: none;
+        }
+
+        .preco-destaque {
+            background: var(--verde);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .preco-nota {
+            font-size: 0.9rem;
+            color: var(--cinza);
+            margin-top: 1rem;
+        }
+
+        /* ==================== SEÇÃO 5: GUARDIÕES ==================== */
+        #guardioes {
+            text-align: center;
+        }
+
+        .guardioes-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 1rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .guardiao-card {
+            flex: 0 0 200px;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            scroll-snap-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .guardiao-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .guardiao-nome {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .guardiao-virtude {
+            font-size: 0.85rem;
+            color: var(--dourado);
+            margin: 0.25rem 0;
+        }
+
+        .guardiao-frase {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: var(--cinza);
+        }
+
+        /* ==================== SEÇÃO 6: DEPOIMENTOS ==================== */
+        #depoimentos blockquote {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--dourado);
+            font-style: italic;
+        }
+
+        #depoimentos .autor {
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--verde);
+        }
+
+        /* ==================== SEÇÃO 7: CTA FINAL ==================== */
+        #cta {
+            text-align: center;
+            background: linear-gradient(180deg, var(--creme) 0%, white 100%);
+        }
+
+        #cta .preco-grande {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--verde);
+        }
+
+        #cta .desconto {
+            background: var(--dourado);
+            color: white;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        #cta .garantia {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--cinza);
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--texto);
+            color: var(--creme);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: var(--dourado);
             text-decoration: none;
         }
 
-        /* Placeholder para desenvolvimento */
-        .placeholder {
-            background: #eee;
-            border: 2px dashed #ccc;
-            padding: 2rem;
-            text-align: center;
-            color: #999;
-            border-radius: 8px;
-            margin: 1rem 0;
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -74,85 +340,155 @@
     <!-- SEÇÃO 1: HERO -->
     <section id="hero">
         <h1>🦁 Matemática Viva</h1>
-        <p><em>"Histórias que ensinam. Narração que fixa."</em></p>
-        <p>Da Família Rodrigues para outras famílias.</p>
+        <p class="slogan">"Histórias que ensinam. Narração que fixa."</p>
+        <p class="familia">Da Família Rodrigues para outras famílias.</p>
 
-        <blockquote>
-            <strong>E se matemática fosse a melhor parte do dia?</strong>
-        </blockquote>
+        <div class="pergunta">
+            E se matemática fosse a melhor parte do dia?
+        </div>
 
-        <a href="mailto:rfbr21@gmail.com?subject=Quero ser Pioneiro" class="btn-primary">
+        <a href="mailto:rfbr21@gmail.com?subject=Quero ser Pioneiro" class="btn-cta">
             QUERO SER PIONEIRO →
         </a>
     </section>
 
-    <!-- SEÇÃO 2: DOR (Empatia) -->
+    <!-- SEÇÃO 2: DOR -->
     <section id="dor">
         <h2>💭 Você já pensou isso?</h2>
         <ul>
             <li>"Não sou pedagoga..."</li>
-            <li>"Não tenho tempo pra preparar"</li>
+            <li>"Não tenho tempo pra preparar aula"</li>
             <li>"Será que ele vai perder o brilho nos olhos?"</li>
         </ul>
-        <p><strong>Se você pensou assim, criamos isso para você.</strong></p>
+        <p class="conclusao">Se você pensou assim, criamos isso para você.</p>
     </section>
 
-    <!-- SEÇÃO 3: SOLUÇÃO (3 Pilares) -->
+    <!-- SEÇÃO 3: SOLUÇÃO -->
     <section id="solucao">
-        <h2>✨ A Solução</h2>
-        <div class="placeholder">[Pilar 1: ABRA E FAÇA — 5 min]</div>
-        <div class="placeholder">[Pilar 2: NARRATIVA — Histórias]</div>
-        <div class="placeholder">[Pilar 3: ESPIRAL — Conceitos crescem]</div>
+        <h2>✨ O Método</h2>
+        <div class="pilares">
+            <div class="pilar">
+                <div class="pilar-icon">⏱️</div>
+                <div>
+                    <div class="pilar-titulo">ABRA E FAÇA</div>
+                    <div class="pilar-desc">5 minutos de preparo. Pronto para ensinar.</div>
+                </div>
+            </div>
+            <div class="pilar">
+                <div class="pilar-icon">📖</div>
+                <div>
+                    <div class="pilar-titulo">NARRATIVA</div>
+                    <div class="pilar-desc">Histórias onde matemática emerge naturalmente.</div>
+                </div>
+            </div>
+            <div class="pilar">
+                <div class="pilar-icon">🔄</div>
+                <div>
+                    <div class="pilar-titulo">ESPIRAL</div>
+                    <div class="pilar-desc">Conceitos que crescem com seu filho.</div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- SEÇÃO 4: VACA ROXA (Family-First Pricing) -->
+    <!-- SEÇÃO 4: PRICING -->
     <section id="pricing">
         <h2>💎 Uma assinatura. Todos os seus filhos.</h2>
-        <div class="placeholder">[Tabela de preços: 2/4/6 filhos → R$ 2.397/ano]</div>
-        <p><em>*Pioneiros (2026): R$ 1.197 (50% off)</em></p>
-        <p><strong>Quanto mais filhos, mais vale!</strong></p>
+        <div class="preco-tabela">
+            <div class="preco-linha">
+                <span>2 filhos</span>
+                <span><strong>R$ 2.397/ano</strong></span>
+            </div>
+            <div class="preco-linha">
+                <span>4 filhos</span>
+                <span><strong>R$ 2.397/ano</strong></span>
+            </div>
+            <div class="preco-linha">
+                <span>6 filhos</span>
+                <span><strong>R$ 2.397/ano</strong></span>
+            </div>
+            <div class="preco-destaque">
+                Pioneiros (2026): R$ 1.197/ano (50% off)
+            </div>
+        </div>
+        <p class="preco-nota">Quanto mais filhos, mais vale a pena! ❤️</p>
     </section>
 
     <!-- SEÇÃO 5: GUARDIÕES -->
     <section id="guardioes">
         <h2>🦁 Os Cinco Guardiões</h2>
-        <div class="placeholder">[Carrossel: Melquior, Bernardo, Celeste, Noé, Íris]</div>
+        <div class="guardioes-scroll">
+            <div class="guardiao-card">
+                <img src="assets/cards/guardioes/melquior-leao.png" alt="Melquior" loading="lazy">
+                <div class="guardiao-nome">Melquior</div>
+                <div class="guardiao-virtude">Sabedoria</div>
+                <div class="guardiao-frase">"O Rei sorriu ao ver você chegar."</div>
+            </div>
+            <div class="guardiao-card">
+                <img src="assets/cards/guardioes/bernardo-urso.png" alt="Bernardo" loading="lazy">
+                <div class="guardiao-nome">Bernardo</div>
+                <div class="guardiao-virtude">Persistência</div>
+                <div class="guardiao-frase">"Mais uma vez. Comigo."</div>
+            </div>
+            <div class="guardiao-card">
+                <img src="assets/cards/guardioes/celeste-raposa.png" alt="Celeste" loading="lazy">
+                <div class="guardiao-nome">Celeste</div>
+                <div class="guardiao-virtude">Curiosidade</div>
+                <div class="guardiao-frase">"Sente esse cheiro? É aventura."</div>
+            </div>
+            <div class="guardiao-card">
+                <img src="assets/cards/guardioes/noe-coruja.png" alt="Noé" loading="lazy">
+                <div class="guardiao-nome">Noé</div>
+                <div class="guardiao-virtude">Paciência</div>
+                <div class="guardiao-frase">"Respire. O número espera por você."</div>
+            </div>
+            <div class="guardiao-card">
+                <img src="assets/cards/guardioes/iris-passarinho.png" alt="Íris" loading="lazy">
+                <div class="guardiao-nome">Íris</div>
+                <div class="guardiao-virtude">Atenção</div>
+                <div class="guardiao-frase">"Olhe bem. A beleza está no detalhe."</div>
+            </div>
+        </div>
     </section>
 
-    <!-- SEÇÃO 6: PROVA SOCIAL -->
+    <!-- SEÇÃO 6: DEPOIMENTOS -->
     <section id="depoimentos">
         <h2>💬 Famílias Dizem</h2>
         <blockquote>
-            "A imersão é fantástica..."<br>
-            — <strong>Raul</strong>, Criador
+            "Meu filho sempre menciona os Guardiões com bons olhos. A imersão é fantástica — até eu fiquei impressionado
+            quando a lição é bem feita."
+            <div class="autor">— Raul, Família Rodrigues (Criador)</div>
         </blockquote>
         <blockquote>
-            "Saber o porquê me dá confiança."<br>
-            — <strong>Amanda</strong>, Pioneira
+            "Eu tinha medo de ensinar matemática. Quando vi a narrativa, ele começou a interagir naturalmente! Saber o
+            'porquê' de cada lição me dá confiança."
+            <div class="autor">— Amanda, Família Pioneira</div>
         </blockquote>
     </section>
 
     <!-- SEÇÃO 7: CTA FINAL -->
     <section id="cta">
         <h2>🚀 Pronto para começar?</h2>
-        <p><strong>R$ 1.197/ano</strong> (Pioneiro)</p>
-        <p>50% off até Nov/2026</p>
+        <div class="preco-grande">R$ 1.197</div>
+        <div class="desconto">50% off — Pioneiro 2026</div>
 
-        <a href="mailto:rfbr21@gmail.com?subject=Quero ser Pioneiro" class="btn-primary">
+        <a href="mailto:rfbr21@gmail.com?subject=Quero ser Pioneiro" class="btn-cta">
             QUERO SER PIONEIRO →
         </a>
 
-        <p>📧 rfbr21@gmail.com</p>
-        <p>🛡️ Garantia 30 dias</p>
+        <div class="garantia">
+            🛡️ Garantia de 30 dias — não gostou, devolvemos
+        </div>
     </section>
 
-    <!-- SEÇÃO 8: FOOTER -->
-    <footer style="text-align: center; padding: 2rem; background: var(--texto); color: var(--creme);">
+    <!-- FOOTER -->
+    <footer>
         <p>© 2026 Família Rodrigues</p>
         <p>CC BY-NC 4.0</p>
         <p>
-            <a href="/" style="color: var(--dourado);">Home</a> |
-            <a href="/blog" style="color: var(--dourado);">Blog</a>
+            <a href="index.html">Dashboard</a> ·
+            <a href="blog/">Blog</a> ·
+            <a href="mailto:rfbr21@gmail.com">Contato</a>
         </p>
     </footer>
 
