@@ -5,694 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matemática Viva | Orchestrator Dashboard</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Gloria+Hallelujah&display=swap');
-
-        :root {
-            --primary: #B8860B;
-            /* Ouro Antigo */
-            --secondary: #1F2937;
-            /* Cinza Escuro */
-            --bg-page: #FDF8F3;
-            /* Papel Antigo */
-            --bg-card: #FFFFFF;
-            --font-heading: 'Lora', serif;
-            --font-body: 'Outfit', sans-serif;
-        }
-
-        /* Reset & Base */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background: var(--bg-page);
-            color: var(--secondary);
-            font-family: var(--font-body);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.2s;
-        }
-
-        /* Layout Grid */
-        .main-wrapper {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        .sidebar {
-            width: 280px;
-            background: white;
-            border-right: 1px solid #E5E7EB;
-            padding: 2rem;
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-            z-index: 50;
-        }
-
-        .main-content {
-            margin-left: 280px;
-            padding: 3rem 4rem;
-            width: 100%;
-            max-width: 1400px;
-        }
-
-        /* Sidebar */
-        .brand {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-section {
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #9CA3AF;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin: 2rem 0 0.5rem;
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-weight: 500;
-            color: #4B5563;
-        }
-
-        .nav-link:hover {
-            background: #FEF3C7;
-            color: #92400E;
-        }
-
-        .nav-link.active {
-            background: #FFFBEB;
-            color: #B45309;
-            border-left: 3px solid #F59E0B;
-        }
-
-        .nav-link small {
-            margin-left: auto;
-            font-size: 0.7rem;
-            color: #D1D5DB;
-        }
-
-        /* Header */
-        header {
-            margin-bottom: 4rem;
-        }
-
-        .role-badge {
-            background: #E0E7FF;
-            color: #3730A3;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 400;
-            color: #111827;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            color: #6B7280;
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Stats Row */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid #E5E7EB;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-
-        .stat-val {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #111827;
-            font-family: var(--font-heading);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: #6B7280;
-            font-weight: 500;
-        }
-
-        /* Sections */
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #E5E7EB;
-            padding-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 1.75rem;
-            color: #111827;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .section-meta {
-            font-size: 0.9rem;
-            color: #9CA3AF;
-        }
-
-        /* Grid Cards */
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #F3F4F6;
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
-            border-color: #FCD34D;
-        }
-
-        /* Card Variants (Guardians) */
-        .card.celeste {
-            border-top: 4px solid #F97316;
-        }
-
-        /* Raposa Laranja */
-        .card.bernardo {
-            border-top: 4px solid #8B5CF6;
-        }
-
-        /* Urso Roxo/Forte */
-        .card.noe {
-            border-top: 4px solid #10B981;
-        }
-
-        /* Coruja Verde/Sabedoria */
-        .card.iris {
-            border-top: 4px solid #EC4899;
-        }
-
-        /* Pássaro Rosa/Beleza */
-        .card.melquior {
-            border-top: 4px solid #F59E0B;
-        }
-
-        /* Leão Dourado/Rei */
-        .card.raizes {
-            border-top: 4px solid #4B5563;
-            border-style: dashed;
-        }
-
-        /* Raízes (Diferente) */
-
-        .card-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-        }
-
-        .card-id {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #9CA3AF;
-            text-transform: uppercase;
-            background: #F3F4F6;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .card-title {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: #1F2937;
-            line-height: 1.3;
-        }
-
-        .card-desc {
-            font-size: 0.95rem;
-            color: #6B7280;
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .guardian-icon-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid #FEF3C7;
-            padding: 2px;
-            background: white;
-        }
-
-        .card-footer {
-            padding: 1rem 1.5rem;
-            border-top: 1px solid #F3F4F6;
-            background: #FAFAFA;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .btn-arr {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #4B5563;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .btn-arr span {
-            transition: transform 0.2s;
-        }
-
-        .btn-arr:hover span {
-            transform: translateX(3px);
-        }
-
-        .btn-arr:hover {
-            color: #B45309;
-        }
-
-        /* Empty States */
-        .blog-empty {
-            text-align: center;
-            padding: 4rem;
-            background: #F9FAFB;
-            border-radius: 12px;
-            border: 2px dashed #E5E7EB;
-            opacity: 0.7;
-        }
-
-        .blog-empty h3 {
-            color: #374151;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .blog-empty p {
-            color: #6B7280;
-            font-size: 0.9rem;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        /* MOBILE NAVIGATION REFINED (Drawer Style) */
-        .mobile-toggle {
-            display: none;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(2px);
-            z-index: 40;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        @media (max-width: 1024px) {
-            .sidebar {
-                display: block;
-                /* Restored */
-                transform: translateX(-100%);
-                transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-                width: 80%;
-                max-width: 300px;
-            }
-
-            .sidebar.active {
-                transform: translateX(0);
-                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.15);
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 2rem;
-                padding-top: 6rem;
-            }
-
-            .mobile-toggle {
-                display: flex;
-                position: fixed;
-                top: 1.5rem;
-                left: 1.5rem;
-                width: 3.5rem;
-                height: 3.5rem;
-                border-radius: 50%;
-                background: white;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                z-index: 60;
-                font-size: 1.5rem;
-                border: none;
-                color: var(--primary);
-                cursor: pointer;
-                transition: transform 0.2s;
-            }
-
-            .mobile-toggle:active {
-                transform: scale(0.95);
-            }
-        }
-
-        /* LESSON PAGE SPECIFIC (Premium Visuals) */
-        .lesson-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 4rem;
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
-            border-radius: 16px;
-            position: relative;
-        }
-
-        .home-btn {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            font-size: 1.5rem;
-            text-decoration: none;
-            opacity: 0.6;
-            transition: opacity 0.2s;
-            z-index: 10;
-            filter: grayscale(1);
-        }
-
-        .home-btn:hover {
-            opacity: 1;
-            filter: grayscale(0);
-            transform: scale(1.1);
-        }
-
-        .lesson-hero {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .lesson-meta-tag {
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            color: #9CA3AF;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-title {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            color: #1F2937;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .hero-quote {
-            font-family: var(--font-heading);
-            font-style: italic;
-            color: #6B7280;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-guardian {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #FEF3C7;
-            padding: 4px;
-            background: white;
-            margin-top: 1rem;
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Typography for Lesson Body */
-        .lesson-body p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: #4B5563;
-        }
-
-        .lesson-body h2 {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: #B45309;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #FFE4E6;
-            padding-bottom: 0.5rem;
-        }
-
-        .lesson-body h3 {
-            font-size: 1.4rem;
-            color: #1F2937;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .lesson-body ul {
-            list-style: none;
-            margin-bottom: 2rem;
-            padding-left: 0;
-        }
-
-        .lesson-body li {
-            padding: 0.75rem 0;
-            border-bottom: 1px dashed #E5E7EB;
-            color: #4B5563;
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .lesson-body li::before {
-            content: "•";
-            color: #F59E0B;
-            font-weight: bold;
-        }
-
-        /* Rich Objects */
-        .script-persona-block {
-            background: #FDF2F8;
-            border-left: 4px solid #EC4899;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 12px 12px 0;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .script-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            border: 2px solid white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .script-content {
-            flex: 1;
-        }
-
-        .script-name {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: #BE185D;
-            margin-bottom: 0.25rem;
-            display: block;
-        }
-
-        .script-text {
-            font-family: var(--font-heading);
-            font-style: italic;
-            font-size: 1.1rem;
-            color: #831843;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .instruction-box {
-            background: #EFF6FF;
-            border: 1px solid #DBEAFE;
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin: 2rem 0;
-            display: flex;
-            gap: 1rem;
-            color: #1E40AF;
-        }
-
-        .instruction-icon {
-            font-size: 1.5rem;
-        }
-
-        /* Navigation Footer */
-        .lesson-nav {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6rem;
-            padding-top: 2rem;
-            border-top: 1px solid #E5E7EB;
-        }
-
-        .nav-btn {
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            transition: all 0.2s;
-            max-width: 45%;
-        }
-
-        .nav-btn:hover {
-            background: #F3F4F6;
-        }
-
-        .nav-btn.disabled {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .nav-btn .nav-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #9CA3AF;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .nav-btn .nav-title {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
-            color: #1F2937;
-            font-weight: 600;
-        }
-
-        .nav-btn.prev {
-            text-align: left;
-        }
-
-        .nav-btn.next {
-            text-align: right;
-        }
-
-        @media (max-width: 768px) {
-            .lesson-container {
-                padding: 2rem 1.5rem;
-                margin: 1rem;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .lesson-nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-btn {
-                max-width: 100%;
-                text-align: center !important;
-                background: #F9FAFB;
-            }
-        }
-    </style>
+    <!-- CSS na raiz do site/ -->
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <!-- Mobile Elements -->
-    <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
-    <div class="overlay" onclick="toggleMenu()"></div>
-
-    <nav class="sidebar" id="sidebar">
+    <!-- SIDEBAR DINÂMICA (Mas com estrutura fixa visual) -->
+    <nav class="sidebar">
         <div class="brand">
             <img src="assets/cards/guardioes/melquior-leao.png" alt="Logo" style="width: 32px; height: 32px;">
             Matemática Viva
         </div>
 
-        <div class="nav-section">Acervo Público</div>
-        <a href="#blog" class="nav-link"><span>📝</span> Artigos & Ensaios</a>
-        <a href="manual-portador.html" class="nav-link"><span>🔥</span> Manual do Portador</a>
-        <a href="placeholders/biblioteca.html" class="nav-link"><span>📚</span> Biblioteca Pedagogia</a>
-
-        <div class="nav-section">Sistema (Orchestrator)</div>
-        <a href="placeholders/config.html" class="nav-link"><span>⚙️</span> Configurações</a>
-        =======
-
         <div class="nav-section">Família Pioneira</div>
+
+        <!-- MANUAL (Recuperado) -->
+        <a href="manual-portador.html" class="nav-link"><span>🔥</span> Manual do Portador</a>
 
         <!-- CICLO BROTOS -->
         <a href="placeholders/brotos.html" class="nav-link ">
@@ -721,53 +50,84 @@
         <a href="placeholders/legado.html" class="nav-link"><span>🏺</span> O Legado</a>
 
         <div class="nav-section">Acervo Aberto</div>
+        <a href="placeholders/biblioteca.html" class="nav-link"><span>📚</span> Biblioteca Pedagogia</a>
         <a href="#blog" class="nav-link"><span>📝</span> Blog & Ensaios</a>
 
         <div class="nav-section">Sistema</div>
         <a href="#" class="nav-link"><span>⚙️</span> Configurações</a>
-        >>>>>>> 37b865ee14522b1e4e38a588f0fdad77161e6357
     </nav>
 
     <main class="main-content">
         <header>
-            <div class="role-badge">Admin: Maestro Raul</div>
+            <div class="role-badge">Ambiente: Production (Forge V3)</div>
             <h1>Visão Geral do Reino</h1>
-            <p class="subtitle">O progresso da Matemática Viva, monitorado pelo Orchestrator. Aqui a "Qualidade Não é
-                Negociável" se torna visível.</p>
+            <p class="subtitle">"A Qualidade Não é Negociável." — Painel de Controle Dinâmico.</p>
         </header>
 
         <!-- ESTATÍSTICAS REMOVIDAS POR DESIGN REVIEW (Foco na Narrativa) -->
-        <!--
-        <section class="stats">
-            <div class="stat-card">
-                <div class="stat-val">25</div>
-                <div class="stat-label">Lições Sementes</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">1</div>
-                <div class="stat-label">Lições Raízes</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val">100%</div>
-                <div class="stat-label">Conformidade North Star</div>
-            </div>
-        </section>
-        -->
 
-        <!-- SEMENTES -->
+        <!-- SEÇÃO SEMENTES -->
         <section id="sementes" class="mb-16">
             <div class="section-header">
                 <div class="section-title"><span>🌱</span> Ciclo Sementes</div>
-                <div class="section-meta">Estação 1: A Fundação • Build: 22/01/2026 15:02</div>
+                <div class="section-meta">Estação 1: A Fundação</div>
             </div>
+
             <div class="grid-cards">
+
+                <!-- CARD MANUAL EM DESTAQUE -->
+                <article class="card melquior"
+                    style="border: 1px solid #D97706; background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id" style="color: #B45309; font-weight: 800;">MANUAL</span>
+                            <img src="assets/sementes/guardioes/melquior-leao.png" class="guardian-icon-img"
+                                alt="manual">
+                        </div>
+                        <h3 class="card-title" style="color: #92400E;">Manual do Portador da Tocha</h3>
+                        <p class="card-desc">“O guia essencial para os pais e mestres que conduzem a jornada da
+                            Matemática Viva.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #92400E; border-top: 1px solid #FDE68A; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🔥</span> <em>Leitura Obrigatória para Pais</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="manual-portador.html" class="btn-arr" style="color: #92400E;">Ler Manual
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+
+                <article class="card melquior">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 000</span>
+                            <img src="assets/sementes/guardioes/melquior-leao.png" class="guardian-icon-img"
+                                alt="melquior" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Portal do Reino</h3>
+                        <p class="card-desc">“A entrada solene no mundo da Matemática Viva. Conheça os Guardiões e a
+                            geografia do Reino.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Introdução à Narrativa e Geografia</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-000_O_PORTAL_DO_REINO.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
 
                 <article class="card celeste">
                     <div class="card-body">
                         <div class="card-meta">
-                            <span class="card-id">MV-S-001</span>
-                            <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img" alt="celeste"
-                                title="celeste">
+                            <span class="card-id">Lição 001</span>
+                            <img src="assets/sementes/guardioes/celeste-raposa.png" class="guardian-icon-img"
+                                alt="celeste" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
                         </div>
                         <h3 class="card-title">A Trindade na Palma</h3>
                         <p class="card-desc">“Três sementes de carvalho encontradas pela Raposa — uma para cada promessa
@@ -775,21 +135,21 @@
 
                         <div class="card-objective"
                             style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                            <span>🏷️</span> <em>Senso Numérico</em>
+                            <span>🏷️</span> <em>Números 1 a 3 e Reconhecimento</em>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="sementes/001_TRINDADE_PALMA.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                        <a href="sementes/MV-S-001_A_TRINDADE_NA_PALMA.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
                     </div>
                 </article>
 
-
-                <<<<<<< HEAD <article class="card bernardo">
+                <article class="card bernardo">
                     <div class="card-body">
                         <div class="card-meta">
-                            <span class="card-id">MV-S-002</span>
-                            <img src="assets/cards/guardioes/bernardo-urso.png" class="guardian-icon-img" alt="bernardo"
-                                title="bernardo">
+                            <span class="card-id">Lição 002</span>
+                            <img src="assets/sementes/guardioes/bernardo-urso.png" class="guardian-icon-img"
+                                alt="bernardo" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
                         </div>
                         <h3 class="card-title">As Pedras da Fortaleza</h3>
                         <p class="card-desc">“O Urso Bernardo precisa organizar as pedras pesadas em fileiras perfeitas
@@ -797,806 +157,529 @@
 
                         <div class="card-objective"
                             style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                            <span>🏷️</span> <em>Senso Numérico</em>
+                            <span>🏷️</span> <em>Quadros de Dez e Organização</em>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="sementes/002_PEDRAS_FORTALEZA.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                    </div>
-                    </article>
-
-                    =======
-                    <!-- CARD MANUAL EM DESTAQUE -->
-                    <article class="card melquior"
-                        style="border: 1px solid #D97706; background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id" style="color: #B45309; font-weight: 800;">MANUAL</span>
-                                <img src="assets/sementes/guardioes/melquior-leao.png" class="guardian-icon-img"
-                                    alt="manual">
-                            </div>
-                            <h3 class="card-title" style="color: #92400E;">Manual do Portador da Tocha</h3>
-                            <p class="card-desc">“O guia essencial para os pais e mestres que conduzem a jornada da
-                                Matemática Viva.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #92400E; border-top: 1px solid #FDE68A; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🔥</span> <em>Leitura Obrigatória para Pais</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="manual-portador.html" class="btn-arr" style="color: #92400E;">Ler Manual
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-                    >>>>>>> 37b865ee14522b1e4e38a588f0fdad77161e6357
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-003</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">A Estrela do Reino</h3>
-                            <p class="card-desc">“A Pequena Pardal ensina a organizar as pedras do Bernardo em uma nova
-                                forma: a estrela de cinco pontas.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Geometria Viva</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/003_ESTRELA_REINO.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card noe">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-004</span>
-                                <img src="assets/cards/guardioes/noe-coruja.png" class="guardian-icon-img" alt="noe"
-                                    title="noe">
-                            </div>
-                            <h3 class="card-title">A Ordem do Dia</h3>
-                            <p class="card-desc">“Há um tempo para tudo debaixo do céu: um tempo de plantar e um tempo
-                                de colher.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico e Tempo</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/004_A_ORDEM_DO_DIA.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card celeste">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-005</span>
-                                <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img"
-                                    alt="celeste" title="celeste">
-                            </div>
-                            <h3 class="card-title">O Esconderijo da Glória</h3>
-                            <p class="card-desc">“Saber quem se esconde atrás da rocha e quem brilha acima das nuvens.”
-                            </p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Posição e Espaço</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/005_O_ESCONDERIJO_DA_GLORIA.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-006</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">O Desenho do Rei</h3>
-                            <p class="card-desc">“Cada número tem seu próprio desenho — como a assinatura do Rei.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/006_O_DESENHO_DO_REI.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card celeste">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-007</span>
-                                <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img"
-                                    alt="celeste" title="celeste">
-                            </div>
-                            <h3 class="card-title">A Coroa da Semana</h3>
-                            <p class="card-desc">“Sete cores no arco-íris, sete dias na semana — o Rei ama o número 7.”
-                            </p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/007_A_COROA_DA_SEMANA.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-008</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">O Par Perfeito</h3>
-                            <p class="card-desc">“Cada tesouro tem seu lugar. Cada criatura, seu par.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Correspondência</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/008_O_PAR_PERFEITO.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card noe">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-009</span>
-                                <img src="assets/cards/guardioes/noe-coruja.png" class="guardian-icon-img" alt="noe"
-                                    title="noe">
-                            </div>
-                            <h3 class="card-title">O Celeiro de Noé</h3>
-                            <p class="card-desc">“Oito fardos de esperança guardados para a chuva. Nove tesouros para o
-                                amanhã.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/009_O_CELEIRO_DE_NOE.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card celeste">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-010</span>
-                                <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img"
-                                    alt="celeste" title="celeste">
-                            </div>
-                            <h3 class="card-title">A Fila da Providência</h3>
-                            <p class="card-desc">“O primeiro a colher e o terceiro a agradecer. Quem a Raposa vê
-                                primeiro?”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Números Ordinais</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/010_A_FILA_DA_PROVIDENCIA.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card celeste">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-011</span>
-                                <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img"
-                                    alt="celeste" title="celeste">
-                            </div>
-                            <h3 class="card-title">A Plenitude das Mãos</h3>
-                            <p class="card-desc">“Dez dedos para abraçar o mundo e um a mais para apontar para o céu.”
-                            </p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/011_A_PLENITUDE_DAS_MAOS.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card bernardo">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-012</span>
-                                <img src="assets/cards/guardioes/bernardo-urso.png" class="guardian-icon-img"
-                                    alt="bernardo" title="bernardo">
-                            </div>
-                            <h3 class="card-title">O Segredo do Feixe</h3>
-                            <p class="card-desc">“Ver dez gravetos virarem UM grupo forte nas mãos do Urso que abraça.”
-                            </p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Valor Posicional</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/012_O_SEGREDO_DO_FEIXE.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card melquior">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-013</span>
-                                <img src="assets/cards/guardioes/melquior-leao.png" class="guardian-icon-img"
-                                    alt="melquior" title="melquior">
-                            </div>
-                            <h3 class="card-title">O Rio que se Une</h3>
-                            <p class="card-desc">“Dois riachos que viram um só. Melquior ensina a força da união no
-                                Reino.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Operações</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/013_O_RIO_QUE_SE_UNE.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card bernardo">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-014</span>
-                                <img src="assets/cards/guardioes/bernardo-urso.png" class="guardian-icon-img"
-                                    alt="bernardo" title="bernardo">
-                            </div>
-                            <h3 class="card-title">O Celeiro que Cresce</h3>
-                            <p class="card-desc">“Mais feixes de força para sustentar a construção da Vila sob o olhar
-                                de Bernardo.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Valor Posicional</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/014_O_CELEIRO_QUE_CRESCE.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card melquior">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-015</span>
-                                <img src="assets/cards/guardioes/melquior-leao.png" class="guardian-icon-img"
-                                    alt="melquior" title="melquior">
-                            </div>
-                            <h3 class="card-title">A Escada de Luz</h3>
-                            <p class="card-desc">“Contemplar com o Maestro os trinta passos que já demos rumo ao
-                                Deslumbramento.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Contagem</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/015_A_ESCADA_DE_LUZ.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card bernardo">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-016</span>
-                                <img src="assets/cards/guardioes/bernardo-urso.png" class="guardian-icon-img"
-                                    alt="bernardo" title="bernardo">
-                            </div>
-                            <h3 class="card-title">O Bando que Cresce</h3>
-                            <p class="card-desc">“Um pássaro chama outro. O Urso ensina a aritmética da alegria!”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Operações</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/016_O_BANDO_QUE_CRESCE.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card celeste">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-017</span>
-                                <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img"
-                                    alt="celeste" title="celeste">
-                            </div>
-                            <h3 class="card-title">O Horizonte Além</h3>
-                            <p class="card-desc">“Quarenta tesouros coletados na mochila da Raposa exploradora.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Contagem</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/017_O_HORIZONTE_ALEM.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card melquior">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-018</span>
-                                <img src="assets/cards/guardioes/melquior-leao.png" class="guardian-icon-img"
-                                    alt="melquior" title="melquior">
-                            </div>
-                            <h3 class="card-title">O Vazio e a Plenitude</h3>
-                            <p class="card-desc">“O silêncio do Zero e a coroação da Dúzia pelo Grande Rei.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/018_O_VAZIO_E_A_PLENITUDE.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-019</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">O Risco na Rocha</h3>
-                            <p class="card-desc">“Marcar cada maravilha com o giz da Sentinela, de cinco em cinco.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Representação</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/019_O_RISCO_NA_ROCHA.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-020</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">O Selo Real</h3>
-                            <p class="card-desc">“Dando forma e vida à escrita dos nossos amigos numerados sob o olhar
-                                do Pardal.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/020_O_SELO_REAL.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card celeste">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-021</span>
-                                <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img"
-                                    alt="celeste" title="celeste">
-                            </div>
-                            <h3 class="card-title">A Jornada Longa</h3>
-                            <p class="card-desc">“Passos firmes de sessenta batidas de coração nas trilhas de Celeste.”
-                            </p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Contagem</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/021_A_JORNADA_LONGA.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-022</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">Revisão Visual</h3>
-                            <p class="card-desc">“A Pardal revisita os rostos queridos dos números que já nos são
-                                íntimos.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/022_REVISAO_VISUAL.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-023</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">Atenção aos Detalhes</h3>
-                            <p class="card-desc">“A geometria secreta do 7 e do 8 no plano de beleza da criação.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Senso Numérico</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/023_ATENCAO_AOS_DETALHES.html" class="btn-arr">Abrir Lição
-                                <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card iris">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-024</span>
-                                <img src="assets/cards/guardioes/iris-passarinho.png" class="guardian-icon-img"
-                                    alt="iris" title="iris">
-                            </div>
-                            <h3 class="card-title">Consolidação</h3>
-                            <p class="card-desc">“A paz de saber ler o que a Pardal enviou no chão do jardim.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Revisão</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/024_CONSOLIDACAO.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-
-                    <article class="card noe">
-                        <div class="card-body">
-                            <div class="card-meta">
-                                <span class="card-id">MV-S-025</span>
-                                <img src="assets/cards/guardioes/noe-coruja.png" class="guardian-icon-img" alt="noe"
-                                    title="noe">
-                            </div>
-                            <h3 class="card-title">A Comitiva do Dez</h3>
-                            <p class="card-desc">“Onde o grupo de dez se abre para receber novos amigos no celeiro de
-                                Noé.”</p>
-
-                            <div class="card-objective"
-                                style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                                <span>🏷️</span> <em>Operações</em>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="sementes/025_A_COMITIVA_DO_DEZ.html" class="btn-arr">Abrir Lição <span>→</span></a>
-                        </div>
-                    </article>
-
-            </div>
-        </section>
-
-        <!-- RAIZES (Condicional via CSS ou não renderizado se vazio) -->
-        <section id="raizes" style="margin-top: 6rem; display: grid;">
-            <div class="section-header">
-                <div class="section-title"><span>🌳</span> Ciclo Raízes</div>
-                <div class="section-meta">Estação 2: O Aprofundamento</div>
-            </div>
-            <div class="grid-cards">
-
-                <article class="card raizes">
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-id">Lição 001</span>
-                            <img src="assets/cards/guardioes/celeste-raposa.png" class="guardian-icon-img" alt="celeste"
-                                title="celeste">
-                        </div>
-                        <h3 class="card-title">Identificando Esquerda e Direita</h3>
-                        <p class="card-desc">“O corpo é a primeira bússola do viajante.”</p>
-
-                        <div class="card-objective"
-                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
-                            <span>🏷️</span> <em>Geometria / Espaço</em>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="raizes/L001_IDENTIFICANDO_ESQUERDA_DIREITA.html" class="btn-arr">Abrir Lição
+                        <a href="sementes/MV-S-002_AS_PEDRAS_DA_FORTALEZA.html" class="btn-arr">Abrir Lição
                             <span>→</span></a>
                     </div>
                 </article>
 
+                <article class="card iris">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 003</span>
+                            <img src="assets/sementes/guardioes/iris-passarinho.png" class="guardian-icon-img"
+                                alt="iris" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">A Estrela do Reino</h3>
+                        <p class="card-desc">“A Pequena Pardal ensina a organizar as pedras do Bernardo em uma nova
+                            forma: a estrela de cinco pontas.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Números 4 a 5 e a Geometria da Flor</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-003_A_ESTRELA_DO_REINO.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card noe">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 004</span>
+                            <img src="assets/sementes/guardioes/noe-coruja.png" class="guardian-icon-img" alt="noe"
+                                onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">A Ordem do Dia</h3>
+                        <p class="card-desc">“Há um tempo para tudo debaixo do céu: um tempo de plantar e um tempo de
+                            colher.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Ordenação 1 a 5 e Sequência Temporal</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-004_A_ORDEM_DO_DIA.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card celeste">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 005</span>
+                            <img src="assets/sementes/guardioes/celeste-raposa.png" class="guardian-icon-img"
+                                alt="celeste" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Esconderijo da Glória</h3>
+                        <p class="card-desc">“Saber quem se esconde atrás da rocha e quem brilha acima das nuvens.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Posição espacial — em cima, embaixo, atrás, na frente</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-005_O_ESCONDERIJO_DA_GLÓRIA.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card iris">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 006</span>
+                            <img src="assets/sementes/guardioes/iris-passarinho.png" class="guardian-icon-img"
+                                alt="iris" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Desenho do Rei</h3>
+                        <p class="card-desc">“Cada número tem seu próprio desenho — como a assinatura do Rei.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Traçar números 1-5 no ar e reconhecer formas</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-006_O_DESENHO_DO_REI.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card celeste">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 007</span>
+                            <img src="assets/sementes/guardioes/celeste-raposa.png" class="guardian-icon-img"
+                                alt="celeste" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">A Coroa da Semana</h3>
+                        <p class="card-desc">“Sete cores no arco-íris, sete dias na semana — o Rei ama o número 7.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Números 6 e 7 — quantidade e reconhecimento</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-007_A_COROA_DA_SEMANA.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card iris">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 008</span>
+                            <img src="assets/sementes/guardioes/iris-passarinho.png" class="guardian-icon-img"
+                                alt="iris" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Par Perfeito</h3>
+                        <p class="card-desc">“Cada tesouro tem seu lugar. Cada criatura, seu par.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Correspondência um-a-um entre objetos</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-008_O_PAR_PERFEITO.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card noe">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 009</span>
+                            <img src="assets/sementes/guardioes/noe-coruja.png" class="guardian-icon-img" alt="noe"
+                                onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Celeiro de Noé</h3>
+                        <p class="card-desc">“Oito fardos de esperança guardados para a chuva. Nove tesouros para o
+                            amanhã.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Números 8 e 9 — quantidade e reconhecimento</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-009_O_CELEIRO_DE_NOÉ.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card celeste">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 010</span>
+                            <img src="assets/sementes/guardioes/celeste-raposa.png" class="guardian-icon-img"
+                                alt="celeste" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">A Fila da Providência</h3>
+                        <p class="card-desc">“O primeiro a colher e o terceiro a agradecer. Quem a Raposa vê primeiro?”
+                        </p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Primeiro, segundo, terceiro — ordinais até 5º</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-010_A_FILA_DA_PROVIDÊNCIA.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card celeste">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 011</span>
+                            <img src="assets/sementes/guardioes/celeste-raposa.png" class="guardian-icon-img"
+                                alt="celeste" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">A Plenitude das Mãos</h3>
+                        <p class="card-desc">“Dez dedos para abraçar o mundo e um a mais para apontar para o céu.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Números 10 e 11 — base decimal, duas mãos completas</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-011_A_PLENITUDE_DAS_MÃOS.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card bernardo">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 012</span>
+                            <img src="assets/sementes/guardioes/bernardo-urso.png" class="guardian-icon-img"
+                                alt="bernardo" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Segredo do Feixe</h3>
+                        <p class="card-desc">“Ver dez gravetos virarem UM grupo forte nas mãos do Urso que abraça.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Agrupar 10 objetos como 1 grupo — base do valor posicional</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-012_O_SEGREDO_DO_FEIXE.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card melquior">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 013</span>
+                            <img src="assets/sementes/guardioes/melquior-leao.png" class="guardian-icon-img"
+                                alt="melquior" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Rio que se Une</h3>
+                        <p class="card-desc">“Dois riachos que viram um só. Melquior ensina a força da união no Reino.”
+                        </p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Símbolos + e = — unir e resultar</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-013_O_RIO_QUE_SE_UNE.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card bernardo">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 014</span>
+                            <img src="assets/sementes/guardioes/bernardo-urso.png" class="guardian-icon-img"
+                                alt="bernardo" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Celeiro que Cresce</h3>
+                        <p class="card-desc">“Mais feixes de força para sustentar a construção da Vila sob o olhar de
+                            Bernardo.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Mais feixes de dez — composição de números até 20</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-014_O_CELEIRO_QUE_CRESCE.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card melquior">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 015</span>
+                            <img src="assets/sementes/guardioes/melquior-leao.png" class="guardian-icon-img"
+                                alt="melquior" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">A Escada de Luz</h3>
+                        <p class="card-desc">“Contemplar com o Maestro os trinta passos que já demos rumo ao
+                            Deslumbramento.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Contagem fluente até 30</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-015_A_ESCADA_DE_LUZ.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card bernardo">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 016</span>
+                            <img src="assets/sementes/guardioes/bernardo-urso.png" class="guardian-icon-img"
+                                alt="bernardo" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Bando que Cresce</h3>
+                        <p class="card-desc">“Um pássaro chama outro. O Urso ensina a aritmética da alegria!”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Adição concreta — juntar grupos e contar o total</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-016_O_BANDO_QUE_CRESCE.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card celeste">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 017</span>
+                            <img src="assets/sementes/guardioes/celeste-raposa.png" class="guardian-icon-img"
+                                alt="celeste" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Horizonte Além</h3>
+                        <p class="card-desc">“Quarenta tesouros coletados na mochila da Raposa exploradora.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Contagem fluente até 40</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-017_O_HORIZONTE_ALÉM.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card melquior">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 018</span>
+                            <img src="assets/sementes/guardioes/melquior-leao.png" class="guardian-icon-img"
+                                alt="melquior" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Vazio e a Plenitude</h3>
+                        <p class="card-desc">“O silêncio do Zero e a coroação da Dúzia pelo Grande Rei.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Zero como "nada" e 12 como a dúzia completa</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-018_O_VAZIO_E_A_PLENITUDE.html" class="btn-arr">Abrir Lição
+                            <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card iris">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 019</span>
+                            <img src="assets/sementes/guardioes/iris-passarinho.png" class="guardian-icon-img"
+                                alt="iris" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Risco na Rocha</h3>
+                        <p class="card-desc">“Marcar cada maravilha com o giz da Sentinela, de cinco em cinco.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Tally marks — marcas de contagem de 1 a 5</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-019_O_RISCO_NA_ROCHA.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card iris">
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">Lição 020</span>
+                            <img src="assets/sementes/guardioes/iris-passarinho.png" class="guardian-icon-img"
+                                alt="iris" onerror="this.src='assets/cards/guardioes/melquior-leao.png'">
+                        </div>
+                        <h3 class="card-title">O Selo Real</h3>
+                        <p class="card-desc">“Dando forma e vida à escrita dos nossos amigos numerados sob o olhar do
+                            Pardal.”</p>
+
+                        <div class="card-objective"
+                            style="margin-top: 0.5rem; font-size: 0.8rem; color: #6B7280; border-top: 1px solid #F3F4F6; padding-top: 0.5rem; display: flex; align-items: center; gap: 0.25rem;">
+                            <span>🏷️</span> <em>Prática de formação de números — traçar 1-10</em>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="sementes/MV-S-020_O_SELO_REAL.html" class="btn-arr">Abrir Lição <span>→</span></a>
+                    </div>
+                </article>
+
+
             </div>
         </section>
 
-        <!-- BLOG -->
+        <!-- SEÇÃO LIVROS DOURADOS -->
+        <section id="livros" class="mb-16">
+            <div class="section-header">
+                <div class="section-title"><span>🏆</span> Livros Dourados</div>
+                <div class="section-meta">Living Books • Narrativa Visual</div>
+            </div>
+
+            <div class="grid-cards">
+
+
+                <article class="card melquior"> <!-- Usando Melquior (Dourado/Leão) por padrão -->
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">LIVRO VIVO</span>
+                            <img src="assets/cards/guardioes/melquior-leao.png" class="guardian-icon-img">
+                        </div>
+                        <h3 class="card-title">O Inimigo Invisível</h3>
+                        <p class="card-desc">Uma narrativa visual imersiva das matemáticas vivas.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="livros/901_santos_dumont.html" class="btn-arr">Ler Livro <span>→</span></a>
+                    </div>
+                </article>
+
+                <article class="card melquior"> <!-- Usando Melquior (Dourado/Leão) por padrão -->
+                    <div class="card-body">
+                        <div class="card-meta">
+                            <span class="card-id">LIVRO VIVO</span>
+                            <img src="assets/cards/guardioes/melquior-leao.png" class="guardian-icon-img">
+                        </div>
+                        <h3 class="card-title">Conselho-Narrativa-Bento</h3>
+                        <p class="card-desc">Uma narrativa visual imersiva das matemáticas vivas.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="livros/conselho-narrativa-bento.html" class="btn-arr">Ler Livro <span>→</span></a>
+                    </div>
+                </article>
+
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO BLOG -->
         <section id="blog" style="margin-top: 6rem;">
             <div class="section-header">
                 <div class="section-title"><span>📝</span> Blog & Ensaios</div>
                 <div class="section-meta">Base de Conhecimento</div>
             </div>
-            <<<<<<< HEAD <div class="grid-cards">
 
-                <article class="card card-blog">
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-id" style="background:#E0E7FF; color:#3730A3;">ARTIGO</span>
-                            <span style="font-size: 2rem;">✍️</span>
+            <div class="blog-list">
+                <!-- Por enquanto estático ou lista simples -->
+                <div class="grid-cards">
+
+                    <!-- Post 5 -->
+                    <article class="card" style="border-left: 4px solid #059669;">
+                        <div class="card-body">
+                            <div class="card-meta" style="color: #059669; font-weight: 600;">19 JAN 2026</div>
+                            <h3 class="card-title">O Primeiro Mês do Raulzito: Diário de Uma Cobaia de Luxo</h3>
+                            <p class="card-desc">Nosso filho de 5 anos é a cobaia oficial. Aqui está o diário honesto
+                                das primeiras semanas — sem filtro.</p>
                         </div>
-                        <h3 class="card-title">O Primeiro Mês do Raulzito: Diário de Uma Cobaia de Luxo</h3>
-                        <p class="card-desc" style="font-size: 0.95rem;">Nosso filho de 5 anos é a cobaia oficial do
-                            currículo. Aqui está o que aconteceu nas primeiras semanas — sem filtro, sem promessas
-                            exageradas.</p>
-                        <div style="font-size: 0.8rem; color: #9CA3AF; margin-top: auto;">
-                            2026-01-19 • O Embaixador
-                            =======
-
-                            <div class="blog-list">
-                                <!-- Por enquanto estático ou lista simples -->
-                                <div class="grid-cards">
-
-                                    <!-- Post 5 -->
-                                    <article class="card" style="border-left: 4px solid #059669;">
-                                        <div class="card-body">
-                                            <div class="card-meta" style="color: #059669; font-weight: 600;">19 JAN 2026
-                                            </div>
-                                            <h3 class="card-title">O Primeiro Mês do Raulzito: Diário de Uma Cobaia de
-                                                Luxo</h3>
-                                            <p class="card-desc">Nosso filho de 5 anos é a cobaia oficial. Aqui está o
-                                                diário honesto
-                                                das primeiras semanas — sem filtro.</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="blog/2026-01-19_primeiro-mes-raulzito.html" class="btn-arr"
-                                                style="color: #059669;">Ler Artigo <span>→</span></a>
-                                        </div>
-                                    </article>
-
-                                    <!-- Post 4 -->
-                                    <article class="card" style="border-left: 4px solid #059669;">
-                                        <div class="card-body">
-                                            <div class="card-meta" style="color: #059669; font-weight: 600;">19 JAN 2026
-                                            </div>
-                                            <h3 class="card-title">Para Quem é Matemática Viva? (E Para Quem Não É)</h3>
-                                            <p class="card-desc">Não somos para todo mundo. Descubra se você faz parte
-                                                dessa tribo de
-                                                famílias.</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="blog/2026-01-19_para-quem-e-matematica-viva.html" class="btn-arr"
-                                                style="color: #059669;">Ler Artigo <span>→</span></a>
-                                        </div>
-                                    </article>
-
-                                    <!-- Post 3 -->
-                                    <article class="card" style="border-left: 4px solid #059669;">
-                                        <div class="card-body">
-                                            <div class="card-meta" style="color: #059669; font-weight: 600;">19 JAN 2026
-                                            </div>
-                                            <h3 class="card-title">Matemática em 20 Minutos: Rotina Sem Estresse</h3>
-                                            <p class="card-desc">Você não precisa de horas. 20 minutos são suficientes
-                                                para plantar
-                                                sementes que durarão toda a vida.</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="blog/2026-01-19_matematica-em-20-minutos.html" class="btn-arr"
-                                                style="color: #059669;">Ler Artigo <span>→</span></a>
-                                        </div>
-                                    </article>
-
-                                    <!-- Post 2 -->
-                                    <article class="card" style="border-left: 4px solid #059669;">
-                                        <div class="card-body">
-                                            <div class="card-meta" style="color: #059669; font-weight: 600;">15 JAN 2026
-                                            </div>
-                                            <h3 class="card-title">A Mentira que Contaram sobre 'Ser de Exatas'</h3>
-                                            <p class="card-desc">A neurociência mostra que o cérebro é uma orquestra,
-                                                não um dueto.
-                                                Derrube esse mito.</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="blog/2026-01-15_a-mentira-ser-de-exatas.html" class="btn-arr"
-                                                style="color: #059669;">Ler Artigo <span>→</span></a>
-                                        </div>
-                                    </article>
-
-                                    <!-- Post 1 -->
-                                    <article class="card" style="border-left: 4px solid #059669;">
-                                        <div class="card-body">
-                                            <div class="card-meta" style="color: #059669; font-weight: 600;">14 JAN 2026
-                                            </div>
-                                            <h3 class="card-title">Por que seu filho (ainda) não ama matemática?</h3>
-                                            <p class="card-desc">Eles disseram que era seco. E se a matemática fosse uma
-                                                aventura para
-                                                viver juntos?</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="blog/2026-01-14_por-que-seu-filho-nao-ama-matematica.html"
-                                                class="btn-arr" style="color: #059669;">Ler Artigo <span>→</span></a>
-                                        </div>
-                                    </article>
-
-                                    >>>>>>> 37b865ee14522b1e4e38a588f0fdad77161e6357
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                <a href="blog/2026-01-19_primeiro-mes-raulzito.html" class="btn-arr"
-                                    style="background: #4F46E5;">Ler Artigo <span>→</span></a>
-                            </div>
-                </article>
-
-
-                <article class="card card-blog">
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-id" style="background:#E0E7FF; color:#3730A3;">ARTIGO</span>
-                            <span style="font-size: 2rem;">✍️</span>
+                        <div class="card-footer">
+                            <a href="blog/2026-01-19_primeiro-mes-raulzito.html" class="btn-arr"
+                                style="color: #059669;">Ler Artigo <span>→</span></a>
                         </div>
-                        <h3 class="card-title">Para Quem é Matemática Viva? (E Para Quem Não É)</h3>
-                        <p class="card-desc" style="font-size: 0.95rem;">Não somos para todo mundo. E está tudo bem.
-                            Aqui está como saber se somos para você.</p>
-                        <div style="font-size: 0.8rem; color: #9CA3AF; margin-top: auto;">
-                            2026-01-19 • O Embaixador
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="blog/2026-01-19_para-quem-e-matematica-viva.html" class="btn-arr"
-                            style="background: #4F46E5;">Ler Artigo <span>→</span></a>
-                    </div>
-                </article>
+                    </article>
 
+                    <!-- Post 4 -->
+                    <article class="card" style="border-left: 4px solid #059669;">
+                        <div class="card-body">
+                            <div class="card-meta" style="color: #059669; font-weight: 600;">19 JAN 2026</div>
+                            <h3 class="card-title">Para Quem é Matemática Viva? (E Para Quem Não É)</h3>
+                            <p class="card-desc">Não somos para todo mundo. Descubra se você faz parte dessa tribo de
+                                famílias.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="blog/2026-01-19_para-quem-e-matematica-viva.html" class="btn-arr"
+                                style="color: #059669;">Ler Artigo <span>→</span></a>
+                        </div>
+                    </article>
 
-                <article class="card card-blog">
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-id" style="background:#E0E7FF; color:#3730A3;">ARTIGO</span>
-                            <span style="font-size: 2rem;">✍️</span>
+                    <!-- Post 3 -->
+                    <article class="card" style="border-left: 4px solid #059669;">
+                        <div class="card-body">
+                            <div class="card-meta" style="color: #059669; font-weight: 600;">19 JAN 2026</div>
+                            <h3 class="card-title">Matemática em 20 Minutos: Rotina Sem Estresse</h3>
+                            <p class="card-desc">Você não precisa de horas. 20 minutos são suficientes para plantar
+                                sementes que durarão toda a vida.</p>
                         </div>
-                        <h3 class="card-title">Matemática em 20 Minutos: Rotina Sem Estresse Para Mães Ocupadas</h3>
-                        <p class="card-desc" style="font-size: 0.95rem;">Você não precisa de horas por dia. Com a
-                            abordagem certa, 20 minutos são suficientes para plantar sementes que durarão toda a vida.
-                        </p>
-                        <div style="font-size: 0.8rem; color: #9CA3AF; margin-top: auto;">
-                            2026-01-19 • O Embaixador
+                        <div class="card-footer">
+                            <a href="blog/2026-01-19_matematica-em-20-minutos.html" class="btn-arr"
+                                style="color: #059669;">Ler Artigo <span>→</span></a>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="blog/2026-01-19_matematica-em-20-minutos.html" class="btn-arr"
-                            style="background: #4F46E5;">Ler Artigo <span>→</span></a>
-                    </div>
-                </article>
+                    </article>
 
+                    <!-- Post 2 -->
+                    <article class="card" style="border-left: 4px solid #059669;">
+                        <div class="card-body">
+                            <div class="card-meta" style="color: #059669; font-weight: 600;">15 JAN 2026</div>
+                            <h3 class="card-title">A Mentira que Contaram sobre 'Ser de Exatas'</h3>
+                            <p class="card-desc">A neurociência mostra que o cérebro é uma orquestra, não um dueto.
+                                Derrube esse mito.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="blog/2026-01-15_a-mentira-ser-de-exatas.html" class="btn-arr"
+                                style="color: #059669;">Ler Artigo <span>→</span></a>
+                        </div>
+                    </article>
 
-                <article class="card card-blog">
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-id" style="background:#E0E7FF; color:#3730A3;">ARTIGO</span>
-                            <span style="font-size: 2rem;">✍️</span>
+                    <!-- Post 1 -->
+                    <article class="card" style="border-left: 4px solid #059669;">
+                        <div class="card-body">
+                            <div class="card-meta" style="color: #059669; font-weight: 600;">14 JAN 2026</div>
+                            <h3 class="card-title">Por que seu filho (ainda) não ama matemática?</h3>
+                            <p class="card-desc">Eles disseram que era seco. E se a matemática fosse uma aventura para
+                                viver juntos?</p>
                         </div>
-                        <h3 class="card-title">A Mentira que Contaram sobre 'Ser de Exatas'</h3>
-                        <p class="card-desc" style="font-size: 0.95rem;">Eles dividiram o mundo em dois: os 'de humanas'
-                            e os 'de exatas'. E se eu te dissesse que essa divisão é a maior barreira entre seu filho e
-                            o potencial dele?</p>
-                        <div style="font-size: 0.8rem; color: #9CA3AF; margin-top: auto;">
-                            2026-01-15 • O Embaixador
+                        <div class="card-footer">
+                            <a href="blog/2026-01-14_por-que-seu-filho-nao-ama-matematica.html" class="btn-arr"
+                                style="color: #059669;">Ler Artigo <span>→</span></a>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="blog/2026-01-15_a-mentira-ser-de-exatas.html" class="btn-arr"
-                            style="background: #4F46E5;">Ler Artigo <span>→</span></a>
-                    </div>
-                </article>
-
-
-                <article class="card card-blog">
-                    <div class="card-body">
-                        <div class="card-meta">
-                            <span class="card-id" style="background:#E0E7FF; color:#3730A3;">ARTIGO</span>
-                            <span style="font-size: 2rem;">✍️</span>
-                        </div>
-                        <h3 class="card-title">Por que seu filho (ainda) não ama matemática?</h3>
-                        <p class="card-desc" style="font-size: 0.95rem;">Eles disseram que era difícil. Disseram que era
-                            seco. E se a matemática fosse, na verdade, uma aventura que vocês pudessem viver juntos?</p>
-                        <div style="font-size: 0.8rem; color: #9CA3AF; margin-top: auto;">
-                            2026-01-14 • O Embaixador
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="blog/2026-01-14_por-que-seu-filho-nao-ama-matematica.html" class="btn-arr"
-                            style="background: #4F46E5;">Ler Artigo <span>→</span></a>
-                    </div>
-                </article>
+                    </article>
 
                 </div>
-
-                <div class="blog-empty" style="display: none;">
-                    <h3>O sistema de blog está sendo forjado.</h3>
-                    <p>Nenhum artigo encontrado em blog/*.md</p>
-                </div>
+            </div>
         </section>
 
         <footer
             style="margin-top: 6rem; border-top: 1px solid #E5E7EB; padding-top: 2rem; color: #9CA3AF; font-size: 0.875rem; display: flex; justify-content: space-between;">
-            <div>&copy; 2026 Matemática Viva. Built by Orchestrator.</div>
-            <div>Versão 2.1.0 (Narrative Focus)</div>
+            <div>&copy; 2026 Matemática Viva. Built by Forge V3.</div>
+            <div>Versão 2.1 (Vercel)</div>
         </footer>
     </main>
 </body>
 
 </html>
-<script>
-    function toggleMenu() {
-        document.getElementById('sidebar').classList.toggle('active');
-        document.querySelector('.overlay').classList.toggle('active');
-    }
-
-    // Fechar ao clicar em link (UX)
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 1024) toggleMenu();
-        });
-    });
-</script>
