@@ -39,9 +39,9 @@ licao:
       conceito: Atmosfera sagrada e apresentação dos Guardiões
       intencao_cm: "Estabelecer a 'atmosfera' (Charlotte Mason) antes de qualquer conteúdo. A criança precisa PERTENCER antes de aprender."
     dica_coracao: |
-      Hoje não há matemática. Só magia.
+      Hoje não há matemática. Só maravilhamento.
       Seu único trabalho é criar o ambiente sagrado.
-      Acenda uma vela (real ou imaginária), estenda o tapete, diminua as luzes.
+      Acenda a Luz Amarela (ou seu sinal escolhido), estenda o tapete.
       Melquior fará o resto.
     filho_descobre: |
       Que existe um Reino especial chamado Reino Contado.
@@ -65,8 +65,9 @@ licao:
     preparacao:
       materiais:
         - {item: Tapete ou cobertor (Tapete do Reino), qtd: 1, essencial: true}
-        - {item: Vela (real ou LED), qtd: 1, essencial: true}
-        - {item: Cards dos 5 Guardiões impressos, qtd: 5, alt: desenhos ou descrições verbais, essencial: false}
+        - {item: Luz Amarela (ou seu Sinal de Início escolhido), qtd: 1, essencial: true, nota: "Gatilho de Foco e Imersão"}
+        - {item: Cards dos 5 Guardiões, qtd: 5, essencial: true}
+        - {item: Cards dos 5 Locais, qtd: 5, essencial: true}
         - {item: Música ambiente suave (opcional), qtd: 1, essencial: false}
 
   linkage:
@@ -78,159 +79,129 @@ licao:
   ritual_abertura:
     instrucao_ambiente: |
       Estendam o Tapete do Reino no chão.
-      Diminuam as luzes. Acendam a vela.
+      Diminuam as distrações. Acendam a Luz Amarela.
       Sentem-se juntos. Respirem fundo três vezes.
     local: jardim_central
     clima: ensolarado
     virtude: maravilhamento
-    artefato: A Pequena Vela
-    transicao_reino: |
-      Feche os olhos. Respire fundo.
-      Quando abrir os olhos, estaremos em um lugar muito especial...
-      O Jardim Central do Reino Contado.
-    fala_portador:
-      tom: misterioso
-      script: |
-        Hoje vamos visitar um lugar muito especial.
-        Um lugar onde animais sábios nos esperam.
-        Shhh... você está pronto para conhecê-los?
-    card_guardiao: 'CARD: MELQUIOR'
-    abertura_sensorial: |
-      O ar cheira a terra molhada e musgo fresco.
-      O sol dourado aquece o rosto. Pássaros cantam ao longe.
-      Em um banco de pedra antiga, sentado com as patas cruzadas,
-      está um grande Leão de juba dourada. Ele sorri ao ver você chegar.
+    artefato: A Luz Amarela
+    - item: ritual_abertura
+      tipo: instruction
+      icon: "🕯️"
+      text: |
+        **Ritual de Entrada:**
+        **Ritual de Entrada:**
+        O pai diz: "Luz de fora acalma." (Diminua o ritmo / distrações)
+        "Sol de dentro acende." (Acenda a Luz Amarela)
+        "Respirem... Estamos no Reino."
+
+    - item: transicao
+      text: "Feche os olhos. Respire fundo. Quando abrir os olhos, estaremos em um lugar muito especial... O Jardim Central do Reino Contado."
+
+    - item: sensorial
+      text: "O ar cheira a terra molhada e musgo fresco. O sol dourado aquece o rosto. Pássaros cantam ao longe. Em um banco de pedra antiga, sentado com as patas cruzadas, está um grande Leão de juba dourada. Ele sorri ao ver você chegar."
+
+    - item: fala_portador
+      text: "Hoje vamos visitar um lugar muito especial. Um lugar onde animais sábios nos esperam. Shhh... você está pronto para conhecê-los?"
+      tone: misterioso
 
   jornada:
     narrativa_principal:
-      - titulo: O Convite de Melquior
-        local: jardim_central
-        card_guardiao: melquior-leao.png
-        fala_guardiao:
-          tom: acolhedor
-          script: |
+      - section: A Jornada
+        items:
+        - item: fala_guardiao
+          guardiao: melquior
+          card_img: melquior-leao.png
+          tone: acolhedor
+          text: |
             "Aproxime-se, pequeno Herdeiro.
-            Sente-se aqui, no tapete de musgo, sob o brilho da Pequena Vela."
-        instrucao_portador: |
-          Leia com calma. Olhe nos olhos da criança.
-          Dê tempo para ela se acomodar.
-      
-      - titulo: A História da Criação
-        local: jardim_central
-        card_guardiao: melquior-leao.png
-        fala_guardiao:
-          tom: reverente
-          script: |
+            Sente-se aqui, no tapete de musgo, sob o brilho da Luz Amarela."
+
+        - item: fala_guardiao
+          guardiao: melquior
+          card_img: melquior-leao.png
+          tone: reverente
+          text: |
             "Antes de você nascer, o Grande Rei olhou para o mundo
             e viu que faltava algo muito importante.
-            
             Ele disse com sua voz de trovão suave:
             'Criarei um Reino onde os números não sejam frios,
             onde contar seja uma aventura,
             e onde cada criança saiba que foi feita para descobrir.'
-            
             E assim nasceu o Reino Contado.
-            
             Esse jardim onde estamos? O Rei o plantou pensando em você.
             Cada árvore, cada flor, cada caminho...
             Tudo foi preparado para seus olhos, Herdeiro."
-        instrucao_portador: |
-          Fale com reverência, como quem conta um segredo antigo.
-          Faça pausas nas vírgulas. Deixe as palavras criarem imagens.
-      
-      - titulo: Quem é Melquior
-        local: jardim_central
-        card_guardiao: melquior-leao.png
-        fala_guardiao:
-          tom: nobre
-          script: |
+
+        - item: fala_guardiao
+          guardiao: melquior
+          card_img: melquior-leao.png
+          tone: nobre
+          text: |
             "Eu sou Melquior, o Leão Dourado.
-            O Rei me escolheu para ser o Anfitrião deste Jardim.
-            
+            Eu sabia que você viria.
+            O Portal estava esperando por você.
             Minha juba brilha com a luz da sabedoria,
             e meu rugido... bem, meu rugido é gentil.
             Eu não assusto — eu acolho.
-            
-            Sou o primeiro que você encontra,
-            mas não sou o único.
-            
-            Hoje, as portas do Reino Contado se abrem para você,
-            pois tudo o que vê aqui foi feito para seus olhos.
-            
             Venha. Deixe-me apresentar meus amigos."
-        instrucao_portador: |
-          Este é o momento de estabelecer Melquior como figura paterna/mentora.
-          Se tiver o card do Melquior, mostre-o bem perto da criança.
-      
-      - titulo: A Coruja Noé
-        local: jardim_central
-        card_guardiao: noe-coruja.png
-        fala_guardiao:
-          tom: respeitoso
-          script: |
-            "Veja! Ali, no galho mais alto, está a Coruja Noé.
-            Ele guarda o Tempo.
+
+        - item: fala_guardiao
+          guardiao: melquior
+          ref_guardiao: noe
+          card_img: noe-coruja.png
+          tone: respeitoso
+          text: |
+            "Veja! Ali, no galho mais alto...
+            Olhos grandes que veem o tempo passar devagar.
+            É a Coruja Noé.
             Ele nos ensina a ouvir o silêncio e a esperar com paciência.
             [Aponte para cima]
             Consegue vê-lo? Seus olhos são como duas luas amarelas.
-            
-            Noé é sábio. Ele observa tudo, ouve tudo.
             Quando você precisar de calma, Noé estará lá."
-        instrucao_portador: |
-          Aponte para cima como se visse Noé.
-          Mostre o card do Noé agora.
-      
-      - titulo: A Raposa Celeste
-        local: jardim_central
-        card_guardiao: celeste-raposa.png
-        fala_guardiao:
-          tom: animado
-          script: |
+
+        - item: fala_guardiao
+          guardiao: melquior
+          ref_guardiao: celeste
+          card_img: celeste-raposa.png
+          tone: animado
+          text: |
             "Sente este vento rápido?
+            Um vulto laranja que corre entre as árvores!
+            Rápida como um pensamento.
             É a Raposa Celeste!
             Ela adora segredos e padrões.
-            Ela vai ajudá-lo a encontrar as pistas que o Rei deixou escondidas.
             [Fareja o ar]
             Está sentindo? Cheira a aventura!
-            
             Celeste é curiosa como você. Ela fareja mistérios!"
-        instrucao_portador: |
-          Faça o gesto de farejar o ar.
-          Mostre o card da Celeste.
-      
-      - titulo: O Urso Bernardo
-        local: jardim_central
-        card_guardiao: bernardo-urso.png
-        fala_guardiao:
-          tom: firme
-          script: |
-            "Ouça o passo firme na terra...
+
+        - item: fala_guardiao
+          guardiao: melquior
+          ref_guardiao: bernardo
+          card_img: bernardo-urso.png
+          tone: firme
+          text: |
+            "Uma montanha de pelo quente e bondade.
+            Ouça o passo firme na terra...
+            Tum-tum-arrasta.
             É o Urso Bernardo!
             Ele é forte e gentil.
-            Usa suas mãos grandes para construir coisas belas.
-            Ele nos ensina que o esforço é uma canção.
-            [Som de passos pesados]
-            
-            Vê a pata manca dele? Bernardo se machucou salvando seus amigos
-            na Grande Nevasca. Mas isso nunca o parou.
+            Vê a pata manca dele? Bernardo se machucou salvando seus amigos.
+            Mas isso nunca o parou.
             Quando você errar, Bernardo vai dizer: 'Mais uma vez. Comigo.'"
-        instrucao_portador: |
-          Bata os pés no chão imitando passos pesados.
-          Mostre o card do Bernardo.
-      
-      - titulo: A Pardal Íris
-        local: jardim_central
-        card_guardiao: iris-passarinho.png
-        fala_guardiao:
-          tom: delicado
-          script: |
+
+        - item: fala_guardiao
+          guardiao: melquior
+          ref_guardiao: iris
+          card_img: iris-passarinho.png
+          tone: delicado
+          text: |
             "E olhe bem de perto para aquela flor...
+            Ela é pequena, mas vê coisas gigantes.
             Lá está Íris, a pequena Pardal!
             Ela vê o que ninguém mais vê:
-            a beleza num grão de areia,
-            a cor no menor detalhe.
+            a beleza num grão de areia.
             [Aponte para baixo, para algo pequeno]
-            
             Você consegue ver o brilho do colar dela?
             Íris tem olhos de artista. Ela encontra beleza em tudo."
         instrucao_portador: |
@@ -260,7 +231,7 @@ licao:
 
     concreto:
       desc: Esta lição não tem atividade concreta matemática. O "concreto" é a experiência sensorial.
-      card_objeto: 'CARD: VELA'
+      card_objeto: 'CARD: LUZ AMARELA'
       metodo: vivencia
       instrucoes_portador:
         - passo: 1
@@ -317,9 +288,9 @@ licao:
         Descanse bem. O Reino espera seu retorno."
     fio_ouro: Amanhã, Celeste nos mostrará as três sementes do carvalho mais velho.
     transicao_volta:
-      instrucao: Apaguem a vela juntos (ou façam de conta)
-      fala: |
-        A vela se apaga, mas a luz fica no coração.
+      instrucao: Apaguem a Luz Amarela juntos (ou o seu sinal)
+      fala_portador: |
+        A Luz se apaga, mas o brilho fica no coração.
         O Reino descansa. Até amanhã, Herdeiro.
 
   para_familia:
@@ -339,7 +310,7 @@ licao:
       - Íris (Pardal): Atenção aos detalhes, beleza, visão
       - Melquior (Leão): Liderança, sabedoria, acolhimento
     metodo_cpa:
-      concreto: Experiência sensorial (vela, tapete, ambiente)
+      concreto: Experiência sensorial (luz, tapete, ambiente)
       pictorico: Não aplicável (lição litúrgica)
       abstrato: Não aplicável
       nota: 'Esta lição é pré-matemática: estabelece atmosfera.'
@@ -370,7 +341,7 @@ licao:
   diario_portador:
     nota: Suas anotações serão usadas nas revisões trimestrais.
     perguntas:
-      - Como meu filho reagiu ao ambiente (vela, tapete)?
+      - Como meu filho reagiu ao ambiente (luz, tapete)?
       - Qual guardião chamou mais atenção?
       - Houve encantamento? Ou preciso ajustar o ritual?
 

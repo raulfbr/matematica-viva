@@ -37,7 +37,7 @@ titulos:
     guardioes: "'Pequeno Herdeiro' ou pelo nome. Nunca infantilizam — tratam com respeito real."
     exemplo_fala: "'Herdeiro, o Rei deixou algo para você. Não precisa fazer nada para ganhar — já é seu. Vem, vou te mostrar.'"
     artefato: Nenhum (só promessas verbais)
-    ritual: {quando: "L000", quem: Melquior, fala: "'Você é nosso convidado especial. O Rei sorriu ao ver você chegar.'"}
+    ritual: {quando: "L000", quem: Melquior, acao: "Acender Luz Amarela (Gatilho)", fala: "'Você é nosso convidado especial. O Rei sorriu ao ver você chegar.'"}
 
   construtor:
     ciclo: Raízes

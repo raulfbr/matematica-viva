@@ -34,7 +34,16 @@ regra_geral: |
   Não banalize — o poder está na escassez.
   CM: "The teacher must not be too present." O mesmo vale para artefatos.
 
-# OS 6 ARTEFATOS
+# OBJETOS DE RITUAL (Uso Diário)
+objetos_rituais:
+  luz_amarela:
+    nome: "Luz Amarela (A Tocha de Melquior)"
+    emoji: "🕯️"
+    funcao: "Gatilho de Atenção e Imersão (Sinal de Início)"
+    descricao: "Um ponto de luz quente (luminária, vela LED) que cria foco. Não exige escuridão ao redor. É o sinal ativo de que o tempo cronológico parou e o tempo do Reino começou."
+    uso: "Acenda no início, apague no final."
+
+# OS 6 ARTEFATOS LENDÁRIOS
 
 artefatos:
 

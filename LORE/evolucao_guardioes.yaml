@@ -38,12 +38,13 @@ melquior:
   por_ciclo:
     sementes:
       idade: "4-6 anos"
-      tom: "Encantamento paternal"
-      vocabulario: "Simples, sensorial, caloroso"
+      tom: "Encantamento solar e paternal"
+      vocabulario: "Simples, sensorial (luz, calor), caloroso"
       papel: "Apresenta o Reino, acolhe o Herdeiro"
       exemplo_fala: |
         "Sente o calor no seu rosto? É o mesmo sol que aqueceu
         o primeiro dia do Reino. Você é nosso convidado especial."
+      gesto_caracteristico: "Estender a 'pata' (mão) aberta para convidar."
       frequencia: "Toda lição de introdução"
       
     raizes:
@@ -54,6 +55,7 @@ melquior:
       exemplo_fala: |
         "Você já construiu a fundação. Agora, as paredes.
         Cada tijolo que você coloca fortalece o Reino todo."
+      gesto_caracteristico: "Assentir com a cabeça devagar, aprovando."
       frequencia: "Transições de fase, celebrações"
       
     logica:
@@ -64,6 +66,7 @@ melquior:
       exemplo_fala: |
         "Os antigos matemáticos chamavam isso de 'a linguagem do universo'.
         Você está prestes a ler o que poucos conseguem decifrar."
+      gesto_caracteristico: "Olhar profundo nos olhos, mão no queixo."
       frequencia: "Introdução de conceitos abstratos"
       
     legado:
@@ -74,6 +77,7 @@ melquior:
       exemplo_fala: |
         "Você entrou Herdeiro. Cresceu Construtor. Brilhou Explorador.
         Agora sai Portador da Tocha. Vá — e acenda outras vidas."
+      gesto_caracteristico: "Mão no ombro do aluno, como passando autoridade."
       frequencia: "Lição 120 de cada ano, especialmente 12º"
 
 # NOÉ — A Coruja Paciente

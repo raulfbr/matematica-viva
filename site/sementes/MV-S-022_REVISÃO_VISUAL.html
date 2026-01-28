@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão Visual | Matemática Viva</title>
+    <!-- CSS ISOLADO DE SEMENTES -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        /* INLINE STYLES FOR CRITICAL RENDERING PRIORITY */
+        body { background-color: #F8F9FA; color: #374151; }
+        .lesson-container { max-width: 768px; margin: 0 auto; padding-bottom: 4rem; }
+        
+        /* CARD COMPONENT */
+        .scene-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .scene-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 100%);
+            opacity: 0.8;
+        }
+
+        /* HEADER & TYPOGRAPHY */
+        .scene-header {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            color: #111827;
+            margin-bottom: 2rem;
+            display: flex; align-items: center; gap: 0.75rem; font-weight: 600;
+        }
+        .scene-icon { font-size: 1.5rem; }
+        h2 { font-family:'Outfit'; color:#6B7280; font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin: 3rem 0 1rem 0; text-align:center; }
+        strong { font-weight: 600; color: #1F2937; }
+
+        /* COMPONENTS */
+        .script-persona-block {
+            background: #F9FAFB;
+            border: 1px solid #F3F4F6;
+            border-left: 4px solid #10B981;
+            border-radius: 8px;
+            margin-top: 1.5rem; padding: 1.5rem;
+        }
+        .script-avatar { border: 2px solid #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        
+        .instruction-box {
+            background: #FEFCE8; border: 1px solid #FEF9C3; color: #854D0E;
+            border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0;
+            display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .instruction-icon { font-size: 1.5rem; }
+        
+        .portador-block { border-left: 4px solid #10B981 !important; background: #FFFFFF !important; }
+        .script-name { text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            .lesson-container { padding: 0; }
+            .scene-card { border-radius: 0; margin: 0 0 0.5rem 0; box-shadow: none; border-bottom: 1px solid #E5E7EB; }
+            .scene-card::before { height: 3px; }
+            h2 { font-size: 1.4rem; padding: 0 1.5rem; margin-top: 2rem; }
+        }
+    </style>
+</head>
+<body class="clima-2">
+    <a href="../index.html" class="home-btn" title="Voltar ao Dashboard">🏡</a>
+
+    <div class="lesson-container">
+        <!-- HERO SECTION -->
+        <header class="lesson-hero">
+            <div class="lesson-meta-tag">Lição 022 • Revisão Visual • ⏱️ 15-20 min</div>
+            <h1 class="hero-title">Revisão Visual</h1>
+            <p class="hero-quote">"A Pardal revisita os rostos queridos dos números que já nos são íntimos."</p>
+            <!-- ASSETS ISOLADOS DE SEMENTES -->
+            <img src="../assets/sementes/guardioes/iris-passarinho.png" 
+                 onError="this.src='../assets/sementes/guardioes/placeholder.png'"
+                 alt="iris" class="hero-guardian">
+        </header>
+
+        <article class="lesson-body">
+            
+
+
+
+
+
+
+<div class="lesson-header-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E5E7EB;">
+    <div style="width: 33%;">
+        
+        <a href="MV-S-021_A_JORNADA_LONGA.html" class="nav-mini-link" style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>←</span> <span>A Jornada Longa</span>
+        </a>
+        
+    </div>
+    
+    <div style="width: 33%; text-align: center;">
+        <img src="../assets/icon-sementes.png" alt="Sementes" style="height: 32px; opacity: 0.8;" onerror="this.style.display='none'">
+    </div>
+    
+    <div style="width: 33%; text-align: right;">
+        
+        <a href="MV-S-023_ATENÇÃO_AOS_DETALHES.html" class="nav-mini-link" style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
+            <span>Atenção aos Detalhes</span> <span>→</span>
+        </a>
+        
+    </div>
+</div>
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">👨‍👩‍👧</span>
+        Preparação do Portador
+    </div>
+    
+    
+    
+    
+    <div style="text-align: center; margin-bottom: 1.5rem; color: #6B7280; font-size: 0.9rem; font-style: italic;">
+        [Foco: Reconhecimento rápido e escrita de 1 a 10]
+    </div>
+    
+
+    
+<div class="instruction-box">
+    <span class="instruction-icon">💡</span>
+    <div>
+        
+        
+        <strong>Dica do Coração:</strong> Hoje Íris nos convida a observar.<br>Não precisamos contar tudo.<br>Olhar para o 3 e saber que é o 3. Olhar para 5 pedras e ver o 5.<br>É o "golpe de vista" (subitizing) gentil.<br>
+    
+    </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    <div class="materials-box" style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:8px; padding:1.25rem; margin:1.5rem 0;">
+        
+        <p><strong>🎯 Essencial:</strong></p>
+        <ul style="margin-top:0.5rem; margin-left:1rem;">
+            
+            <li>Cartões com números 1-10 (10)</li>
+            
+            <li>Cartões com bolinhas 1-5 (5)</li>
+            
+            <li>Card Íris (1)</li>
+            
+        </ul>
+        
+        
+        
+        
+        
+        
+    </div>
+    
+
+    
+    
+    <p><strong>🌟 Seu filho vai descobrir:</strong> Que pode reconhecer quantidades e símbolos num piscar de olhos.</p>
+    
+
+    <p><strong>🛡️ Protocolo de Impecabilidade:</strong> MOSTRA RÁPIDA. Mostre o cartão, esconda. "O que você viu?"<br>Brincadeira de esconde-esconde visual.<br></p>
+    <p><strong>🕊️ Nota de Graça:</strong> Íris diz: 'Olhe bem. A beleza está no detalhe.' — um olhar rápido basta!</p>
+
+</div>
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🎬</span>
+        Ritual de Abertura
+    </div>
+    
+    
+    
+<div class="instruction-box">
+    <span class="instruction-icon">🕯️</span>
+    <div>
+        
+        
+        Ambiente claro, jogo rápido.
+    
+    </div>
+</div>
+
+
+    <p><strong>🌫️ Transição:</strong> Feche os olhos. O vento agita as folhas.<br>Íris está escondida entre os galhos.<br></p>
+
+    
+    
+    <div class="sensory-box" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius:8px; padding:1.25rem; margin:1.5rem 0; font-style:italic; color:#92400E; border-left:4px solid #F59E0B;">
+        O ar é fresco e rápido.<br>Íris pisca um olho e mostra uma pena.<br>"Olhe bem. A beleza está no detalhe."<br>
+    </div>
+    
+
+    
+<div class="script-persona-block portador-block">
+    <span class="portador-icon">🔥</span>
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">Portador da Tocha</span>
+            
+                
+                
+                    
+                    <span class="script-tone">(brincando)</span>
+                
+            
+        </div>
+        <div class="script-text">
+            Íris quer brincar!<br>Ela vai mostrar algo rápido. Fique atento!<br>
+        </div>
+    </div>
+</div>
+
+
+    <div style="text-align:center; margin-top:2rem;">
+        <p style="font-size:0.9rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Visualizar</p>
+        <img src="../assets/cards/guardioes/iris-passarinho.png" 
+             style="width:120px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transform: rotate(-2deg); border: 4px solid white;"
+             onError="this.src='../assets/cards/guardioes/placeholder.png'"
+             alt="Card iris">
+    </div>
+
+</div>
+
+
+
+
+<h2>🗺️ A Jornada</h2>
+
+
+    
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">✨</span>
+        O Jogo do Relâmpago
+    </div>
+    
+    
+        
+        
+<div class="local-card">
+    <p><strong>📍 Local:</strong> Ninho Mirante</p>
+    <p class="local-label">Visualizar</p>
+    <img src="../assets/cards/locais/local-ninho-mirante.png" alt="Ninho Mirante">
+</div>
+
+        
+
+        
+        
+
+        
+            
+<div class="instruction-box">
+    <span class="instruction-icon">👉</span>
+    <div>
+        
+        
+                Mostre cartões (1-5) por 2 segundos cada.<br>"Preparado? Tchan! Qual era?"<br>
+            
+    </div>
+</div>
+
+        
+
+        
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/iris-passarinho.png" class="script-avatar" alt="iris">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">iris</span>
+            
+                
+                
+                    
+                    <span class="script-tone">(rapido)</span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Vou mostrar um número. Tente dizer o nome antes de eu esconder!"<br>[Íris mostra e esconde]<br>"Um! Dois! Três!"<br>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+
+
+    
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">✨</span>
+        Quantos Pontos?
+    </div>
+    
+    
+        
+
+        
+        
+
+        
+            
+<div class="instruction-box">
+    <span class="instruction-icon">👉</span>
+    <div>
+        
+        
+                Mostre cartões de bolinhas (1-5).<br>"Olhe rápido! Quantos?"<br>
+            
+    </div>
+</div>
+
+        
+
+        
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/iris-passarinho.png" class="script-avatar" alt="iris">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">iris</span>
+            
+                
+                
+                    <span class="script-tone tone-tooltip" data-tooltip="Incline a cabeça, olhe com atenção. Como um detetive descobrindo uma pista.">
+                        <span style="font-style: normal;">🧐</span> (curioso)
+                    </span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Agora pontos! Sem contar, só olhar!"<br>[Íris mostra padrão de dados]<br>"Viu? Eram quatro!"<br>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+
+
+    
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">✨</span>
+        O Traço Rápido
+    </div>
+    
+    
+        
+
+        
+        
+
+        
+            
+<div class="instruction-box">
+    <span class="instruction-icon">👉</span>
+    <div>
+        
+        
+                Mostre o 5. Peça para a criança traçar no ar.<br>
+            
+    </div>
+</div>
+
+        
+
+        
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/iris-passarinho.png" class="script-avatar" alt="iris">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">iris</span>
+            
+                
+                
+                    <span class="script-tone tone-tooltip" data-tooltip="Voz firme que diz 'Eu acredito em você'.">
+                        <span style="font-style: normal;">💪</span> (encorajador)
+                    </span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Você é rápido! Agora trace no ar o último que viu!"<br>[Íris faz pirueta]<br>"Cinco!"<br>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+
+
+
+
+
+<h2>🧱 O Concreto</h2>
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🧱</span>
+        Atividade Concreta
+    </div>
+    
+    
+    
+
+    
+<div class="instruction-box">
+    <span class="instruction-icon">📋</span>
+    <div>
+        
+        
+        <strong>Passo a Passo:</strong>
+        <ol style="margin-top:0.5rem; margin-left:1rem;">
+            
+            <li>
+                Mostre cartão numérico (ex: 3). Esconda.
+                
+                <br><em>Fala sugerida: "Já! O que você viu?"</em>
+                
+            </li>
+            
+            <li>
+                Repita com 1-5 misturados.
+                
+                <br><em>Fala sugerida: "Esse foi fácil! E esse?"</em>
+                
+            </li>
+            
+            <li>
+                Use cartões de bolinhas (subitizing).
+                
+                <br><em>Fala sugerida: "Bolinhas! Quantas? Rápido!"</em>
+                
+            </li>
+            
+            <li>
+                Se errar, mostre e conte junto.
+                
+                <br><em>Fala sugerida: "Vamos ver... um, dois, três. Isso!"</em>
+                
+            </li>
+            
+        </ol>
+    
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🗣️</span>
+        Narramos Juntos
+    </div>
+    
+    
+    
+<div class="instruction-box">
+    <span class="instruction-icon">🤫</span>
+    <div>
+        
+        
+        Guarde os cartões.<br>"Íris ficou impressionada com seus olhos de águia!"<br>
+    
+    </div>
+</div>
+
+
+    
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/iris-passarinho.png" class="script-avatar" alt="iris">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">iris</span>
+            
+        </div>
+        <div class="script-text">
+            "O que você descobriu hoje na Clareira? O que contaria para o Melquior?"
+        </div>
+    </div>
+</div>
+
+
+    <p><strong>Perguntas do Coração:</strong></p>
+    <ul style="margin-left:1.5rem; margin-top:0.5rem;">
+        <li>Qual número foi mais fácil de ver rápido?</li>
+        
+        <li>Você precisou contar as bolinhas do 2?</li>
+        
+        <li>O 5 parece uma mão cheia?</li>
+        
+    </ul>
+
+</div>
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🏁</span>
+        Ritual de Fechamento
+    </div>
+    
+    
+    
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/iris-passarinho.png" class="script-avatar" alt="iris">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">iris</span>
+            
+                
+                
+                    
+                    <span class="script-tone">(gracioso)</span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Seus olhos são rápidos como o vento!"<br>"Reconhecer amigos é um dom."<br>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+<div class="script-persona-block portador-block">
+    <span class="portador-icon">🔥</span>
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">Portador da Tocha</span>
+            
+        </div>
+        <div class="script-text">
+            Um, dois, três, quatro, cinco. Voltamos.
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🔗</span>
+        Conexão da Jornada
+    </div>
+    
+    
+    
+    <p><strong>⬅️ Última Aventura:</strong> Você caminhou até o 60! Agora, Íris quer ver se seus olhos são rápidos!</p>
+    
+    
+        <div onclick="window.location.href='MV-S-023_ATENÇÃO_AOS_DETALHES.html'" style="cursor: pointer;">
+            <p><strong>➡️ Próxima Aventura:</strong> Seus olhos são rápidos. Amanhã, vamos olhar os detalhes do 7 e do 8!</p>
+            
+            <div style="margin-top:0.5rem; text-align:right;">
+                <span style="font-size:0.85rem; color:#4B5563; background:#F3F4F6; padding:0.25rem 0.75rem; border-radius:1rem;">
+                    Ir para Atenção aos Detalhes →
+                </span>
+            </div>
+            
+        </div>
+    
+
+</div>
+
+
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">👨‍👩‍👧‍👦</span>
+        Para a Família
+    </div>
+    
+    
+    <p><strong>📚 Por que isso importa:</strong></p>
+    <div style="padding:0.5rem 0;">
+        "Subitizing" (reconhecer quantidades sem contar) é habilidade chave.<br>Prepara para operações mentais rápidas.<br>
+    </div>
+    
+    
+    
+    <div class="bruner-box">
+        <strong>🧠 Método CPA (Jerome Bruner):</strong><br>
+        <ul style="margin:0.5rem 0 0 1.5rem;">
+            <li><strong>Concreto:</strong> Cartões físicos de "flash".</li>
+            <li><strong>Pictórico:</strong> Vetado (mas o cartão de bolinhas é "ponte").</li>
+            <li><strong>Abstrato:</strong> Reconhecimento do símbolo.</li>
+        </ul>
+        
+        <span style="color:#6B7280; font-size:0.9rem;">CM: Atenção visual e memória.</span>
+        
+    </div>
+    
+    
+    
+    
+    <div class="cm-box">
+        <strong>🏛️ Princípio Charlotte Mason:</strong><br>
+        <em>"Handicrafts teach accuracy."</em><br>
+        <span style="color:#6B7280;">O olhar preciso é base para mãos precisas.</span>
+    </div>
+    
+    
+    
+    
+    <div class="tgtb-box">
+        <strong>📘 Conexão TGTB:</strong><br>
+        <span style="color:#92400E;">Corresponde à lição de Prática de Números.
+Íris traz o foco em "ver de verdade".
+</span>
+    </div>
+    
+    
+    
+    
+    <div class="bruner-box">
+        <strong>🌀 Currículo em Espiral (Bruner):</strong><br>
+        <ul style="margin:0.5rem 0 0 1.5rem;">
+            <li><strong>Agora:</strong> Subitizing e Reconhecimento — Sementes — até 5 instantâneo</li>
+            <li><strong>Depois:</strong> Raízes — fatos de adição instantâneos</li>
+        </ul>
+        
+    </div>
+    
+    
+    
+    
+    <div class="espiritual-box">
+        <strong>✨ Reflexão Espiritual:</strong><br>
+        <span style="color:#166534;">"Os olhos são a lâmpada do corpo."
+Ver a verdade rapidamente é sabedoria.
+</span>
+    </div>
+    
+    
+    
+    
+    <div class="graca-box">
+        <strong>🕊️ Nota de Graça:</strong><br>
+        Se não reconhecer, tudo bem.
+Íris diz: "Vamos olhar mais devagar. Ele vai se revelar."
+
+    </div>
+    
+
+</div>
+
+
+
+
+        </article>
+
+        <!-- NAVIGATION FOOTER -->
+        <nav class="lesson-nav">
+            
+            
+
+            
+            <a href="MV-S-021_A_JORNADA_LONGA.html" class="nav-btn prev">
+                <span class="nav-label">← Anterior</span>
+                <span class="nav-title">A Jornada Longa</span>
+            </a>
+            
+            
+            
+            <a href="MV-S-023_ATENÇÃO_AOS_DETALHES.html" class="nav-btn next">
+                <span class="nav-label">Próxima →</span>
+                <span class="nav-title">Atenção aos Detalhes</span>
+            </a>
+            
+        </nav>
+
+        <footer style="text-align: center; margin-top: 4rem; color: #A8A29E; font-size: 0.8rem;">
+            Matemática Viva • Forjado com Estilo e Propósito
+        </footer>
+    </div>
+</body>
+</html>

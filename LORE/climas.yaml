@@ -13,8 +13,8 @@ climas:
     emoji: "☀️"
     atmosfera: "Alegria, claridade, descoberta"
     uso: [Introdução, Conceitos novos, Energia alta]
-    desc: "A luz dourada banha o jardim, aquecendo com promessa de novo dia."
-    sensorial: {luz: Dourada/brilhante, temp: Quente, energia: Alta}
+    desc: "A luz dourada banha o jardim, cheiro de terra molhada e musgo fresco."
+    sensorial: {luz: Dourada/brilhante, temp: Quente, cheiro: Terra/musgo, energia: Alta}
     tom_guardiao: "Vibrante, alegre"
 
   nublado:
@@ -22,8 +22,8 @@ climas:
     emoji: "☁️"
     atmosfera: "Reflexão, mistério suave"
     uso: [Consolidação, Revisão, Abstratos]
-    desc: "Uma névoa suave envolve a clareira, misterioso e calmo."
-    sensorial: {luz: Difusa/suave, temp: Fresca, energia: Média}
+    desc: "Uma névoa suave envolve a clareira, silenciando o mundo lá fora."
+    sensorial: {luz: Difusa/suave, temp: Fresca, cheiro: Ozônio/pedra úmida, som: Silêncio abafado, energia: Média}
     tom_guardiao: "Sereno, misterioso"
 
   ventoso:
@@ -31,8 +31,8 @@ climas:
     emoji: "🌬️"
     atmosfera: "Movimento, ação, dinâmica"
     uso: [Atividade física, Contagem movimento, Cinética]
-    desc: "As folhas dançam ao redor, o vento brinca com seus cabelos."
-    sensorial: {luz: Variável, temp: Fresca, energia: Alta/movimento}
+    desc: "As folhas dançam ao redor, o vento traz notícias de longe."
+    sensorial: {luz: Variável, temp: Fresca, cheiro: Folhas secas/pinho, som: Vento nas copas (Shhh), tato: Vento no rosto, energia: Alta/movimento}
     tom_guardiao: "Rápido, brincalhão"
 
   chuvoso:
@@ -40,8 +40,8 @@ climas:
     emoji: "🌧️"
     atmosfera: "Aconchego, interioridade"
     uso: [Contemplação, Histórias longas, Foco]
-    desc: "O som da chuva embala o Reino, gotas desenham padrões."
-    sensorial: {luz: Cinza/suave, temp: Quente/interno, energia: Baixa/focada}
+    desc: "O som da chuva isola o Reino, criando um ninho de foco."
+    sensorial: {luz: Cinza/suave, temp: Aconchegante, cheiro: Chuva na terra (petrichor), som: Gotejar rítmico, tato: Umidade no ar, energia: Baixa/focada}
     tom_guardiao: "Suave, íntimo"
 
   outonal:
@@ -49,8 +49,8 @@ climas:
     emoji: "🍂"
     atmosfera: "Transição, amadurecimento"
     uso: [Fechamento, Síntese, Reflexão aprendizado]
-    desc: "Folhas caem suavemente, pintando chão de dourado."
-    sensorial: {luz: Baixa/tarde, temp: Fresca, energia: Nostálgica}
+    desc: "Folhas caem suavemente. O ar tem cheiro de tempo."
+    sensorial: {luz: Dourado-escuro, temp: Fresca, cheiro: Madeira/canela, som: Folhas estalando, tato: Ar seco, energia: Nostálgica}
     tom_guardiao: "Sábio, retrospectivo"
 
   primaveril:
@@ -58,8 +58,8 @@ climas:
     emoji: "🌸"
     atmosfera: "Renovação, novos começos"
     uso: [Início fases, Primeiro contato, Possibilidade]
-    desc: "Flores desabrocham, ar traz promessa de crescimento."
-    sensorial: {luz: Clara/fresca, temp: Amena, energia: Crescente}
+    desc: "Flores desabrocham. O mundo cheira a vida nova."
+    sensorial: {luz: Clara/límpida, temp: Amena, cheiro: Néctar/flores, som: Pássaros cantando, tato: Brisa morna, energia: Crescente}
     tom_guardiao: "Esperançoso, entusiasmado"
 
   crepusculo:
@@ -67,8 +67,8 @@ climas:
     emoji: "🌅"
     atmosfera: "Encerramento, gratidão"
     uso: [Celebração, Revisão final, Fim de ciclo]
-    desc: "O sol se despede pintando céu de rosa e laranja."
-    sensorial: {luz: Dourada/suave, temp: Morna, energia: Gratidão}
+    desc: "O sol se despede. As sombras se alongam, convidando ao descanso."
+    sensorial: {luz: Violeta/laranja, temp: Morna diminuindo, cheiro: Dama-da-noite, som: Grilos ao longe, energia: Gratidão}
     tom_guardiao: "Grato, acolhedor"
 
   estrelado:
@@ -76,8 +76,8 @@ climas:
     emoji: "⭐"
     atmosfera: "Maravilhamento, infinitude"
     uso: [Números grandes, Grandeza, Infinito]
-    desc: "Estrelas brilham como promessas infinitas esperando ser conhecidas."
-    sensorial: {luz: Escura/pontos, temp: Fresca/noturna, energia: Maravilhada}
+    desc: "O céu é um manto de veludo pontilhado de diamantes."
+    sensorial: {luz: Escura/pontos, temp: Fria, cheiro: Ar da noite/sereno, som: Vasto silêncio, tato: Arrepio de grandeza, energia: Maravilhada}
     tom_guardiao: "Reverente"
 
 regras:

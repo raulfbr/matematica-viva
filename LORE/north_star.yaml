@@ -173,6 +173,7 @@ diretrizes_operacionais:
     - {id: 3, name: Economia do Reino (Preço Único), desc: "Honramos a fertilidade. Uma assinatura = Todos os filhos (0-18).", apply: "Família com 1 ou 10 filhos paga o mesmo.", expert: "Thiel (Monopoly Secret)"}
     - {id: 4, name: Orientação não Imposição, desc: "Norte seguro com espaço para adaptar. Convite, não ordem.", expert: "Charlotte Mason (Princípio 6)"}
     - {id: 5, name: "Imago Dei (Ver Princípio #9)", desc: "PROMOVIDO para principios_fundamentais.id_9 (Transcendência)", ref: "principios_fundamentais.9"}
+    - {id: 6, name: "Atmosfera de Foco (Gatilhos)", desc: "O ambiente educa. Use Sinais Ativos (Luz Amarela, Tapete, Cheiro) para ligar a atenção via Empilhamento Sensorial. Não crie cavernas escuras, crie focos de luz.", expert: "Charlotte Mason (Hábito da Atenção)"}
 
 
 garantia_oportunidade:

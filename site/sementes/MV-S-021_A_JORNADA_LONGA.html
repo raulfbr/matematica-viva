@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Jornada Longa | Matemática Viva</title>
+    <!-- CSS ISOLADO DE SEMENTES -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <style>
+        /* INLINE STYLES FOR CRITICAL RENDERING PRIORITY */
+        body { background-color: #F8F9FA; color: #374151; }
+        .lesson-container { max-width: 768px; margin: 0 auto; padding-bottom: 4rem; }
+        
+        /* CARD COMPONENT */
+        .scene-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .scene-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 100%);
+            opacity: 0.8;
+        }
+
+        /* HEADER & TYPOGRAPHY */
+        .scene-header {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            color: #111827;
+            margin-bottom: 2rem;
+            display: flex; align-items: center; gap: 0.75rem; font-weight: 600;
+        }
+        .scene-icon { font-size: 1.5rem; }
+        h2 { font-family:'Outfit'; color:#6B7280; font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin: 3rem 0 1rem 0; text-align:center; }
+        strong { font-weight: 600; color: #1F2937; }
+
+        /* COMPONENTS */
+        .script-persona-block {
+            background: #F9FAFB;
+            border: 1px solid #F3F4F6;
+            border-left: 4px solid #10B981;
+            border-radius: 8px;
+            margin-top: 1.5rem; padding: 1.5rem;
+        }
+        .script-avatar { border: 2px solid #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        
+        .instruction-box {
+            background: #FEFCE8; border: 1px solid #FEF9C3; color: #854D0E;
+            border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0;
+            display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .instruction-icon { font-size: 1.5rem; }
+        
+        .portador-block { border-left: 4px solid #10B981 !important; background: #FFFFFF !important; }
+        .script-name { text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            .lesson-container { padding: 0; }
+            .scene-card { border-radius: 0; margin: 0 0 0.5rem 0; box-shadow: none; border-bottom: 1px solid #E5E7EB; }
+            .scene-card::before { height: 3px; }
+            h2 { font-size: 1.4rem; padding: 0 1.5rem; margin-top: 2rem; }
+        }
+    </style>
+</head>
+<body class="clima-2">
+    <a href="../index.html" class="home-btn" title="Voltar ao Dashboard">🏡</a>
+
+    <div class="lesson-container">
+        <!-- HERO SECTION -->
+        <header class="lesson-hero">
+            <div class="lesson-meta-tag">Lição 021 • A Jornada Longa • ⏱️ 15-20 min</div>
+            <h1 class="hero-title">A Jornada Longa</h1>
+            <p class="hero-quote">"Passos firmes de sessenta batidas de coração nas trilhas de Celeste."</p>
+            <!-- ASSETS ISOLADOS DE SEMENTES -->
+            <img src="../assets/sementes/guardioes/celeste-raposa.png" 
+                 onError="this.src='../assets/sementes/guardioes/placeholder.png'"
+                 alt="celeste" class="hero-guardian">
+        </header>
+
+        <article class="lesson-body">
+            
+
+
+
+
+
+
+<div class="lesson-header-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E5E7EB;">
+    <div style="width: 33%;">
+        
+        <a href="MV-S-020_O_SELO_REAL.html" class="nav-mini-link" style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span>←</span> <span>O Selo Real</span>
+        </a>
+        
+    </div>
+    
+    <div style="width: 33%; text-align: center;">
+        <img src="../assets/icon-sementes.png" alt="Sementes" style="height: 32px; opacity: 0.8;" onerror="this.style.display='none'">
+    </div>
+    
+    <div style="width: 33%; text-align: right;">
+        
+        <a href="MV-S-022_REVISÃO_VISUAL.html" class="nav-mini-link" style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
+            <span>Revisão Visual</span> <span>→</span>
+        </a>
+        
+    </div>
+</div>
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">👨‍👩‍👧</span>
+        Preparação do Portador
+    </div>
+    
+    
+    
+    
+    <div style="text-align: center; margin-bottom: 1.5rem; color: #6B7280; font-size: 0.9rem; font-style: italic;">
+        [Foco: Contagem fluente até 60 — padrão das dezenas]
+    </div>
+    
+
+    
+<div class="instruction-box">
+    <span class="instruction-icon">💡</span>
+    <div>
+        
+        
+        <strong>Dica do Coração:</strong> Sessenta é o número do tempo! 60 segundos, 60 minutos.<br>Celeste nos guia numa caminhada longa.<br>O segredo não é pressa, é ritmo misturado com o bater do coração.<br>
+    
+    </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    <div class="materials-box" style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:8px; padding:1.25rem; margin:1.5rem 0;">
+        
+        <p><strong>🎯 Essencial:</strong></p>
+        <ul style="margin-top:0.5rem; margin-left:1rem;">
+            
+            <li>Espaço para caminhar (1)</li>
+            
+            <li>Card Celeste (1)</li>
+            
+        </ul>
+        
+        
+        
+        <p style="margin-top:1rem;"><strong>📦 Se tiver:</strong></p>
+        <ul style="margin-top:0.5rem; margin-left:1rem; color:#6B7280;">
+            
+            <li>Um "mapa" simples (opcional) (1)</li>
+            
+        </ul>
+        
+        
+        
+        
+    </div>
+    
+
+    
+    
+    <p><strong>🌟 Seu filho vai descobrir:</strong> Que o padrão dos números se repete a cada dezena.</p>
+    
+
+    <p><strong>🛡️ Protocolo de Impecabilidade:</strong> CONTE COM MOVIMENTO. Pule, bata palmas ou caminhe.<br>O corpo sente o ritmo de 10 em 10.<br></p>
+    <p><strong>🕊️ Nota de Graça:</strong> Celeste diz: 'Sente esse cheiro? É aventura!' — mesmo quando as pernas cansam.</p>
+
+</div>
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🎬</span>
+        Ritual de Abertura
+    </div>
+    
+    
+    
+<div class="instruction-box">
+    <span class="instruction-icon">🕯️</span>
+    <div>
+        
+        
+        Ambiente espaçoso, janelas abertas.
+    
+    </div>
+</div>
+
+
+    <p><strong>🌫️ Transição:</strong> Feche os olhos. Sinta o vento no rosto.<br>Celeste está amarrando suas botas na entrada da trilha.<br></p>
+
+    
+    
+    <div class="sensory-box" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius:8px; padding:1.25rem; margin:1.5rem 0; font-style:italic; color:#92400E; border-left:4px solid #F59E0B;">
+        O ar traz cheiro de pinheiros e terra batida.<br>Celeste aponta para o caminho sem fim.<br>"Sente esse cheiro? É aventura!"<br>
+    </div>
+    
+
+    
+<div class="script-persona-block portador-block">
+    <span class="portador-icon">🔥</span>
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">Portador da Tocha</span>
+            
+                
+                
+                    
+                    <span class="script-tone">(vigoroso)</span>
+                
+            
+        </div>
+        <div class="script-text">
+            Celeste está pronta para uma longa jornada!<br>Vamos caminhar com ela? Respire fundo!<br>
+        </div>
+    </div>
+</div>
+
+
+    <div style="text-align:center; margin-top:2rem;">
+        <p style="font-size:0.9rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Visualizar</p>
+        <img src="../assets/cards/guardioes/celeste-raposa.png" 
+             style="width:120px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transform: rotate(-2deg); border: 4px solid white;"
+             onError="this.src='../assets/cards/guardioes/placeholder.png'"
+             alt="Card celeste">
+    </div>
+
+</div>
+
+
+
+
+<h2>🗺️ A Jornada</h2>
+
+
+    
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">✨</span>
+        O Aquecimento
+    </div>
+    
+    
+        
+        
+<div class="local-card">
+    <p><strong>📍 Local:</strong> Trilha Bosque</p>
+    <p class="local-label">Visualizar</p>
+    <img src="../assets/cards/locais/local-trilha-bosque.png" alt="Trilha Bosque">
+</div>
+
+        
+
+        
+        
+
+        
+            
+<div class="instruction-box">
+    <span class="instruction-icon">👉</span>
+    <div>
+        
+        
+                Marche no lugar contando até 30 num ritmo constante.<br>"Esquerda, direita! Até o 30!"<br>
+            
+    </div>
+</div>
+
+        
+
+        
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/celeste-raposa.png" class="script-avatar" alt="celeste">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">celeste</span>
+            
+                
+                
+                    <span class="script-tone tone-tooltip" data-tooltip="Com entusiasmo, sorrindo, e brilho nos olhos! Contagie a criança.">
+                        <span style="font-style: normal;">✨</span> (animado)
+                    </span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Até o 30 é fácil, já conhecemos o caminho!"<br>[Celeste começa a marchar]<br>"Um, dois... trinta! Passos firmes!"<br>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+
+
+    
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">✨</span>
+        A Subida
+    </div>
+    
+    
+        
+
+        
+        
+
+        
+            
+<div class="instruction-box">
+    <span class="instruction-icon">👉</span>
+    <div>
+        
+        
+                Continue marchando. Conte 31-40, pausa.<br>Depois 41-50. "Estamos subindo!"<br>
+            
+    </div>
+</div>
+
+        
+
+        
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/celeste-raposa.png" class="script-avatar" alt="celeste">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">celeste</span>
+            
+                
+                
+                    <span class="script-tone tone-tooltip" data-tooltip="Voz firme que diz 'Eu acredito em você'.">
+                        <span style="font-style: normal;">💪</span> (encorajador)
+                    </span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Agora a subida começa! Do 30 ao 40... ao 50!"<br>[Celeste sobe pedras]<br>"Mantenha o ritmo! O coração bate forte!"<br>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+
+
+    
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">✨</span>
+        O Topo da Colina
+    </div>
+    
+    
+        
+
+        
+        
+
+        
+            
+<div class="instruction-box">
+    <span class="instruction-icon">👉</span>
+    <div>
+        
+        
+                Acelere o passo de 51 a 60.<br>"Chegamos! Respire fundo! Sessenta!"<br>
+            
+    </div>
+</div>
+
+        
+
+        
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/celeste-raposa.png" class="script-avatar" alt="celeste">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">celeste</span>
+            
+                
+                
+                    
+                    <span class="script-tone">(triunfante)</span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Falta pouco! Do 50 ao 60!"<br>[Celeste corre para o topo]<br>"Cinquenta e nove... SESSENTA! Que vista!"<br>
+        </div>
+    </div>
+</div>
+
+    
+</div>
+
+
+
+
+
+<h2>🧱 O Concreto</h2>
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🧱</span>
+        Atividade Concreta
+    </div>
+    
+    
+    
+
+    
+<div class="instruction-box">
+    <span class="instruction-icon">📋</span>
+    <div>
+        
+        
+        <strong>Passo a Passo:</strong>
+        <ol style="margin-top:0.5rem; margin-left:1rem;">
+            
+            <li>
+                Comece a marchar. Conte 1-30.
+                
+                <br><em>Fala sugerida: "Ritmo de aventura! 1, 2, 3... 30!"</em>
+                
+            </li>
+            
+            <li>
+                Mude o movimento (pulos ou palmas). Conte 31-50.
+                
+                <br><em>Fala sugerida: "Agora pulando pedras! 31... 50!"</em>
+                
+            </li>
+            
+            <li>
+                Corra no lugar (slow motion). Conte 51-60.
+                
+                <br><em>Fala sugerida: "Quase lá! 51... 60! Chegamos!"</em>
+                
+            </li>
+            
+            <li>
+                Coloque a mão no coração.
+                
+                <br><em>Fala sugerida: "Sinta seu coração. 60 batidas!"</em>
+                
+            </li>
+            
+        </ol>
+    
+    </div>
+</div>
+
+
+    
+
+</div>
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🗣️</span>
+        Narramos Juntos
+    </div>
+    
+    
+    
+<div class="instruction-box">
+    <span class="instruction-icon">🤫</span>
+    <div>
+        
+        
+        Sente-se para descansar da "caminhada".<br>"Celeste adorou sua companhia!"<br>
+    
+    </div>
+</div>
+
+
+    
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/celeste-raposa.png" class="script-avatar" alt="celeste">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">celeste</span>
+            
+        </div>
+        <div class="script-text">
+            "O que você descobriu hoje na Clareira? O que contaria para o Melquior?"
+        </div>
+    </div>
+</div>
+
+
+    <p><strong>Perguntas do Coração:</strong></p>
+    <ul style="margin-left:1.5rem; margin-top:0.5rem;">
+        <li>Como foi caminhar até o 60?</li>
+        
+        <li>Qual parte foi mais cansativa?</li>
+        
+        <li>O que vem depois do 59?</li>
+        
+    </ul>
+
+</div>
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🏁</span>
+        Ritual de Fechamento
+    </div>
+    
+    
+    
+<div class="script-persona-block ">
+    <img src="../assets/cards/guardioes/celeste-raposa.png" class="script-avatar" alt="celeste">
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">celeste</span>
+            
+                
+                
+                    
+                    <span class="script-tone">(sereno)</span>
+                
+            
+        </div>
+        <div class="script-text">
+            "Que jornada linda!"<br>"Sessenta passos, sessenta batidas. O tempo é amigo."<br>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    
+<div class="script-persona-block portador-block">
+    <span class="portador-icon">🔥</span>
+    <div class="script-content">
+        <div class="script-header">
+            <span class="script-name">Portador da Tocha</span>
+            
+        </div>
+        <div class="script-text">
+            Dez, vinte... sessenta. Voltamos.
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">🔗</span>
+        Conexão da Jornada
+    </div>
+    
+    
+    
+    <p><strong>⬅️ Última Aventura:</strong> Você aprendeu a traçar os números. Agora, vamos caminhar com eles até o 60!</p>
+    
+    
+        <div onclick="window.location.href='MV-S-022_REVISÃO_VISUAL.html'" style="cursor: pointer;">
+            <p><strong>➡️ Próxima Aventura:</strong> Que jornada longa! Amanhã, Íris nos convida para descansar e observar os números.</p>
+            
+            <div style="margin-top:0.5rem; text-align:right;">
+                <span style="font-size:0.85rem; color:#4B5563; background:#F3F4F6; padding:0.25rem 0.75rem; border-radius:1rem;">
+                    Ir para Revisão Visual →
+                </span>
+            </div>
+            
+        </div>
+    
+
+</div>
+
+
+
+
+
+
+
+<div class="scene-card" >
+    
+    <div class="scene-header">
+        <span class="scene-icon">👨‍👩‍👧‍👦</span>
+        Para a Família
+    </div>
+    
+    
+    <p><strong>📚 Por que isso importa:</strong></p>
+    <div style="padding:0.5rem 0;">
+        O número 60 é base do nosso tempo (segundos, minutos).<br>Contar até 60 com ritmo prepara para leitura de relógio no futuro.<br>
+    </div>
+    
+    
+    
+    <div class="bruner-box">
+        <strong>🧠 Método CPA (Jerome Bruner):</strong><br>
+        <ul style="margin:0.5rem 0 0 1.5rem;">
+            <li><strong>Concreto:</strong> Movimento corporal rítmico.</li>
+            <li><strong>Pictórico:</strong> Vetado.</li>
+            <li><strong>Abstrato:</strong> Sequência numérica oral.</li>
+        </ul>
+        
+        <span style="color:#6B7280; font-size:0.9rem;">Dalcroze/CM: Ritmo educa a atenção.</span>
+        
+    </div>
+    
+    
+    
+    
+    <div class="cm-box">
+        <strong>🏛️ Princípio Charlotte Mason:</strong><br>
+        <em>"Education is an atmosphere."</em><br>
+        <span style="color:#6B7280;">O ambiente de "caminhada" torna a repetição significativa.</span>
+    </div>
+    
+    
+    
+    
+    <div class="tgtb-box">
+        <strong>📘 Conexão TGTB:</strong><br>
+        <span style="color:#92400E;">Corresponde à lição de Prática de Contagem até 60.
+Celeste traz o tema de jornada e tempo.
+</span>
+    </div>
+    
+    
+    
+    
+    <div class="bruner-box">
+        <strong>🌀 Currículo em Espiral (Bruner):</strong><br>
+        <ul style="margin:0.5rem 0 0 1.5rem;">
+            <li><strong>Agora:</strong> Contagem e Tempo — Sementes — contar até 60 ritmicamente</li>
+            <li><strong>Depois:</strong> Raízes — ler horas, sistema sexagesimal</li>
+        </ul>
+        
+    </div>
+    
+    
+    
+    
+    <div class="espiritual-box">
+        <strong>✨ Reflexão Espiritual:</strong><br>
+        <span style="color:#166534;">O tempo é um presente.
+Cada segundo conta. "Ensina-nos a contar os nossos dias."
+</span>
+    </div>
+    
+    
+    
+    
+    <div class="graca-box">
+        <strong>🕊️ Nota de Graça:</strong><br>
+        Se perder o fôlego ou a conta, Celeste diz:
+"Pare. Respire. A vista é linda aqui também."
+
+    </div>
+    
+
+</div>
+
+
+
+
+        </article>
+
+        <!-- NAVIGATION FOOTER -->
+        <nav class="lesson-nav">
+            
+            
+
+            
+            <a href="MV-S-020_O_SELO_REAL.html" class="nav-btn prev">
+                <span class="nav-label">← Anterior</span>
+                <span class="nav-title">O Selo Real</span>
+            </a>
+            
+            
+            
+            <a href="MV-S-022_REVISÃO_VISUAL.html" class="nav-btn next">
+                <span class="nav-label">Próxima →</span>
+                <span class="nav-title">Revisão Visual</span>
+            </a>
+            
+        </nav>
+
+        <footer style="text-align: center; margin-top: 4rem; color: #A8A29E; font-size: 0.8rem;">
+            Matemática Viva • Forjado com Estilo e Propósito
+        </footer>
+    </div>
+</body>
+</html>

@@ -48,7 +48,7 @@ evolucao_por_ciclo:
   sementes:
     como_contar: "Versão Fábula. Bernardo é o 'Urso Grande e Forte' que protegeu os amigos. Foco: Amizade e Bravura."
     uso_em_licoes: [L002, Qualquer lição sobre persistência ou erro]
-    tom: "Místico, simples, acolhedor."
+    tom: "Encantado, simples, acolhedor."
     exemplo_fala: "'Bernardo é forte, mas sabe o que o tornou mais forte? Os amigos que ele protegeu.'"
 
   raizes:

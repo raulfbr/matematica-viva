@@ -1,414 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Nosso filho de 5 anos é a cobaia oficial do currículo Matemática Viva. Aqui está o diário honesto das primeiras semanas — sem filtro, sem promessas exageradas.">
-    <title>O Primeiro Mês do Raulzito | Blog Matemática Viva</title>
+    <title>O Primeiro Mês do Raulzito: Diário de Uma Cobaia de Luxo | Blog Forja Viva</title>
     <link rel="stylesheet" href="../style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        .blog-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .article-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .article-meta {
-            color: #6B7280;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-family: 'Lora', serif;
-            font-size: 2.5rem;
-            color: #111827;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .article-summary {
-            font-size: 1.25rem;
-            color: #4B5563;
-            line-height: 1.6;
-            font-style: italic;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .article-body {
-            background: #FFF;
-            padding: 3rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            line-height: 1.8;
-            font-size: 1.125rem;
-            color: #374151;
-            font-family: 'Lora', serif;
-        }
-
-        .article-body h2 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            color: #111827;
-        }
-
-        .article-body h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            font-size: 1.25rem;
-            color: #1F2937;
-        }
-
-        .article-body p {
-            margin-bottom: 1.5rem;
-        }
-
-        .article-body ul,
-        .article-body ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        .article-body li {
-            margin-bottom: 0.5rem;
-        }
-
-        .article-body blockquote {
-            border-left: 4px solid #047857;
-            padding-left: 1rem;
-            margin: 1.5rem 0;
-            color: #4B5563;
-            font-style: italic;
-            background: #F0FDF4;
-            padding: 1rem 1rem 1rem 1.5rem;
-            border-radius: 0 0.5rem 0.5rem 0;
-        }
-
-        .article-body table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-
-        .article-body th,
-        .article-body td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid #E5E7EB;
-        }
-
-        .article-body th {
-            background: #F9FAFB;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .article-body hr {
-            border: none;
-            border-top: 2px solid #E5E7EB;
-            margin: 2.5rem 0;
-        }
-
-        .intro-note {
-            background: linear-gradient(135deg, #FDF4FF 0%, #FAE8FF 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid #A855F7;
-            font-style: italic;
-        }
-
-        .week-card {
-            background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid #047857;
-        }
-
-        .week-card h2 {
-            margin-top: 0;
-            color: #047857;
-        }
-
-        .week-meta {
-            font-size: 0.875rem;
-            color: #6B7280;
-            margin-bottom: 1rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .week-meta span {
-            background: #FFF;
-            padding: 0.25rem 0.75rem;
-            border-radius: 999px;
-        }
-
-        .teaser-box {
-            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-left: 4px solid #F59E0B;
-        }
-
-        .teaser-box p {
-            margin-bottom: 0;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #047857 0%, #065F46 100%);
-            color: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .cta-box a {
-            color: white;
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
-        .home-btn {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            width: 3rem;
-            height: 3rem;
-            background: #FFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid #E5E7EB;
-            color: #374151;
-            text-decoration: none;
-            transition: all 0.2s;
-            z-index: 100;
-        }
-
-        .home-btn:hover {
-            transform: translateY(-2px);
-            color: #047857;
-        }
-
+        .blog-container { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+        .article-header { text-align: center; margin-bottom: 3rem; }
+        .article-meta { color: #6B7280; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        h1 { font-family: 'Lora', serif; font-size: 3rem; color: #111827; line-height: 1.2; margin-bottom: 1.5rem; }
+        .article-summary { font-size: 1.25rem; color: #4B5563; line-height: 1.6; font-style: italic; max-width: 600px; margin: 0 auto 2rem; }
+        
+        .article-body { background: #FFF; padding: 3rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); line-height: 1.8; font-size: 1.125rem; color: #374151; font-family: 'Lora', serif; }
+        .article-body h2 { font-family: 'Inter', sans-serif; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.5rem; color: #111827; }
+        .article-body p { margin-bottom: 1.5rem; }
+        .article-body ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        .article-body li { margin-bottom: 0.5rem; }
+        .article-body blockquote { border-left: 4px solid #047857; padding-left: 1rem; margin: 1.5rem 0; color: #4B5563; font-style: italic; }
+        
+        .home-btn { position: fixed; top: 2rem; left: 2rem; width: 3rem; height: 3rem; background: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #E5E7EB; color: #374151; text-decoration: none; transition: all 0.2s; z-index: 100; }
+        .home-btn:hover { transform: translateY(-2px); color: #047857; }
+        
         @media (max-width: 768px) {
-            .blog-container {
-                padding: 2rem 1rem;
-            }
-
-            h1 {
-                font-size: 1.75rem;
-            }
-
-            .article-body {
-                padding: 1.5rem;
-            }
+            .blog-container { padding: 2rem 1rem; }
+            h1 { font-size: 2rem; }
+            .article-body { padding: 1.5rem; }
         }
     </style>
 </head>
-
 <body>
     <a href="../index.html" class="home-btn" title="Voltar ao Dashboard">🏠</a>
 
     <article class="blog-container">
         <header class="article-header">
-            <div class="article-meta">19 de Janeiro, 2026 • Por O Embaixador</div>
+            <div class="article-meta">2026-01-19 • Por O Embaixador</div>
             <h1>O Primeiro Mês do Raulzito: Diário de Uma Cobaia de Luxo</h1>
-            <div class="article-summary">Nosso filho de 5 anos é a cobaia oficial do currículo. Aqui está o que
-                aconteceu nas primeiras semanas — sem filtro, sem promessas exageradas.</div>
+            <div class="article-summary">Nosso filho de 5 anos é a cobaia oficial do currículo. Aqui está o que aconteceu nas primeiras semanas — sem filtro, sem promessas exageradas.</div>
         </header>
-
+        
         <div class="article-body">
             <p>Antes de qualquer outra família testar, nós testamos em casa.</p>
-
-            <div class="intro-note">
-                Não somos pedagogos profissionais. Somos pais. Com uma casa bagunçada, rotinas imperfeitas, e muito
-                café. Se funciona aqui, funciona em qualquer lugar.
-            </div>
-
-            <p>Raulzito tem 5 anos. Ele é curioso, energético, se distrai fácil, adora histórias de animais, e odeia
-                sentar por muito tempo. Em outras palavras: uma criança normal.</p>
-            <p>Ele é nossa "cobaia de luxo". Se funciona com ele — no caos real da nossa casa, com bebê chorando e café
-                esfriando — funciona para vocês.</p>
-            <p>Aqui está o diário honesto das primeiras semanas.</p>
-
-            <hr>
-
-            <div class="week-card">
-                <h2>Semana 1: O Portal do Reino</h2>
-                <div class="week-meta">
-                    <span>📖 Lição 000</span>
-                    <span>⏱️ 15 minutos</span>
-                    <span>😊 Resistência: Zero</span>
-                </div>
-                <p>No primeiro dia, não tinha "matemática" visível. Só história.</p>
-                <p>Apresentamos o Reino Contado. Falamos do Leão Melquior, guardião da sabedoria. Da Raposa Celeste,
-                    curiosa e ágil. Do Urso Bernardo, forte e paciente.</p>
-                <p>Raulzito escutou de olhos arregalados. Quando terminamos, ele perguntou:</p>
-                <blockquote>"Pai, o Melquior é o rei? Por que ele é dourado?"</blockquote>
-                <p style="margin-bottom: 0;">Sinal verde. Ele estava dentro do mundo. A matemática viria depois, mas a
-                    <strong>porta estava aberta</strong>.
-                </p>
-            </div>
-
-            <div class="week-card">
-                <h2>Semana 2: A Trindade na Palma</h2>
-                <div class="week-meta">
-                    <span>📖 Lição 001: Números 1, 2, 3</span>
-                    <span>⏱️ 18 minutos</span>
-                </div>
-                <p>Aqui entramos na matemática de verdade — mas disfarçada.</p>
-                <p>A Raposa Celeste encontrou três sementes de carvalho. Uma para cada promessa do Rei. Usamos três
-                    pedras reais na mesa.</p>
-                <blockquote>"Raulzito, quantas pedras a Celeste encontrou?"<br>"Três!"<br>"Me mostra com seus dedos."
-                </blockquote>
-                <p>Ele mostrou. Contou de novo. Separou em "uma aqui, duas ali".</p>
-                <p>Depois, desenhou as três sementes no caderno. Não porque pedimos, mas porque quis.</p>
-                <p><strong>O que funcionou:</strong> A história criou contexto. As pedras criaram concretude. O desenho
-                    criou memória.</p>
-                <p><strong>O que quase deu errado:</strong> Eu quase expliquei demais. Marina me lembrou: <em>"Deixa ele
-                        narrar. Não explica, pergunta."</em></p>
-                <p style="margin-bottom: 0;">Toda mãe faz isso no começo. É natural. E corrigível.</p>
-            </div>
-
-            <div class="week-card">
-                <h2>Semana 3: As Pedras da Fortaleza</h2>
-                <div class="week-meta">
-                    <span>📖 Lição 002: Quadros de Dez</span>
-                    <span>⏱️ 22 minutos</span>
-                </div>
-                <p>O Urso Bernardo precisava organizar pedras para construir um muro. Mas as pedras estavam bagunçadas.
-                    Como ajudar?</p>
-                <p>Usamos uma bandeja de ovos (10 espaços) e pedrinhas reais. Raulzito encheu os espaços.</p>
-                <blockquote>"Quantas pedras o Bernardo precisa para encher a fileira?"</blockquote>
-                <p>Ele contou: <em>"Dez!"</em></p>
-                <p>Depois, tiramos algumas. <em>"E agora, quantas faltam?"</em></p>
-                <p>Foi a primeira vez que ele fez subtração sem saber que estava fazendo subtração.</p>
-                <p><strong>Momento especial:</strong> No final, ele disse: <em>"Pai, o Bernardo é forte, mas precisa
-                        pensar também, né?"</em></p>
-                <p style="margin-bottom: 0;">Sim, filho. Força sem ordem é caos. E você acabou de descobrir isso
-                    sozinho.</p>
-            </div>
-
-            <div class="week-card">
-                <h2>Semana 4: A Estrela do Reino</h2>
-                <div class="week-meta">
-                    <span>📖 Lição 003: Números 4 e 5</span>
-                    <span>⏱️ 17 minutos</span>
-                </div>
-                <p>A Pardal Íris ensinou a Raulzito que as pedras do Bernardo podiam virar uma estrela. Cinco pontas.
-                    Cinco pedras nos vértices.</p>
-                <p>Desenhamos a estrela juntos. Ele contou as pontas. Depois, procuramos estrelas na natureza: flores de
-                    cinco pétalas, mãos com cinco dedos.</p>
-                <blockquote>"Pai, eu tenho DUAS estrelas nas mãos!"</blockquote>
-                <p style="margin-bottom: 0;">A geometria deixou de ser abstrata. Estava no corpo dele.</p>
-            </div>
-
-            <hr>
-
-            <h2>O Que Aprendemos (Nós, Os Pais)</h2>
-
-            <h3>1. Menos Explicação, Mais Pergunta</h3>
-            <p>Toda vez que eu "ensinava", Raulzito desligava. Toda vez que eu "perguntava", ele acendia. A diferença é
-                sutil, mas transformadora.</p>
-
-            <h3>2. O Concreto Precede o Abstrato</h3>
-            <p>Pedras → desenho → número. Nunca ao contrário. Jerome Bruner estava certo. As mãos entendem antes que a
-                mente aceite.</p>
-
-            <h3>3. A História é a Cola</h3>
-            <p>Sem a narrativa, seriam só exercícios. Com a narrativa, é uma aventura que ele quer continuar. Ele não
-                pede "matemática" — ele pede "o Melquior".</p>
-
-            <h3>4. 20 Minutos é Real</h3>
-            <p>Passamos de 20 só uma vez. E deu para perceber a diferença na atenção. Charlotte Mason sabia: lições
-                curtas, focadas, frequentes.</p>
-
-            <hr>
-
-            <h2>Resultados Honestos</h2>
-            <p>Depois de um mês:</p>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Antes</th>
-                        <th>Depois</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Contava até 10 com dificuldade</td>
-                        <td>Conta até 20 com confiança</td>
-                    </tr>
-                    <tr>
-                        <td>Não entendia "quanto falta"</td>
-                        <td>Faz subtração simples com objetos</td>
-                    </tr>
-                    <tr>
-                        <td>Achava matemática "chata"</td>
-                        <td>Pede para "ver o Melquior"</td>
-                    </tr>
-                    <tr>
-                        <td>Resistia a sentar</td>
-                        <td>Senta animado para a história</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <p>Não é mágica. É consistência + narrativa + concreto. Todo dia. Vinte minutos.</p>
-
-            <div class="teaser-box">
-                <h3 style="margin-top: 0; color: #92400E;">O Que Vem Depois?</h3>
-                <p>No próximo artigo, contaremos como foi o segundo e terceiro mês — incluindo o dia em que Raulzito
-                    <em>não quis</em> fazer a lição. (Spoiler: não forçamos. E foi a decisão certa.)
-                </p>
-            </div>
-
-            <hr>
-
-            <h2>Para Você</h2>
-            <p>Se você está lendo isso pensando <em>"mas meu filho é diferente"</em> — talvez seja. Cada criança é
-                única, com seu ritmo, suas resistências, suas fagulhas de curiosidade.</p>
-            <p>Mas o princípio é universal: <strong>crianças aprendem o que amam, e amam o que é vivo.</strong></p>
-            <p>Matemática viva não é um método. É uma postura. É tratar seu filho como pessoa capaz, não como recipiente
-                vazio.</p>
-            <p>Raulzito é nossa cobaia de luxo. E ele está amando a aventura.</p>
-
-            <div class="cta-box">
-                <p style="margin: 0;"><strong>Quer ver como uma lição funciona na prática?</strong><br><a
-                        href="../sementes/MV-S-000_O_PORTAL_DO_REINO.html">Experimente o Portal do Reino</a> — é
-                    gratuito.</p>
-            </div>
-
-            <p style="text-align: center;"><strong>Talvez o seu também ame.</strong></p>
+<p>Não somos pedagogos profissionais. Somos pais. Com uma casa bagunçada, rotinas imperfeitas, e muito café. Se funciona aqui, funciona em qualquer lugar.</p>
+<p>Raulzito tem 5 anos. Ele é curioso, energético, se distrai fácil, adora histórias de animais, e odeia sentar por muito tempo. Em outras palavras: uma criança normal.</p>
+<p>Ele é nossa "cobaia de luxo". Se funciona com ele — no caos real da nossa casa, com bebê chorando e café esfriando — funciona para vocês.</p>
+<p>Aqui está o diário honesto das primeiras semanas.</p>
+<hr />
+<h2>Semana 1: O Portal do Reino</h2>
+<p><strong>Lição 000: Conhecendo os Guardiões</strong></p>
+<p>No primeiro dia, não tinha "matemática" visível. Só história.</p>
+<p>Apresentamos o Reino Contado. Falamos do Leão Melquior, guardião da sabedoria. Da Raposa Celeste, curiosa e ágil. Do Urso Bernardo, forte e paciente.</p>
+<p>Raulzito escutou de olhos arregalados. Quando terminamos, ele perguntou:</p>
+<blockquote>
+<p><em>"Pai, o Melquior é o rei? Por que ele é dourado?"</em></p>
+</blockquote>
+<p>Sinal verde. Ele estava dentro do mundo. A matemática viria depois, mas a <strong>porta estava aberta</strong>.</p>
+<p><strong>Tempo total:</strong> 15 minutos.
+<strong>Nível de resistência:</strong> Zero.</p>
+<hr />
+<h2>Semana 2: A Trindade na Palma</h2>
+<p><strong>Lição 001: Números 1, 2, 3</strong></p>
+<p>Aqui entramos na matemática de verdade — mas disfarçada.</p>
+<p>A Raposa Celeste encontrou três sementes de carvalho. Uma para cada promessa do Rei. Usamos três pedras reais na mesa.</p>
+<blockquote>
+<p><em>"Raulzito, quantas pedras a Celeste encontrou?"</em>
+<em>"Três!"</em>
+<em>"Me mostra com seus dedos."</em></p>
+</blockquote>
+<p>Ele mostrou. Contou de novo. Separou em "uma aqui, duas ali".</p>
+<p>Depois, desenhou as três sementes no caderno. Não porque pedimos, mas porque quis.</p>
+<p><strong>O que funcionou:</strong> A história criou contexto. As pedras criaram concretude. O desenho criou memória.</p>
+<p><strong>O que quase deu errado:</strong> Eu quase expliquei demais. Marina me lembrou: <em>"Deixa ele narrar. Não explica, pergunta."</em></p>
+<p>Toda mãe faz isso no começo. É natural. E corrigível.</p>
+<p><strong>Tempo total:</strong> 18 minutos.</p>
+<hr />
+<h2>Semana 3: As Pedras da Fortaleza</h2>
+<p><strong>Lição 002: Organização e Quadros de Dez</strong></p>
+<p>O Urso Bernardo precisava organizar pedras para construir um muro. Mas as pedras estavam bagunçadas. Como ajudar?</p>
+<p>Usamos uma bandeja de ovos (10 espaços) e pedrinhas reais. Raulzito encheu os espaços.</p>
+<blockquote>
+<p><em>"Quantas pedras o Bernardo precisa para encher a fileira?"</em></p>
+</blockquote>
+<p>Ele contou: <em>"Dez!"</em></p>
+<p>Depois, tiramos algumas. <em>"E agora, quantas faltam?"</em></p>
+<p>Foi a primeira vez que ele fez subtração sem saber que estava fazendo subtração.</p>
+<p><strong>Momento especial:</strong> No final, ele disse: <em>"Pai, o Bernardo é forte, mas precisa pensar também, né?"</em></p>
+<p>Sim, filho. Força sem ordem é caos. E você acabou de descobrir isso sozinho.</p>
+<p><strong>Tempo total:</strong> 22 minutos (passou um pouco, mas estava engajado).</p>
+<hr />
+<h2>Semana 4: A Estrela do Reino</h2>
+<p><strong>Lição 003: Números 4 e 5, Geometria Natural</strong></p>
+<p>A Pardal Íris ensinou a Raulzito que as pedras do Bernardo podiam virar uma estrela. Cinco pontas. Cinco pedras nos vértices.</p>
+<p>Desenhamos a estrela juntos. Ele contou as pontas. Depois, procuramos estrelas na natureza: flores de cinco pétalas, mãos com cinco dedos.</p>
+<blockquote>
+<p><em>"Pai, eu tenho DUAS estrelas nas mãos!"</em></p>
+</blockquote>
+<p>A geometria deixou de ser abstrata. Estava no corpo dele.</p>
+<p><strong>Tempo total:</strong> 17 minutos.</p>
+<hr />
+<h2>O Que Aprendemos (Nós, Os Pais)</h2>
+<h3>1. Menos Explicação, Mais Pergunta</h3>
+<p>Toda vez que eu "ensinava", Raulzito desligava. Toda vez que eu "perguntava", ele acendia. A diferença é sutil, mas transformadora.</p>
+<h3>2. O Concreto Precede o Abstrato</h3>
+<p>Pedras → desenho → número. Nunca ao contrário. Jerome Bruner estava certo. As mãos entendem antes que a mente aceite.</p>
+<h3>3. A História é a Cola</h3>
+<p>Sem a narrativa, seriam só exercícios. Com a narrativa, é uma aventura que ele quer continuar. Ele não pede "matemática" — ele pede "o Melquior".</p>
+<h3>4. 20 Minutos é Real</h3>
+<p>Passamos de 20 só uma vez. E deu para perceber a diferença na atenção. Charlotte Mason sabia: lições curtas, focadas, frequentes.</p>
+<hr />
+<h2>Resultados Honestos</h2>
+<p>Depois de um mês:</p>
+<table>
+<thead>
+<tr>
+<th>Antes</th>
+<th>Depois</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contava até 10 com dificuldade</td>
+<td>Conta até 20 com confiança</td>
+</tr>
+<tr>
+<td>Não entendia "quanto falta"</td>
+<td>Faz subtração simples com objetos</td>
+</tr>
+<tr>
+<td>Achava matemática "chata"</td>
+<td>Pede para "ver o Melquior"</td>
+</tr>
+<tr>
+<td>Resistia a sentar</td>
+<td>Senta animado para a história</td>
+</tr>
+</tbody>
+</table>
+<p>Não é mágica. É consistência + narrativa + concreto. Todo dia. Vinte minutos.</p>
+<hr />
+<h2>O Que Vem Depois?</h2>
+<p>No próximo artigo, contaremos como foi o segundo e terceiro mês — incluindo o dia em que Raulzito <em>não quis</em> fazer a lição. (Spoiler: não forçamos. E foi a decisão certa.)</p>
+<hr />
+<h2>Para Você</h2>
+<p>Se você está lendo isso pensando <em>"mas meu filho é diferente"</em> — talvez seja. Cada criança é única, com seu ritmo, suas resistências, suas fagulhas de curiosidade.</p>
+<p>Mas o princípio é universal: <strong>crianças aprendem o que amam, e amam o que é vivo.</strong></p>
+<p>Matemática viva não é um método. É uma postura. É tratar seu filho como pessoa capaz, não como recipiente vazio.</p>
+<p>Raulzito é nossa cobaia de luxo. E ele está amando a aventura.</p>
+<p><strong>Quer ver como uma lição funciona na prática?</strong> <a href="../sementes/MV-S-000_O_PORTAL_DO_REINO.html">Experimente o Portal do Reino</a> — é gratuito.</p>
+<p>Talvez o seu também ame.</p>
         </div>
     </article>
 </body>
-
 </html>

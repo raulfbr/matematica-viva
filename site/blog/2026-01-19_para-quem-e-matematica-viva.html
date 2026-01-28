@@ -1,412 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Matemática Viva não é para todo mundo. E está tudo bem. Descubra se você faz parte dessa tribo de famílias que acreditam em educação viva.">
-    <title>Para Quem é Matemática Viva? | Blog Matemática Viva</title>
+    <title>Para Quem é Matemática Viva? (E Para Quem Não É) | Blog Forja Viva</title>
     <link rel="stylesheet" href="../style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        .blog-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .article-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .article-meta {
-            color: #6B7280;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-family: 'Lora', serif;
-            font-size: 2.5rem;
-            color: #111827;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-
-        .article-summary {
-            font-size: 1.25rem;
-            color: #4B5563;
-            line-height: 1.6;
-            font-style: italic;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .article-body {
-            background: #FFF;
-            padding: 3rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            line-height: 1.8;
-            font-size: 1.125rem;
-            color: #374151;
-            font-family: 'Lora', serif;
-        }
-
-        .article-body h2 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            color: #111827;
-        }
-
-        .article-body h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 0.75rem;
-            font-size: 1.25rem;
-            color: #1F2937;
-        }
-
-        .article-body p {
-            margin-bottom: 1.5rem;
-        }
-
-        .article-body ul,
-        .article-body ol {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            list-style: none;
-        }
-
-        .article-body li {
-            margin-bottom: 0.75rem;
-        }
-
-        .article-body blockquote {
-            border-left: 4px solid #047857;
-            padding-left: 1rem;
-            margin: 1.5rem 0;
-            color: #4B5563;
-            font-style: italic;
-        }
-
-        .article-body hr {
-            border: none;
-            border-top: 2px solid #E5E7EB;
-            margin: 2.5rem 0;
-        }
-
-        .yes-card {
-            background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid #047857;
-        }
-
-        .yes-card h3 {
-            margin-top: 0;
-            color: #047857;
-        }
-
-        .no-card {
-            background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-left: 4px solid #DC2626;
-        }
-
-        .no-card h3 {
-            margin-top: 0;
-            color: #DC2626;
-        }
-
-        .movement-box {
-            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: center;
-            border: 2px solid #6366F1;
-        }
-
-        .movement-box p {
-            margin: 0;
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: #4338CA;
-        }
-
-        .checklist {
-            background: #F9FAFB;
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .checklist ol {
-            counter-reset: item;
-        }
-
-        .checklist li {
-            counter-increment: item;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #E5E7EB;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .checklist li:last-child {
-            border-bottom: none;
-        }
-
-        .checklist li::before {
-            content: counter(item);
-            background: #047857;
-            color: white;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            flex-shrink: 0;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #047857 0%, #065F46 100%);
-            color: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .cta-box h3 {
-            color: white;
-            margin-top: 0;
-        }
-
-        .cta-box p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .cta-box a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .home-btn {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            width: 3rem;
-            height: 3rem;
-            background: #FFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid #E5E7EB;
-            color: #374151;
-            text-decoration: none;
-            transition: all 0.2s;
-            z-index: 100;
-        }
-
-        .home-btn:hover {
-            transform: translateY(-2px);
-            color: #047857;
-        }
-
+        .blog-container { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; }
+        .article-header { text-align: center; margin-bottom: 3rem; }
+        .article-meta { color: #6B7280; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        h1 { font-family: 'Lora', serif; font-size: 3rem; color: #111827; line-height: 1.2; margin-bottom: 1.5rem; }
+        .article-summary { font-size: 1.25rem; color: #4B5563; line-height: 1.6; font-style: italic; max-width: 600px; margin: 0 auto 2rem; }
+        
+        .article-body { background: #FFF; padding: 3rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); line-height: 1.8; font-size: 1.125rem; color: #374151; font-family: 'Lora', serif; }
+        .article-body h2 { font-family: 'Inter', sans-serif; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.5rem; color: #111827; }
+        .article-body p { margin-bottom: 1.5rem; }
+        .article-body ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        .article-body li { margin-bottom: 0.5rem; }
+        .article-body blockquote { border-left: 4px solid #047857; padding-left: 1rem; margin: 1.5rem 0; color: #4B5563; font-style: italic; }
+        
+        .home-btn { position: fixed; top: 2rem; left: 2rem; width: 3rem; height: 3rem; background: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #E5E7EB; color: #374151; text-decoration: none; transition: all 0.2s; z-index: 100; }
+        .home-btn:hover { transform: translateY(-2px); color: #047857; }
+        
         @media (max-width: 768px) {
-            .blog-container {
-                padding: 2rem 1rem;
-            }
-
-            h1 {
-                font-size: 1.75rem;
-            }
-
-            .article-body {
-                padding: 1.5rem;
-            }
+            .blog-container { padding: 2rem 1rem; }
+            h1 { font-size: 2rem; }
+            .article-body { padding: 1.5rem; }
         }
     </style>
 </head>
-
 <body>
     <a href="../index.html" class="home-btn" title="Voltar ao Dashboard">🏠</a>
 
     <article class="blog-container">
         <header class="article-header">
-            <div class="article-meta">19 de Janeiro, 2026 • Por O Embaixador</div>
+            <div class="article-meta">2026-01-19 • Por O Embaixador</div>
             <h1>Para Quem é Matemática Viva? (E Para Quem Não É)</h1>
-            <div class="article-summary">Não somos para todo mundo. E está tudo bem. Aqui está como saber se somos para
-                você.</div>
+            <div class="article-summary">Não somos para todo mundo. E está tudo bem. Aqui está como saber se somos para você.</div>
         </header>
-
+        
         <div class="article-body">
             <p>Vou ser honesto com você.</p>
-            <p>Matemática Viva não é para todo mundo. E tudo bem.</p>
-            <p>Não estamos tentando converter o mundo. Estamos tentando servir uma tribo específica: famílias que
-                acreditam em certas coisas sobre educação, sobre crianças, sobre vida.</p>
-            <p>Este artigo é para você descobrir se faz parte dessa tribo — ou não.</p>
-
-            <hr>
-
-            <h2>Matemática Viva É Para Você Se...</h2>
-
-            <div class="yes-card">
-                <h3>✅ Você acredita que seu filho é uma PESSOA, não um projeto</h3>
-                <p>Charlotte Mason, a educadora britânica que inspira nosso trabalho, tinha um lema: <em>"Crianças são
-                        pessoas completas desde o nascimento."</em></p>
-                <p>Isso significa: seu filho não é um copo vazio para ser enchido de conteúdo. Ele é um ser humano com
-                    dignidade, curiosidade e vontade própria. A educação não é algo que você FAZ nele — é algo que você
-                    CULTIVA com ele.</p>
-                <p style="margin-bottom:0;">Se você acredita nisso, estamos na mesma página.</p>
-            </div>
-
-            <div class="yes-card">
-                <h3>✅ Você quer matemática com VIDA, não planilhas mortas</h3>
-                <p>Na escola tradicional, matemática é isso: 50 exercícios iguais, decorar tabuada, preencher lacunas.
-                </p>
-                <p>Na Matemática Viva, é assim: histórias com personagens, problemas reais em mundos imaginários,
-                    descobertas que fazem sentido.</p>
-                <p>Chamamos de "Reino Contado" — um universo narrativo onde os números têm propósito e os problemas têm
-                    contexto.</p>
-                <p style="margin-bottom:0;">Se você quer que seu filho AME matemática em vez de TOLERAR, estamos juntos.
-                </p>
-            </div>
-
-            <div class="yes-card">
-                <h3>✅ Você valoriza o processo, não só o resultado</h3>
-                <p>Não prometemos que seu filho vai ser o melhor da sala em 3 meses. Prometemos que ele vai entender o
-                    que está fazendo — e por que aquilo importa.</p>
-                <p>Usamos o método CPA (Concreto → Pictórico → Abstrato): primeiro as mãos tocam, depois os olhos veem,
-                    depois a mente abstrai. Isso leva tempo. Mas constrói fundamentos que não desmoronam.</p>
-                <p style="margin-bottom:0;">Se você tem pressa de "passar de ano", talvez existam opções mais rápidas.
-                    Se você quer construir para a vida, este é o lugar.</p>
-            </div>
-
-            <div class="yes-card">
-                <h3>✅ Você educa em casa (ou quer complementar a escola)</h3>
-                <p>Nosso currículo foi pensado para famílias educadoras. Mães e pais que estão na linha de frente, todos
-                    os dias, ensinando seus filhos.</p>
-                <p style="margin-bottom:0;">Não substituímos escolas. Mas se você está em casa, somos seu aliado. E se
-                    seu filho está na escola mas você quer enriquecer a matemática dele, também funcionamos.</p>
-            </div>
-
-            <div class="yes-card">
-                <h3>✅ Sua fé importa na educação</h3>
-                <p>Não somos um currículo "secular neutro". Acreditamos que a matemática revela a ordem do Criador. Que
-                    os padrões do universo apontam para Alguém. Que a verdade, a beleza e a bondade estão conectadas.
-                </p>
-                <p>Isso não significa que cada lição tem um versículo. Significa que a cosmovisão subjacente é cristã.
-                </p>
-                <p style="margin-bottom:0;">Se você também caminha nessa direção, vai se sentir em casa. Se você está
-                    curiosa sobre como a fé pode enriquecer a educação, venha conhecer — sem pressão.</p>
-            </div>
-
-            <hr>
-
-            <h2>Matemática Viva NÃO É Para Você Se...</h2>
-
-            <div class="no-card">
-                <h3>❌ Você quer resultados imediatos e mensuráveis</h3>
-                <p style="margin-bottom:0;">Se sua métrica é "quantas contas meu filho acerta por minuto", existem apps
-                    que fazem isso melhor. Nós priorizamos compreensão sobre velocidade. Profundidade sobre quantidade.
-                </p>
-            </div>
-
-            <div class="no-card">
-                <h3>❌ Você prefere terceirizar a educação</h3>
-                <p style="margin-bottom:0;">Matemática Viva exige presença. Você é o Portador — a pessoa que guia a
-                    criança pelo Reino. Não é difícil, mas exige estar lá. Se você quer um sistema que "se ensina
-                    sozinho", não somos isso.</p>
-            </div>
-
-            <div class="no-card">
-                <h3>❌ Você quer neutralidade religiosa total</h3>
-                <p style="margin-bottom:0;">Nossa cosmovisão é cristã. Não de forma agressiva, mas consistente. Se você
-                    precisa de um currículo 100% secular, existem excelentes opções no mercado — e respeitamos quem faz
-                    essa escolha.</p>
-            </div>
-
-            <div class="no-card">
-                <h3>❌ Você acha que matemática "não precisa de história"</h3>
-                <p style="margin-bottom:0;">Nosso diferencial é a narrativa. Se você prefere exercícios diretos, sem
-                    contexto, sem personagens, sem mundo — vamos discordar sobre pedagogia. E tudo bem. Cada família
-                    encontra seu caminho.</p>
-            </div>
-
-            <hr>
-
-            <h2>A Pergunta Final</h2>
-
-            <div class="movement-box">
-                <p>Nós não somos um produto. Somos um <strong>movimento de famílias</strong> que decidiram educar
-                    diferente.</p>
-            </div>
-
-            <p>Leia estas frases. Se você concordar com a maioria, você é da tribo:</p>
-
-            <div class="checklist">
-                <ol>
-                    <li><em>"Meu filho é uma pessoa completa, não um projeto incompleto."</em></li>
-                    <li><em>"Quero que ele ame aprender, não apenas faça a lição."</em></li>
-                    <li><em>"Prefiro profundidade a velocidade."</em></li>
-                    <li><em>"Estou disposta a estar presente, mesmo que seja só 20 minutos."</em></li>
-                    <li><em>"Minha fé informa como educo."</em></li>
-                </ol>
-            </div>
-
-            <div class="cta-box">
-                <h3>Concordou com 4 ou 5?</h3>
-                <p style="margin-bottom: 0;"><strong>Bem-vinda ao Reino Contado.</strong></p>
-            </div>
-
-            <p><strong>Concordou com 1 ou 2?</strong></p>
-            <p>Sem problema. Existem outros caminhos excelentes. Fico feliz que você esteja buscando o melhor para seu
-                filho — isso já te faz uma ótima mãe.</p>
-
-            <hr>
-
-            <h2>Para Quem Está Na Dúvida</h2>
-            <p>Se você leu até aqui e ainda não sabe, sugiro:</p>
-            <ol style="list-style: decimal;">
-                <li><strong>Leia outros artigos do blog.</strong> Sinta o tom, a abordagem.</li>
-                <li><strong>Veja uma lição de exemplo.</strong> <a href="../sementes/MV-S-000_O_PORTAL_DO_REINO.html">O
-                        Portal do Reino</a> está disponível.</li>
-                <li><strong>Converse conosco.</strong> Estamos no WhatsApp da comunidade.</li>
-            </ol>
-            <p>Não temos pressa de te convencer. Queremos famílias alinhadas, não clientes arrependidos.</p>
-
-            <hr>
-
-            <p>Na Matemática Viva, acreditamos que <strong>a matemática é uma linguagem de beleza</strong>. E que seu
-                filho
-                merece aprendê-la com dignidade, alegria e propósito.</p>
-            <p>Se isso ressoa em você, a fogueira está acesa. Venha se aquecer.</p>
-            <p style="text-align: center; font-size: 1.25rem;"><strong>Sua cadeira já está reservada.</strong></p>
+<p>Matemática Viva não é para todo mundo. E tudo bem.</p>
+<p>Não estamos tentando converter o mundo. Estamos tentando servir uma tribo específica: famílias que acreditam em certas coisas sobre educação, sobre crianças, sobre vida.</p>
+<p>Este artigo é para você descobrir se faz parte dessa tribo — ou não.</p>
+<hr />
+<h2>Matemática Viva É Para Você Se...</h2>
+<h3>✅ Você acredita que seu filho é uma PESSOA, não um projeto</h3>
+<p>Charlotte Mason, a educadora britânica que inspira nosso trabalho, tinha um lema: <em>"Crianças são pessoas completas desde o nascimento."</em></p>
+<p>Isso significa: seu filho não é um copo vazio para ser enchido de conteúdo. Ele é um ser humano com dignidade, curiosidade e vontade própria. A educação não é algo que você FAZ nele — é algo que você CULTIVA com ele.</p>
+<p>Se você acredita nisso, estamos na mesma página.</p>
+<hr />
+<h3>✅ Você quer matemática com VIDA, não planilhas mortas</h3>
+<p>Na escola tradicional, matemática é isso: 50 exercícios iguais, decorar tabuada, preencher lacunas.</p>
+<p>Na Matemática Viva, é assim: histórias com personagens, problemas reais em mundos imaginários, descobertas que fazem sentido.</p>
+<p>Chamamos de "Reino Contado" — um universo narrativo onde os números têm propósito e os problemas têm contexto.</p>
+<p>Se você quer que seu filho AME matemática em vez de TOLERAR, estamos juntos.</p>
+<hr />
+<h3>✅ Você valoriza o processo, não só o resultado</h3>
+<p>Não prometemos que seu filho vai ser o melhor da sala em 3 meses. Prometemos que ele vai entender o que está fazendo — e por que aquilo importa.</p>
+<p>Usamos o método CPA (Concreto → Pictórico → Abstrato): primeiro as mãos tocam, depois os olhos veem, depois a mente abstrai. Isso leva tempo. Mas constrói fundamentos que não desmoronam.</p>
+<p>Se você tem pressa de "passar de ano", talvez existam opções mais rápidas. Se você quer construir para a vida, este é o lugar.</p>
+<hr />
+<h3>✅ Você educa em casa (ou quer complementar a escola)</h3>
+<p>Nosso currículo foi pensado para famílias educadoras. Mães e pais que estão na linha de frente, todos os dias, ensinando seus filhos.</p>
+<p>Não substituímos escolas. Mas se você está em casa, somos seu aliado. E se seu filho está na escola mas você quer enriquecer a matemática dele, também funcionamos.</p>
+<hr />
+<h3>✅ Sua fé importa na educação</h3>
+<p>Não somos um currículo "secular neutro". Acreditamos que a matemática revela a ordem do Criador. Que os padrões do universo apontam para Alguém. Que a verdade, a beleza e a bondade estão conectadas.</p>
+<p>Isso não significa que cada lição tem um versículo. Significa que a cosmovisão subjacente é cristã.</p>
+<p>Se você também caminha nessa direção, vai se sentir em casa. Se você está curiosa sobre como a fé pode enriquecer a educação, venha conhecer — sem pressão.</p>
+<hr />
+<h2>Matemática Viva NÃO É Para Você Se...</h2>
+<h3>❌ Você quer resultados imediatos e mensuráveis</h3>
+<p>Se sua métrica é "quantas contas meu filho acerta por minuto", existem apps que fazem isso melhor. Nós priorizamos compreensão sobre velocidade. Profundidade sobre quantidade.</p>
+<hr />
+<h3>❌ Você prefere terceirizar a educação</h3>
+<p>Matemática Viva exige presença. Você é o Portador — a pessoa que guia a criança pelo Reino. Não é difícil, mas exige estar lá. Se você quer um sistema que "se ensina sozinho", não somos isso.</p>
+<hr />
+<h3>❌ Você quer neutralidade religiosa total</h3>
+<p>Nossa cosmovisão é cristã. Não de forma agressiva, mas consistente. Se você precisa de um currículo 100% secular, existem excelentes opções no mercado — e respeitamos quem faz essa escolha.</p>
+<hr />
+<h3>❌ Você acha que matemática "não precisa de história"</h3>
+<p>Nosso diferencial é a narrativa. Se você prefere exercícios diretos, sem contexto, sem personagens, sem mundo — vamos discordar sobre pedagogia. E tudo bem. Cada família encontra seu caminho.</p>
+<hr />
+<h2>A Pergunta Final</h2>
+<p>Nós não somos um produto. Somos um movimento de famílias que decidiram educar diferente.</p>
+<p>Leia estas frases. Se você concordar com a maioria, você é da tribo:</p>
+<ol>
+<li><em>"Meu filho é uma pessoa completa, não um projeto incompleto."</em></li>
+<li><em>"Quero que ele ame aprender, não apenas faça a lição."</em></li>
+<li><em>"Prefiro profundidade a velocidade."</em></li>
+<li><em>"Estou disposta a estar presente, mesmo que seja só 20 minutos."</em></li>
+<li><em>"Minha fé informa como educo."</em></li>
+</ol>
+<p>Concordou com 4 ou 5? </p>
+<p><strong>Bem-vinda ao Reino Contado.</strong></p>
+<p>Concordou com 1 ou 2?</p>
+<p><strong>Sem problema.</strong> Existem outros caminhos excelentes. Fico feliz que você esteja buscando o melhor para seu filho — isso já te faz uma ótima mãe.</p>
+<hr />
+<h2>Para Quem Está Na Dúvida</h2>
+<p>Se você leu até aqui e ainda não sabe, sugiro:</p>
+<ol>
+<li><strong>Leia outros artigos do blog.</strong> Sinta o tom, a abordagem.</li>
+<li><strong>Veja uma lição de exemplo.</strong> <a href="../sementes/MV-S-000_O_PORTAL_DO_REINO.html">O Portal do Reino</a> está disponível.</li>
+<li><strong>Converse conosco.</strong> Estamos no WhatsApp da comunidade.</li>
+</ol>
+<p>Não temos pressa de te convencer. Queremos famílias alinhadas, não clientes arrependidos.</p>
+<hr />
+<p>Na Matemática Viva, acreditamos que <strong>a matemática é uma linguagem de beleza</strong>. E que seu filho merece aprendê-la com dignidade, alegria e propósito.</p>
+<p>Se isso ressoa em você, a fogueira está acesa. Venha se aquecer.</p>
+<p><strong>Sua cadeira já está reservada.</strong></p>
         </div>
     </article>
 </body>
-
 </html>

@@ -40,7 +40,29 @@ class SementesDriver(GutenbergEngine):
             if 'next_licao' in item:
                 item['data']['licao']['navegacao_calculada_next'] = item['next_licao']
         
-        # 3. Delegar para o Engine padrão fazer o trabalho pesado (Jinja, Filesystem)
+        # 3. FILTRO DE SEGURANÇA (MANUAL OVERRIDE)
+        # O usuário está editando manualmente as lições 000-020.
+        # Removemos essas lições da lista de renderização para que o Forge NÃO as sobrescreva.
+        # Elas ainda foram usadas para cálculo de links (passo 1), então a navegação da 021 apontará corretamente para a 020.
+        lessons_to_render = []
+        for item in self.lessons_index:
+            try:
+                # Extrai número do ID (Ex: MV-S-001 -> 1)
+                lid = item.get('id', '')
+                parts = lid.split('-')
+                if len(parts) >= 3 and parts[2].isdigit():
+                    num = int(parts[2])
+                    if 0 <= num <= 25:
+                        ForgeLogger.log(f"🔒 Skipped (Manual Release): {lid}", status="🛡️")
+                        continue
+            except:
+                 pass # Se falhar o parse, renderiza por segurança
+            
+            lessons_to_render.append(item)
+            
+        self.lessons_index = lessons_to_render
+
+        # 4. Delegar para o Engine padrão fazer o trabalho pesado (Jinja, Filesystem)
         super().render_all()
 
     def validate_lesson(self, fpath, data):

@@ -19,6 +19,13 @@ transicoes_sensoriais:
     - {el: Cheiro, desc: aroma natural, ex: "Musgo fresco"}
     - {el: Som, desc: audição/silêncio, ex: "Água correndo"}
     - {el: Luz, desc: qualidade luz, ex: "Dourado morno"}
+    - {el: Tato, desc: textura/temperatura, ex: "Pedra fria"}
+
+empilhamento_sensorial:
+  regra: "Nunca entregar a informação pura. 'Embrulhar' em 3 camadas sensoriais."
+  formula: "1. Visão (Onde estamos) + 2. Tato/Cheiro (O que sentimos) + 3. Tom (Como nos sentimos)."
+  exemplo_ruim: "Melquior está sentado no jardim."
+  exemplo_bom: "A luz dourada bate nas pedras (Visão). Cheira a musgo úmido (Cheiro). Melquior espera em silêncio (Ação)."
 
 falas_com_tom:
   regra: "Sempre indicar [tom] antes do script para guiar Portador."
@@ -37,7 +44,9 @@ pausas:
     - {tag: "[pausa]", tempo: "2-3s", uso: "Transição ideias"}
     - {tag: "[Pausa. Respire com a criança.]", tempo: "5-7s", uso: "Absorção profunda"}
     - {tag: "[pausa 3s — deixe silêncio pesar]", tempo: "3s", uso: "Ritual entrada"}
+    - {tag: "[pausa 3s — deixe silêncio pesar]", tempo: "3s", uso: "Ritual entrada"}
     - {tag: "[pausa — respeite o tempo da criança]", tempo: "Indefinido", uso: "Narração"}
+    - {tag: "[Aguarde o sinal da criança]", tempo: "Indefinido", uso: "Gatilho de Foco"}
 
 frases_canonicas:
   ssot: "LORE/guardioes.yaml"

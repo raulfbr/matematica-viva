@@ -11,58 +11,72 @@ tons:
 # Emoções Básicas
   animado:
     desc: "Com entusiasmo, sorrindo, e brilho nos olhos! Contagie a criança."
+    corpo: "Gestos amplos, inclinação para frente, sorriso aberto."
     icone: "✨"
 
   calmo:
     desc: "Voz suave, pausada, transmitindo paz e segurança."
+    corpo: "Ombros relaxados, respiração visível, gestos lentos."
     icone: "🍃"
 
   serio:
     desc: "Olhando nos olhos, voz firme mas gentil. É importante."
+    corpo: "Contato visual fixo, postura ereta, mãos paradas."
     icone: "🏛️"
 
   cochicho:
     desc: "Incline-se para perto, baixe a voz, como um segredo valioso."
+    corpo: "Mão em 'concha' ao lado da boca, aproximar o rosto."
     icone: "🤫"
 
   confuso:
     desc: "Coce a cabeça ou franza a testa. Peça ajuda genuína à criança."
+    corpo: "Inclinar a cabeça para o lado, sobrancelha levantada."
     icone: "🤔"
 
   curioso:
     desc: "Incline a cabeça, olhe com atenção. Como um detetive descobrindo uma pista."
+    corpo: "Olhos semicerrados focados, dedo no queixo."
     icone: "🧐"
 
   maravilhado:
     desc: "Abra bem os olhos, suspire 'Oooh!'. Há beleza escondida em cada detalhe."
+    corpo: "Mãos no rosto ou no peito, boca levemente aberta."
     icone: "🤩"
 
   segredo:
     desc: "Olhe para os lados, baixe a voz. É algo só entre nós."
+    corpo: "Olhar periférico rápido, ombros encolhidos de cumplicidade."
     icone: "🤫"
 
   grato:
     desc: "Mão no peito, sorriso sincero. Agradeça de coração."
+    corpo: "Mão sobre o coração, leve inclinação de cabeça."
     icone: "🙏"
 
   celebracao:
     desc: "Voz alta, festiva! Vale palmas ou um 'Huzzah!'."
+    corpo: "Braços para o alto, palmas, high-five."
     icone: "🎉"
 
   misterioso:
     desc: "Voz baixa, olhos arregalados de suspense."
+    corpo: "Movimentos muito lentos, 'congelar' a pose."
     icone: "🕵️"
 
   orgulhoso:
     desc: "Infle o peito, sorria com satisfação. Mostre que é uma honra."
+    corpo: "Queixo elevado, postura expandida, mão no ombro da criança."
     icone: "🦁"
 
   poetico:
     desc: "Fale devagar, saboreando a beleza das palavras. Como quem recita um verso."
+    corpo: "Gestos fluidos e curvos com as mãos (maestro)."
     icone: "📜"
 
   observador:
     desc: "Aponte para o detalhe com delicadeza. Convide a olhar perto."
+    corpo: "Dedo indicador guiando o olhar, aproximar-se do objeto."
     icone: "🔍"
 
 # Emoções Específicas
@@ -80,4 +94,9 @@ tons:
     
   ritual:
     desc: "Voz cerimonial, marcada, respeitando cada palavra."
+    corpo: "Postura ereta e solene, respiração profunda antes de falar."
     icone: "🕯️"
+
+  instrucao:
+    desc: "Neutro, claro e direto. Para guiar ações (ex: 'Aponte para...')."
+    icone: "👉"

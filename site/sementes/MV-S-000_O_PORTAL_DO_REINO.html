@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Portal do Reino | Matemática Viva</title>
     <!-- CSS ISOLADO DE SEMENTES -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Gloria+Hallelujah&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <style>
         /* INLINE STYLES FOR CRITICAL RENDERING PRIORITY */
-        body { background-color: #F8F9FA; color: #374151; }
-        .lesson-container { max-width: 768px; margin: 0 auto; padding-bottom: 4rem; }
-        
+        body {
+            background-color: #F8F9FA;
+            color: #374151;
+        }
+
+        .lesson-container {
+            max-width: 768px;
+            margin: 0 auto;
+            padding-bottom: 4rem;
+        }
+
         /* CARD COMPONENT */
         .scene-card {
             background: #FFFFFF;
@@ -25,8 +36,22 @@
             position: relative;
             overflow: hidden;
         }
+
+        /* MOBILE OVERRIDE FOR SCENE CARD */
+        @media (max-width: 768px) {
+            .scene-card {
+                padding: 1rem !important;
+                /* Open up space on mobile */
+            }
+        }
+
         .scene-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
             background: linear-gradient(90deg, #FCD34D 0%, #F59E0B 100%);
             opacity: 0.8;
         }
@@ -37,11 +62,30 @@
             font-size: 1.35rem;
             color: #111827;
             margin-bottom: 2rem;
-            display: flex; align-items: center; gap: 0.75rem; font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
         }
-        .scene-icon { font-size: 1.5rem; }
-        h2 { font-family:'Outfit'; color:#6B7280; font-size:1rem; text-transform:uppercase; letter-spacing:2px; margin: 3rem 0 1rem 0; text-align:center; }
-        strong { font-weight: 600; color: #1F2937; }
+
+        .scene-icon {
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            font-family: 'Outfit';
+            color: #6B7280;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 3rem 0 1rem 0;
+            text-align: center;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #1F2937;
+        }
 
         /* COMPONENTS */
         .script-persona-block {
@@ -49,29 +93,68 @@
             border: 1px solid #F3F4F6;
             border-left: 4px solid #10B981;
             border-radius: 8px;
-            margin-top: 1.5rem; padding: 1.5rem;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
         }
-        .script-avatar { border: 2px solid #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        
+
+        .script-avatar {
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
         .instruction-box {
-            background: #FEFCE8; border: 1px solid #FEF9C3; color: #854D0E;
-            border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0;
-            display: flex; gap: 1rem; align-items: flex-start;
+            background: #FEFCE8;
+            border: 1px solid #FEF9C3;
+            color: #854D0E;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
         }
-        .instruction-icon { font-size: 1.5rem; }
-        
-        .portador-block { border-left: 4px solid #10B981 !important; background: #FFFFFF !important; }
-        .script-name { text-transform: uppercase; letter-spacing: 1px; font-weight: bold; }
+
+        .instruction-icon {
+            font-size: 1.5rem;
+        }
+
+        .portador-block {
+            border-left: 4px solid #10B981 !important;
+            background: #FFFFFF !important;
+        }
+
+        .script-name {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
 
         /* MOBILE OPTIMIZATION */
         @media (max-width: 768px) {
-            .lesson-container { padding: 0; }
-            .scene-card { border-radius: 0; margin: 0 0 0.5rem 0; box-shadow: none; border-bottom: 1px solid #E5E7EB; }
-            .scene-card::before { height: 3px; }
-            h2 { font-size: 1.4rem; padding: 0 1.5rem; margin-top: 2rem; }
+            .lesson-container {
+                padding: 0;
+            }
+
+            .scene-card {
+                border-radius: 0;
+                margin: 0 0 0.5rem 0;
+                box-shadow: none;
+                border-bottom: 1px solid #E5E7EB;
+            }
+
+            .scene-card::before {
+                height: 3px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                padding: 0 1.5rem;
+                margin-top: 2rem;
+            }
         }
     </style>
 </head>
+
 <body class="clima-0">
     <a href="../index.html" class="home-btn" title="Voltar ao Dashboard">🏡</a>
 
@@ -82,935 +165,1034 @@
             <h1 class="hero-title">O Portal do Reino</h1>
             <p class="hero-quote">"O Convite do Mentor Melquior — as portas do Reino Contado se abrem para você."</p>
             <!-- ASSETS ISOLADOS DE SEMENTES -->
-            <img src="../assets/sementes/guardioes/melquior-leao.png" 
-                 onError="this.src='../assets/sementes/guardioes/placeholder.png'"
-                 alt="melquior" class="hero-guardian">
+            <img src="../assets/sementes/guardioes/melquior-leao.png"
+                onError="this.src='../assets/sementes/guardioes/placeholder.png'" alt="melquior" class="hero-guardian">
         </header>
 
         <article class="lesson-body">
-            
 
 
 
 
 
 
-<div class="lesson-header-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E5E7EB;">
-    <div style="width: 33%;">
-        
-    </div>
-    
-    <div style="width: 33%; text-align: center;">
-        <img src="../assets/icon-sementes.png" alt="Sementes" style="height: 32px; opacity: 0.8;" onerror="this.style.display='none'">
-    </div>
-    
-    <div style="width: 33%; text-align: right;">
-        
-        <a href="MV-S-001_A_TRINDADE_NA_PALMA.html" class="nav-mini-link" style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
-            <span>A Trindade na Palma</span> <span>→</span>
-        </a>
-        
-    </div>
-</div>
 
+            <div class="lesson-header-nav"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E5E7EB;">
+                <div style="width: 33%;">
 
+                </div>
 
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">👨‍👩‍👧</span>
-        Preparação do Portador
-    </div>
-    
-    
-    
-    
+                <div style="width: 33%; text-align: center;">
+                    <img src="../assets/icon-sementes.png" alt="Sementes" style="height: 32px; opacity: 0.8;"
+                        onerror="this.style.display='none'">
+                </div>
 
-    
-<div class="instruction-box">
-    <span class="instruction-icon">💡</span>
-    <div>
-        
-        
-        <strong>Dica do Coração:</strong> Hoje não há matemática. Só magia.<br>Seu único trabalho é criar o ambiente sagrado.<br>Acenda uma vela (real ou imaginária), estenda o tapete, diminua as luzes.<br>Melquior fará o resto.<br>
-    
-    </div>
-</div>
+                <div style="width: 33%; text-align: right;">
 
+                    <a href="MV-S-001_A_TRINDADE_NA_PALMA.html" class="nav-mini-link"
+                        style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
+                        <span>A Trindade na Palma</span> <span>→</span>
+                    </a>
 
-    
-    
-    
-    
-    
-    <div class="materials-box" style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:8px; padding:1.25rem; margin:1.5rem 0;">
-        
-        <p><strong>🎯 Essencial:</strong></p>
-        <ul style="margin-top:0.5rem; margin-left:1rem;">
-            
-            <li>Tapete ou cobertor (Tapete do Reino) (1)</li>
-            
-            <li>Vela (real ou LED) (1)</li>
-            
-        </ul>
-        
-        
-        
-        <p style="margin-top:1rem;"><strong>📦 Se tiver:</strong></p>
-        <ul style="margin-top:0.5rem; margin-left:1rem; color:#6B7280;">
-            
-            <li>Cards dos 5 Guardiões impressos (5)</li>
-            
-            <li>Música ambiente suave (opcional) (1)</li>
-            
-        </ul>
-        
-        
-        
-        
-    </div>
-    
-
-    
-    
-    <p><strong>🌟 Seu filho vai descobrir:</strong> Que existe um Reino especial chamado Reino Contado.<br>Que cinco Guardiões vão caminhar com ele nesta jornada.<br>Que ele é um Herdeiro — alguém especial, esperado.<br></p>
-    
-
-    <p><strong>🛡️ Protocolo de Impecabilidade:</strong> NÃO EXPLIQUE NADA. Apenas VIVA a narrativa.<br>Se a criança perguntar, responda com mistério: "Você vai descobrir..."<br>O encantamento é mais importante que a compreensão.<br></p>
-    <p><strong>🕊️ Nota de Graça:</strong> Se a criança não "entrar" na história hoje, tudo bem.<br>A semente foi plantada. Amanhã ela pode brotar.<br>Alguns precisam de mais tempo para cruzar o portal.<br></p>
-
-</div>
-
-
-
-
-
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">🎬</span>
-        Ritual de Abertura
-    </div>
-    
-    
-    
-<div class="instruction-box">
-    <span class="instruction-icon">🕯️</span>
-    <div>
-        
-        
-        Estendam o Tapete do Reino no chão.
-Diminuam as luzes. Acendam a vela.
-Sentem-se juntos. Respirem fundo três vezes.
-
-    
-    </div>
-</div>
-
-
-    <p><strong>🌫️ Transição:</strong> Feche os olhos. Respire fundo.<br>Quando abrir os olhos, estaremos em um lugar muito especial...<br>O Jardim Central do Reino Contado.<br></p>
-
-    
-    
-    <div class="sensory-box" style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius:8px; padding:1.25rem; margin:1.5rem 0; font-style:italic; color:#92400E; border-left:4px solid #F59E0B;">
-        O ar cheira a terra molhada e musgo fresco.<br>O sol dourado aquece o rosto. Pássaros cantam ao longe.<br>Em um banco de pedra antiga, sentado com as patas cruzadas,<br>está um grande Leão de juba dourada. Ele sorri ao ver você chegar.<br>
-    </div>
-    
-
-    
-<div class="script-persona-block portador-block">
-    <span class="portador-icon">🔥</span>
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">Portador da Tocha</span>
-            
-                
-                
-                    <span class="script-tone tone-tooltip" data-tooltip="Voz baixa, olhos arregalados de suspense.">
-                        <span style="font-style: normal;">🕵️</span> (misterioso)
-                    </span>
-                
-            
-        </div>
-        <div class="script-text">
-            Hoje vamos visitar um lugar muito especial.<br>Um lugar onde animais sábios nos esperam.<br>Shhh... você está pronto para conhecê-los?<br>
-        </div>
-    </div>
-</div>
-
-
-    <div style="text-align:center; margin-top:2rem;">
-        <p style="font-size:0.9rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Visualizar</p>
-        <img src="../assets/cards/guardioes/melquior-leao.png" 
-             style="width:120px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transform: rotate(-2deg); border: 4px solid white;"
-             onError="this.src='../assets/cards/guardioes/placeholder.png'"
-             alt="Card melquior">
-    </div>
-
-</div>
-
-
-
-
-<h2>🗺️ A Jornada</h2>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        O Convite de Melquior
-    </div>
-    
-    
-        
-        
-<div class="local-card">
-    <p><strong>📍 Local:</strong> Jardim Central</p>
-    <p class="local-label">Visualizar</p>
-    <img src="../assets/cards/locais/local-jardim-central.png" alt="Jardim Central">
-</div>
-
-        
-
-        
-        
-        <div style="text-align:center; margin:1.5rem 0;">
-            <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Mostrar Card</p>
-            <img src="../assets/cards/guardioes/melquior-leao.png" 
-                 style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
-                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
-                 alt="Card Melquior Leao">
-        </div>
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Leia com calma. Olhe nos olhos da criança.<br>Dê tempo para ela se acomodar.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    
-                    <span class="script-tone">(acolhedor)</span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Aproxime-se, pequeno Herdeiro.<br>Sente-se aqui, no tapete de musgo, sob o brilho da Pequena Vela."<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        A História da Criação
-    </div>
-    
-    
-        
-
-        
-        
-        <div style="text-align:center; margin:1.5rem 0;">
-            <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Mostrar Card</p>
-            <img src="../assets/cards/guardioes/melquior-leao.png" 
-                 style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
-                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
-                 alt="Card Melquior Leao">
-        </div>
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Fale com reverência, como quem conta um segredo antigo.<br>Faça pausas nas vírgulas. Deixe as palavras criarem imagens.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    
-                    <span class="script-tone">(reverente)</span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Antes de você nascer, o Grande Rei olhou para o mundo<br>e viu que faltava algo muito importante.<br><br>Ele disse com sua voz de trovão suave:<br>'Criarei um Reino onde os números não sejam frios,<br>onde contar seja uma aventura,<br>e onde cada criança saiba que foi feita para descobrir.'<br><br>E assim nasceu o Reino Contado.<br><br>Esse jardim onde estamos? O Rei o plantou pensando em você.<br>Cada árvore, cada flor, cada caminho...<br>Tudo foi preparado para seus olhos, Herdeiro."<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        Quem é Melquior
-    </div>
-    
-    
-        
-
-        
-        
-        <div style="text-align:center; margin:1.5rem 0;">
-            <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Mostrar Card</p>
-            <img src="../assets/cards/guardioes/melquior-leao.png" 
-                 style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
-                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
-                 alt="Card Melquior Leao">
-        </div>
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Este é o momento de estabelecer Melquior como figura paterna/mentora.<br>Se tiver o card do Melquior, mostre-o bem perto da criança.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    
-                    <span class="script-tone">(nobre)</span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Eu sou Melquior, o Leão Dourado.<br>O Rei me escolheu para ser o Anfitrião deste Jardim.<br><br>Minha juba brilha com a luz da sabedoria,<br>e meu rugido... bem, meu rugido é gentil.<br>Eu não assusto — eu acolho.<br><br>Sou o primeiro que você encontra,<br>mas não sou o único.<br><br>Hoje, as portas do Reino Contado se abrem para você,<br>pois tudo o que vê aqui foi feito para seus olhos.<br><br>Venha. Deixe-me apresentar meus amigos."<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        A Coruja Noé
-    </div>
-    
-    
-        
-
-        
-        
-        <div style="text-align:center; margin:1.5rem 0;">
-            <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Mostrar Card</p>
-            <img src="../assets/cards/guardioes/noe-coruja.png" 
-                 style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
-                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
-                 alt="Card Noe Coruja">
-        </div>
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Aponte para cima como se visse Noé.<br>Mostre o card do Noé agora.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    
-                    <span class="script-tone">(respeitoso)</span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Veja! Ali, no galho mais alto, está a Coruja Noé.<br>Ele guarda o Tempo.<br>Ele nos ensina a ouvir o silêncio e a esperar com paciência.<br>[Aponte para cima]<br>Consegue vê-lo? Seus olhos são como duas luas amarelas.<br><br>Noé é sábio. Ele observa tudo, ouve tudo.<br>Quando você precisar de calma, Noé estará lá."<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        A Raposa Celeste
-    </div>
-    
-    
-        
-
-        
-        
-        <div style="text-align:center; margin:1.5rem 0;">
-            <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Mostrar Card</p>
-            <img src="../assets/cards/guardioes/celeste-raposa.png" 
-                 style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
-                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
-                 alt="Card Celeste Raposa">
-        </div>
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Faça o gesto de farejar o ar.<br>Mostre o card da Celeste.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    <span class="script-tone tone-tooltip" data-tooltip="Com entusiasmo, sorrindo, e brilho nos olhos! Contagie a criança.">
-                        <span style="font-style: normal;">✨</span> (animado)
-                    </span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Sente este vento rápido?<br>É a Raposa Celeste!<br>Ela adora segredos e padrões.<br>Ela vai ajudá-lo a encontrar as pistas que o Rei deixou escondidas.<br>[Fareja o ar]<br>Está sentindo? Cheira a aventura!<br><br>Celeste é curiosa como você. Ela fareja mistérios!"<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        O Urso Bernardo
-    </div>
-    
-    
-        
-
-        
-        
-        <div style="text-align:center; margin:1.5rem 0;">
-            <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Mostrar Card</p>
-            <img src="../assets/cards/guardioes/bernardo-urso.png" 
-                 style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
-                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
-                 alt="Card Bernardo Urso">
-        </div>
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Bata os pés no chão imitando passos pesados.<br>Mostre o card do Bernardo.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    
-                    <span class="script-tone">(firme)</span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Ouça o passo firme na terra...<br>É o Urso Bernardo!<br>Ele é forte e gentil.<br>Usa suas mãos grandes para construir coisas belas.<br>Ele nos ensina que o esforço é uma canção.<br>[Som de passos pesados]<br><br>Vê a pata manca dele? Bernardo se machucou salvando seus amigos<br>na Grande Nevasca. Mas isso nunca o parou.<br>Quando você errar, Bernardo vai dizer: 'Mais uma vez. Comigo.'"<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        A Pardal Íris
-    </div>
-    
-    
-        
-
-        
-        
-        <div style="text-align:center; margin:1.5rem 0;">
-            <p style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">Mostrar Card</p>
-            <img src="../assets/cards/guardioes/iris-passarinho.png" 
-                 style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
-                 onError="this.src='../assets/cards/guardioes/placeholder.png'"
-                 alt="Card Iris Passarinho">
-        </div>
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Aponte para algo pequeno perto de vocês.<br>Mostre o card da Íris.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    <span class="script-tone tone-tooltip" data-tooltip="Suave e leve, como se tocasse uma asa de borboleta.">
-                        <span style="font-style: normal;">🦋</span> (delicado)
-                    </span>
-                
-            
-        </div>
-        <div class="script-text">
-            "E olhe bem de perto para aquela flor...<br>Lá está Íris, a pequena Pardal!<br>Ela vê o que ninguém mais vê:<br>a beleza num grão de areia,<br>a cor no menor detalhe.<br>[Aponte para baixo, para algo pequeno]<br><br>Você consegue ver o brilho do colar dela?<br>Íris tem olhos de artista. Ela encontra beleza em tudo."<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-    
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">✨</span>
-        O Convite Final
-    </div>
-    
-    
-        
-
-        
-        
-
-        
-            
-<div class="instruction-box">
-    <span class="instruction-icon">👉</span>
-    <div>
-        
-        
-                Abrace a criança ou aperte sua mão.<br>Este é o momento de selamento.<br>
-            
-    </div>
-</div>
-
-        
-
-        
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    
-                    <span class="script-tone">(solene)</span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Noé, Celeste, Bernardo, Íris... e eu, Melquior.<br><br>Todos nós estamos aqui para caminhar com você.<br>Você é o Herdeiro — alguém que o Rei esperava.<br><br>Amanhã, Celeste vai nos levar à Clareira das Perguntas.<br>Ela encontrou algo especial debaixo do carvalho mais velho...<br>Três sementes. Três promessas.<br><br>Mas isso é para amanhã.<br><br>Hoje... bem-vindo ao Reino."<br>
-        </div>
-    </div>
-</div>
-
-    
-</div>
-
-
-
-
-
-<h2>🧱 O Concreto</h2>
-
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">🧱</span>
-        Atividade Concreta
-    </div>
-    
-    
-    
-
-    
-<div class="instruction-box">
-    <span class="instruction-icon">📋</span>
-    <div>
-        
-        
-        <strong>Passo a Passo:</strong>
-        <ol style="margin-top:0.5rem; margin-left:1rem;">
-            
-            <li>
-                Mantenham-se sentados no tapete por um momento em silêncio
-                
-                <br><em>Fala sugerida: "Vamos guardar esse momento no coração?"</em>
-                
-            </li>
-            
-            <li>
-                Pergunte à criança qual guardião ela mais gostou
-                
-                <br><em>Fala sugerida: "Qual deles você quer conhecer melhor?"</em>
-                
-            </li>
-            
-        </ol>
-    
-    </div>
-</div>
-
-
-    
-
-</div>
-
-
-
-
-
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">🗣️</span>
-        Narramos Juntos
-    </div>
-    
-    
-    
-<div class="instruction-box">
-    <span class="instruction-icon">🤫</span>
-    <div>
-        
-        
-        Não force perguntas hoje.<br>Se a criança quiser falar, ouça.<br>Se preferir silêncio, respeite. O coração guardou.<br>
-    
-    </div>
-</div>
-
-
-    
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-        </div>
-        <div class="script-text">
-            "O que você descobriu hoje na Clareira? O que contaria para o Melquior?"
-        </div>
-    </div>
-</div>
-
-
-    <p><strong>Perguntas do Coração:</strong></p>
-    <ul style="margin-left:1.5rem; margin-top:0.5rem;">
-        <li>O que você achou do Reino Contado?</li>
-        
-        <li>Qual guardião você quer conhecer melhor?</li>
-        
-        <li>Como é o jardim que você imaginou?</li>
-        
-        <li>O que você acha que Celeste encontrou?</li>
-        
-    </ul>
-
-</div>
-
-
-
-
-
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">🏁</span>
-        Ritual de Fechamento
-    </div>
-    
-    
-    
-<div class="script-persona-block ">
-    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">melquior</span>
-            
-                
-                
-                    
-                    <span class="script-tone">(esperançoso)</span>
-                
-            
-        </div>
-        <div class="script-text">
-            "Herdeiro... obrigado por ter vindo hoje.<br><br>Amanhã Celeste estará esperando na Clareira.<br>As três sementes do carvalho estão guardadas para você.<br><br>Descanse bem. O Reino espera seu retorno."<br>
-        </div>
-    </div>
-</div>
-
-
-    
-
-    
-<div class="script-persona-block portador-block">
-    <span class="portador-icon">🔥</span>
-    <div class="script-content">
-        <div class="script-header">
-            <span class="script-name">Portador da Tocha</span>
-            
-        </div>
-        <div class="script-text">
-            A vela se apaga, mas a luz fica no coração.<br>O Reino descansa. Até amanhã, Herdeiro.<br>
-        </div>
-    </div>
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">🔗</span>
-        Conexão da Jornada
-    </div>
-    
-    
-    
-    
-        <div onclick="window.location.href='MV-S-001_A_TRINDADE_NA_PALMA.html'" style="cursor: pointer;">
-            <p><strong>➡️ Próxima Aventura:</strong> Amanhã, Celeste vai nos mostrar algo especial — três sementes do carvalho mais velho do Reino!</p>
-            
-            <div style="margin-top:0.5rem; text-align:right;">
-                <span style="font-size:0.85rem; color:#4B5563; background:#F3F4F6; padding:0.25rem 0.75rem; border-radius:1rem;">
-                    Ir para A Trindade na Palma →
-                </span>
+                </div>
             </div>
-            
-        </div>
-    
-
-</div>
 
 
 
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">👨‍👩‍👧</span>
+                    Preparação do Portador
+                </div>
 
 
 
 
-<div class="scene-card" >
-    
-    <div class="scene-header">
-        <span class="scene-icon">👨‍👩‍👧‍👦</span>
-        Para a Família
-    </div>
-    
-    
-    <p><strong>📚 Por que isso importa:</strong></p>
-    <div style="padding:0.5rem 0;">
-        Esta lição não contém matemática — e isso é intencional.<br><br>Charlotte Mason ensinava que a "atmosfera" é um terço da educação.<br>Antes de ensinar QUALQUER coisa, precisamos criar um ambiente de<br>maravilhamento, segurança e pertencimento.<br><br>Melquior apresentou os cinco Guardiões que acompanharão seu filho<br>por toda a jornada das Sementes. Cada um representa uma virtude:<br>- Noé (Coruja): Paciência, observação, tempo<br>- Celeste (Raposa): Curiosidade, padrões, exploração<br>- Bernardo (Urso): Persistência, construção, esforço<br>- Íris (Pardal): Atenção aos detalhes, beleza, visão<br>- Melquior (Leão): Liderança, sabedoria, acolhimento<br>
-    </div>
-    
-    
-    
-    <div class="bruner-box">
-        <strong>🧠 Método CPA (Jerome Bruner):</strong><br>
-        <ul style="margin:0.5rem 0 0 1.5rem;">
-            <li><strong>Concreto:</strong> Experiência sensorial (vela, tapete, ambiente)</li>
-            <li><strong>Pictórico:</strong> Não aplicável (lição litúrgica)</li>
-            <li><strong>Abstrato:</strong> Não aplicável</li>
-        </ul>
-        
-        <span style="color:#6B7280; font-size:0.9rem;">Esta lição é pré-matemática: estabelece atmosfera.</span>
-        
-    </div>
-    
-    
-    
-    
-    <div class="cm-box">
-        <strong>🏛️ Princípio Charlotte Mason:</strong><br>
-        <em>"Education is an atmosphere, a discipline, a life."</em><br>
-        <span style="color:#6B7280;">Antes de contar, dar. Antes de ensinar, encantar. A atmosfera vem primeiro.</span>
-    </div>
-    
-    
-    
-    
-    <div class="tgtb-box">
-        <strong>📘 Conexão TGTB:</strong><br>
-        <span style="color:#92400E;">Esta lição corresponde à "Lesson 0 / Introduction" do TGTB — o momento
-de estabelecer expectativas e criar conexão antes do conteúdo.
-</span>
-    </div>
-    
-    
-    
-    
-    <div class="bruner-box">
-        <strong>🌀 Currículo em Espiral (Bruner):</strong><br>
-        <ul style="margin:0.5rem 0 0 1.5rem;">
-            <li><strong>Agora:</strong> Atmosfera sagrada — Sementes — Primeiro contato com o Reino e os Guardiões</li>
-            <li><strong>Depois:</strong> Raízes — Revisitamos os Guardiões com novas responsabilidades</li>
-        </ul>
-        
-        <span style="color:#6B7280; font-size:0.9rem;">Os Guardiões evoluem junto com a criança. Hoje são amigos; amanhã, mentores.</span>
-        
-    </div>
-    
-    
-    
-    
-    <div class="espiritual-box">
-        <strong>✨ Reflexão Espiritual:</strong><br>
-        <span style="color:#166534;">"Tudo o que vê aqui foi feito para seus olhos."
 
-Melquior lembra à criança que ela é esperada, desejada, preparada.
-Em um mundo que muitas vezes diz "você não é suficiente",
-o Reino Contado sussurra: "Você é o Herdeiro."
-</span>
-    </div>
-    
-    
-    
-    
-    <div class="graca-box">
-        <strong>🕊️ Nota de Graça:</strong><br>
-        Se hoje não "funcionou" como você esperava, respire.
-Algumas crianças precisam de mais tempo para cruzar o portal.
-O convite de Melquior permanece aberto. Volte amanhã com a mesma ternura.
 
-    </div>
-    
+                <div class="instruction-box">
+                    <span class="instruction-icon">💡</span>
+                    <div>
 
-</div>
+
+                        <strong>Dica do Coração:</strong> Hoje não há matemática. Só maravilhamento. Seu único trabalho
+                        é criar o <strong>ambiente de foco</strong>. Acenda a <strong>Luz Amarela</strong> (ou use seu
+                        Sinal de Início). <br>Melquior fará o resto.
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="materials-box"
+                    style="background:#F0FDF4; border:1px solid #BBF7D0; border-radius:8px; padding:1.25rem; margin:1.5rem 0;">
+
+                    <p><strong>🎯 Essencial:</strong></p>
+                    <ul style="margin-top:0.5rem; margin-left:1rem;">
+
+                        <li>Luz Amarela (ou seu Sinal de Início escolhido) (1)</li>
+
+                        <li>Cards dos 5 Guardiões (5)</li>
+
+                        <li>Cards dos 5 Locais (5)</li>
+
+                    </ul>
+
+
+
+                    <p style="margin-top:1rem;"><strong>📦 Se tiver:</strong></p>
+                    <ul style="margin-top:0.5rem; margin-left:1rem; color:#6B7280;">
+
+                        <li>Tapete ou cobertor (Tapete do Reino) (1)</li>
+
+                        <li>Baú do Tesouro (ou caixa especial) (1)</li>
+
+                        <li>Música ambiente suave (opcional) (1)</li>
+
+                    </ul>
+
+
+
+
+                </div>
+
+
+
+
+                <p><strong>🌟 Seu filho vai descobrir:</strong> Que existe um Reino especial chamado <strong>Reino
+                        Contado</strong>, que
+                    cinco Guardiões vão caminhar com ele nesta jornada e que ele é um <strong>Herdeiro</strong> — alguém
+                    especial,
+                    esperado.</p>
+
+
+                <p><strong>🛡️ Protocolo de Impecabilidade:</strong> NÃO EXPLIQUE NADA. Apenas <strong>VIVA a
+                        narrativa</strong>. Se a
+                    criança perguntar, responda com <strong>mistério</strong>: "Você vai descobrir...". O
+                    <strong>encantamento</strong> é mais importante
+                    que a compreensão.
+                </p>
+                <p><strong>🕊️ Nota de Graça:</strong> Se a criança não "entrar" na história hoje, <strong>tudo
+                        bem</strong>. A semente
+                    foi plantada. Amanhã ela pode brotar. Alguns precisam de mais <strong>tempo</strong> para cruzar o
+                    portal.</p>
+
+            </div>
+
+
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">🎬</span>
+                    Ritual de Abertura
+                </div>
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">🕯️</span>
+                    <div>
+
+
+                        <strong>Ritual de Entrada:</strong><br>
+                        O pai diz: "Luz de fora acalma." (Diminua o ritmo / distrações)<br>
+                        "Sol de dentro acende." (Acenda a Luz Amarela)<br>
+                        "Respirem... Estamos no Reino."
+
+
+                    </div>
+                </div>
+
+
+                <p><strong>🌫️ Transição:</strong> Feche os olhos. Respire fundo.<br>Quando abrir os olhos, estaremos em
+                    um lugar muito especial...<br>O Jardim Central do Reino Contado.<br></p>
+
+
+
+                <div class="sensory-box"
+                    style="background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); border-radius:8px; padding:1.25rem; margin:1.5rem 0; font-style:italic; color:#92400E; border-left:4px solid #F59E0B;">
+                    O ar cheira a terra molhada e musgo fresco.<br>O sol dourado aquece o rosto. Pássaros cantam ao
+                    longe.<br>Em um banco de pedra antiga, sentado com as patas cruzadas,<br>está um grande Leão de juba
+                    dourada. Ele sorri ao ver você chegar.<br>
+                </div>
+
+
+
+                <div class="script-persona-block portador-block">
+                    <span class="portador-icon">🔥</span>
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">Portador da Tocha</span>
+
+
+
+                            <span class="script-tone">
+                                <span style="font-style: normal;">🕵️</span> (Tom: Misterioso — Voz baixa, olhos
+                                arregalados de suspense.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            Hoje vamos visitar um lugar muito especial.<br>Um lugar onde animais sábios nos
+                            esperam.<br>Shhh... você está pronto para conhecê-los?<br>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="text-align:center; margin-top:2rem;">
+                    <p
+                        style="font-size:0.9rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Visualizar</p>
+                    <img src="../assets/cards/guardioes/melquior-leao.png"
+                        style="width:120px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card melquior">
+                </div>
+
+            </div>
+
+
+
+
+            <h2>🗺️ A Jornada</h2>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    O Convite de Melquior
+                </div>
+
+
+
+
+                <div class="local-card">
+                    <p><strong>📍 Local:</strong> Jardim Central</p>
+                    <p>— Bem-vindos, viajantes. — A voz dele é grave e quente, como um trovão de verão.</p>
+
+                    <p>— <strong>Eu sabia que vocês viriam.</strong> O Portal estava esperando.</p>
+                    <p class="local-label">Visualizar</p>
+                    <img src="../assets/cards/locais/local-jardim-central.png" alt="Jardim Central">
+                </div>
+
+
+
+
+
+                <div style="text-align:center; margin:1.5rem 0;">
+                    <p
+                        style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Mostrar Card</p>
+                    <img src="../assets/cards/guardioes/melquior-leao.png"
+                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Melquior Leao">
+                </div>
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Leia com calma. Olhe nos olhos da criança.<br>Dê tempo para ela se acomodar.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+
+                            <span class="script-tone">
+                                (Tom: Acolhedor — Sorriso na voz, braços abertos.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "Aproxime-se, pequeno Herdeiro.<br>Sente-se aqui, no tapete de musgo, sob o brilho da
+                            sob o brilho da Luz Amarela."<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    A História da Criação
+                </div>
+
+
+
+
+
+
+                <div style="text-align:center; margin:1.5rem 0;">
+                    <p
+                        style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Mostrar Card</p>
+                    <img src="../assets/cards/guardioes/melquior-leao.png"
+                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Melquior Leao">
+                </div>
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Fale com reverência, como quem conta um segredo antigo.<br>Faça pausas nas vírgulas. Deixe as
+                        palavras criarem imagens.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+
+                            <span class="script-tone">
+                                (Tom: Reverente — Voz calma, ritmo lento, como uma oração.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "Antes de você nascer, o Grande Rei olhou para o mundo<br>e viu que faltava algo muito
+                            importante.<br><br>Ele disse com sua voz de trovão suave:<br>'Criarei um Reino onde os
+                            números não sejam frios,<br>onde contar seja uma aventura,<br>e onde cada criança saiba que
+                            foi feita para descobrir.'<br><br>E assim nasceu o Reino Contado.<br><br>Esse jardim onde
+                            estamos? O Rei o plantou pensando em você.<br>Cada árvore, cada flor, cada
+                            caminho...<br>Tudo foi preparado para seus olhos, Herdeiro."<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    Quem é Melquior
+                </div>
+
+
+
+
+
+
+                <div style="text-align:center; margin:1.5rem 0;">
+                    <p
+                        style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Mostrar Card</p>
+                    <img src="../assets/cards/guardioes/melquior-leao.png"
+                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Melquior Leao">
+                </div>
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Este é o momento de estabelecer Melquior como figura paterna/mentora.<br>Se tiver o card do
+                        Melquior, mostre-o bem perto da criança.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+
+                            <span class="script-tone">
+                                (Tom: Nobre — Postura ereta, voz profunda, mas gentil.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "Eu sou Melquior, o Leão Dourado.<br><br><strong>Eu sabia que você viria.</strong><br>O
+                            Portal estava esperando por você.<br><br>Minha juba brilha com a luz da sabedoria,<br>e meu
+                            rugido... bem, meu rugido é gentil.<br>Eu não assusto — eu acolho.<br><br>Venha. Deixe-me
+                            apresentar meus amigos."<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    A Coruja Noé
+                </div>
+
+
+
+
+
+
+                <div style="text-align:center; margin:1.5rem 0;">
+                    <p
+                        style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Mostrar Card</p>
+                    <img src="../assets/cards/guardioes/noe-coruja.png"
+                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Noe Coruja">
+                </div>
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Aponte para cima como se visse Noé.<br>Mostre o card do Noé agora.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+
+                            <span class="script-tone">
+                                (Tom: Respeitoso — Admiração, levemente sussurrado.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "Veja! Ali, no galho mais alto...<br><strong>Olhos grandes que veem o tempo passar
+                                devagar.</strong><br>É a Coruja Noé.<br>Ele nos ensina a ouvir o silêncio e a esperar
+                            com paciência.<br>[Aponte para cima]<br>Consegue vê-lo? Seus olhos são como duas luas
+                            amarelas.<br><br>Quando você precisar de calma, Noé estará lá."<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    A Raposa Celeste
+                </div>
+
+
+
+
+
+
+                <div style="text-align:center; margin:1.5rem 0;">
+                    <p
+                        style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Mostrar Card</p>
+                    <img src="../assets/cards/guardioes/celeste-raposa.png"
+                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Celeste Raposa">
+                </div>
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Faça o gesto de farejar o ar.<br>Mostre o card da Celeste.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+                            <span class="script-tone">
+                                <span style="font-style: normal;">✨</span> (Tom: Animado — Com entusiasmo, sorrindo, e
+                                brilho nos olhos! Contagie a criança.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "Sente este vento rápido?<br><strong>Um vulto laranja que corre entre as
+                                árvores!</strong><br>Rápida como um pensamento.<br>É a Raposa Celeste!<br>Ela adora
+                            segredos e padrões.<br>[Fareja o ar]<br>Está sentindo? Cheira a aventura!<br><br>Celeste é
+                            curiosa como você. Ela fareja mistérios!"<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    O Urso Bernardo
+                </div>
+
+
+
+
+
+
+                <div style="text-align:center; margin:1.5rem 0;">
+                    <p
+                        style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Mostrar Card</p>
+                    <img src="../assets/cards/guardioes/bernardo-urso.png"
+                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Bernardo Urso">
+                </div>
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Bata os pés no chão imitando passos pesados.<br>Mostre o card do Bernardo.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+
+                            <span class="script-tone">
+                                (Tom: Firme — Voz segura, grave, com peso.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "<strong>Uma montanha de pelo quente e bondade.</strong><br>Ouça o passo firme na
+                            terra...<br><em>Tum-tum-arrasta.</em><br>É o Urso Bernardo!<br>Ele é forte e gentil.<br>Vê a
+                            pata manca dele? Bernardo se machucou salvando seus amigos.<br>Mas isso nunca o
+                            parou.<br>Quando você errar, Bernardo vai dizer: 'Mais uma vez. Comigo.'"<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    A Pardal Íris
+                </div>
+
+
+
+
+
+
+                <div style="text-align:center; margin:1.5rem 0;">
+                    <p
+                        style="font-size:0.85rem; color:#9CA3AF; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:1px;">
+                        Mostrar Card</p>
+                    <img src="../assets/cards/guardioes/iris-passarinho.png"
+                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Iris Passarinho">
+                </div>
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Aponte para algo pequeno perto de vocês.<br>Mostre o card da Íris.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+                            <span class="script-tone">
+                                <span style="font-style: normal;">🦋</span> (Tom: Delicado — Suave e leve, como se
+                                tocasse uma asa de borboleta.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "E olhe bem de perto para aquela flor...<br><strong>Ela é pequena, mas vê coisas
+                                gigantes.</strong><br>Lá está Íris, a pequena Pardal!<br>Ela vê o que ninguém mais
+                            vê:<br>a beleza num grão de areia.<br>[Aponte para baixo, para algo pequeno]<br><br>Você
+                            consegue ver o brilho do colar dela?<br>Íris tem olhos de artista. Ela encontra beleza em
+                            tudo."<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">✨</span>
+                    O Convite Final
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">👉</span>
+                    <div>
+
+
+                        Abrace a criança ou aperte sua mão.<br>Este é o momento de selamento.<br>
+
+                    </div>
+                </div>
+
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+
+                            <span class="script-tone">
+                                (Tom: Esperançoso — Olhar nos olhos, transmitir confiança.)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "Noé, Celeste, Bernardo, Íris... e eu, Melquior.<br><br>Todos nós estamos aqui para caminhar
+                            com você.<br>Você é o Herdeiro — alguém que o Rei esperava.<br><br>Amanhã, Celeste vai nos
+                            levar à Clareira das Perguntas.<br>Ela encontrou algo especial debaixo do carvalho mais
+                            velho...<br>Três sementes. Três promessas.<br><br>Mas isso é para amanhã.<br><br>Hoje...
+                            bem-vindo ao Reino."<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <h2>🧱 O Concreto</h2>
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">🧱</span>
+                    Atividade Concreta
+                </div>
+
+
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">📋</span>
+                    <div>
+
+
+                        <strong>Passo a Passo:</strong>
+                        <ol style="margin-top:0.5rem; margin-left:1rem;">
+
+                            <li>
+                                Mantenham-se sentados no tapete por um momento em silêncio
+
+                                <br><em>Fala sugerida: "Vamos guardar esse momento no coração?"</em>
+
+                            </li>
+
+                            <li>
+                                Pergunte à criança qual guardião ela mais gostou
+
+                                <br><em>Fala sugerida: "Qual deles você quer conhecer melhor?"</em>
+
+                            </li>
+
+                        </ol>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">🗣️</span>
+                    Narramos Juntos
+                </div>
+
+
+
+                <div class="instruction-box">
+                    <span class="instruction-icon">🤫</span>
+                    <div>
+
+
+                        Não force perguntas hoje.<br>Se a criança quiser falar, ouça.<br>Se preferir silêncio, respeite.
+                        O coração guardou.<br>
+
+                    </div>
+                </div>
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+                        </div>
+                        <div class="script-text">
+                            "O que você descobriu hoje na Clareira? O que contaria para o Melquior?"
+                        </div>
+                    </div>
+                </div>
+
+
+                <p><strong>Perguntas do Coração:</strong></p>
+                <ul style="margin-left:1.5rem; margin-top:0.5rem;">
+                    <li>O que você achou do Reino Contado?</li>
+
+                    <li>Qual guardião você quer conhecer melhor?</li>
+
+                    <li>Como é o jardim que você imaginou?</li>
+
+                    <li>O que você acha que Celeste encontrou?</li>
+
+                </ul>
+
+            </div>
+
+
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">🏁</span>
+                    Ritual de Fechamento
+                </div>
+
+
+
+                <div class="script-persona-block ">
+                    <img src="../assets/cards/guardioes/melquior-leao.png" class="script-avatar" alt="melquior">
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">melquior</span>
+
+
+
+
+                            <span class="script-tone tone-tooltip"
+                                data-tooltip="Olhar nos olhos, transmitir confiança.">
+                                (esperançoso)
+                            </span>
+
+
+                        </div>
+                        <div class="script-text">
+                            "Herdeiro... obrigado por ter vindo hoje.<br><br>Amanhã Celeste estará esperando na
+                            Clareira.<br>As três sementes do carvalho estão guardadas para você.<br><br>Descanse bem. O
+                            Reino espera seu retorno."<br>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="script-persona-block portador-block">
+                    <span class="portador-icon">🔥</span>
+                    <div class="script-content">
+                        <div class="script-header">
+                            <span class="script-name">Portador da Tocha</span>
+
+                        </div>
+                        <div class="script-text">
+                            A Luz se apaga, mas o brilho fica no coração.<br>O Reino descansa. Até amanhã, Herdeiro.<br>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">🔗</span>
+                    Conexão da Jornada
+                </div>
+
+
+
+
+                <div onclick="window.location.href='MV-S-001_A_TRINDADE_NA_PALMA.html'" style="cursor: pointer;">
+                    <p><strong>➡️ Próxima Aventura:</strong> Amanhã, Celeste vai nos mostrar algo especial — três
+                        sementes do carvalho mais velho do Reino!</p>
+
+                    <div style="margin-top:0.5rem; text-align:right;">
+                        <span
+                            style="font-size:0.85rem; color:#4B5563; background:#F3F4F6; padding:0.25rem 0.75rem; border-radius:1rem;">
+                            Ir para A Trindade na Palma →
+                        </span>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="scene-card">
+
+                <div class="scene-header">
+                    <span class="scene-icon">👨‍👩‍👧‍👦</span>
+                    Para a Família
+                </div>
+
+
+                <p><strong>📚 Por que isso importa:</strong></p>
+                <div style="padding:0.5rem 0;">
+                    Esta lição não contém matemática — e isso é intencional.<br><br>Charlotte Mason ensinava que a
+                    "atmosfera" é um terço da educação.<br>Antes de ensinar QUALQUER coisa, precisamos criar um ambiente
+                    de<br>maravilhamento, segurança e pertencimento.<br><br>Melquior apresentou os cinco Guardiões que
+                    acompanharão seu filho<br>por toda a jornada das Sementes. Cada um representa uma virtude:<br>- Noé
+                    (Coruja): Paciência, observação, tempo<br>- Celeste (Raposa): Curiosidade, padrões, exploração<br>-
+                    Bernardo (Urso): Persistência, construção, esforço<br>- Íris (Pardal): Atenção aos detalhes, beleza,
+                    visão<br>- Melquior (Leão): Liderança, sabedoria, acolhimento<br>
+                </div>
+
+
+
+                <div class="bruner-box">
+                    <strong>🧠 Método CPA (Jerome Bruner):</strong><br>
+                    <ul style="margin:0.5rem 0 0 1.5rem;">
+                        <li><strong>Concreto:</strong> Experiência sensorial (luz, tapete, ambiente)</li>
+                        <li><strong>Pictórico:</strong> Não aplicável (lição litúrgica)</li>
+                        <li><strong>Abstrato:</strong> Não aplicável</li>
+                    </ul>
+
+                    <span style="color:#6B7280; font-size:0.9rem;">Esta lição é pré-matemática: estabelece
+                        atmosfera.</span>
+
+                </div>
+
+
+
+
+                <div class="cm-box">
+                    <strong>🏛️ Princípio Charlotte Mason:</strong><br>
+                    <em>"Education is an atmosphere, a discipline, a life."</em><br>
+                    <span style="color:#6B7280;">Antes de contar, dar. Antes de ensinar, encantar. A atmosfera vem
+                        primeiro.</span>
+                </div>
+
+
+
+
+                <div class="tgtb-box">
+                    <strong>📘 Conexão TGTB:</strong><br>
+                    <span style="color:#92400E;">Esta lição corresponde à "Lesson 0 / Introduction" do TGTB — o momento
+                        de estabelecer expectativas e criar conexão antes do conteúdo.
+                    </span>
+                </div>
+
+
+
+
+                <div class="bruner-box">
+                    <strong>🌀 Currículo em Espiral (Bruner):</strong><br>
+                    <ul style="margin:0.5rem 0 0 1.5rem;">
+                        <li><strong>Agora:</strong> Atmosfera sagrada — Sementes — Primeiro contato com o Reino e os
+                            Guardiões</li>
+                        <li><strong>Depois:</strong> Raízes — Revisitamos os Guardiões com novas responsabilidades</li>
+                    </ul>
+
+                    <span style="color:#6B7280; font-size:0.9rem;">Os Guardiões evoluem junto com a criança. Hoje são
+                        amigos; amanhã, mentores.</span>
+
+                </div>
+
+
+
+
+                <div class="espiritual-box">
+                    <strong>✨ Reflexão Espiritual:</strong><br>
+                    <span style="color:#166534;">"Tudo o que vê aqui foi feito para seus olhos."
+
+                        Melquior lembra à criança que ela é esperada, desejada, preparada.
+                        Em um mundo que muitas vezes diz "você não é suficiente",
+                        o Reino Contado sussurra: "Você é o Herdeiro."
+                    </span>
+                </div>
+
+
+
+
+                <div class="graca-box">
+                    <strong>🕊️ Nota de Graça:</strong><br>
+                    Se hoje não "funcionou" como você esperava, respire.
+                    Algumas crianças precisam de mais tempo para cruzar o portal.
+                    O convite de Melquior permanece aberto. Volte amanhã com a mesma ternura.
+
+                </div>
+
+
+            </div>
 
 
 
@@ -1019,17 +1201,17 @@ O convite de Melquior permanece aberto. Volte amanhã com a mesma ternura.
 
         <!-- NAVIGATION FOOTER -->
         <nav class="lesson-nav">
-            
-            
 
-            
-            
-            
+
+
+
+
+
             <a href="MV-S-001_A_TRINDADE_NA_PALMA.html" class="nav-btn next">
                 <span class="nav-label">Próxima →</span>
                 <span class="nav-title">A Trindade na Palma</span>
             </a>
-            
+
         </nav>
 
         <footer style="text-align: center; margin-top: 4rem; color: #A8A29E; font-size: 0.8rem;">
@@ -1037,4 +1219,5 @@ O convite de Melquior permanece aberto. Volte amanhã com a mesma ternura.
         </footer>
     </div>
 </body>
+
 </html>
