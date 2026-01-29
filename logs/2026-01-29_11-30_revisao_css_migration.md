@@ -38,6 +38,10 @@
 *   **Diagnóstico:** CONFIRMADO: A classe `.scene-card` NÃO existe no escopo global do `style.css`. Ela precisa ser definida com `background: #FFFFFF`, `border-radius: 12px`, `box-shadow`, etc., antes das media queries.
 *   **Ação Necessária:** Criar a regra `.scene-card` no início do `style.css` (Seção de Componentes) e ajustar a media query mobile para não remover *todas* as bordas/margens se o usuário quiser separação.
 
+### H. Padronização Inteligente de Labels (Visualizar / Mostrar Card)
+*   **Problema:** Nem todos estão centralizados porque muitos usam estilos inline antigos (`<p style="...">`) que não possuem `text-align: center`, em vez da classe `.local-label`.
+*   **Ação Necessária:** Substituir padrões de string inline por `<p class="local-label">` nos arquivos HTML (000, 001, 002). Isso garantirá que todos herdem a centralização do CSS.
+
 ---
 
 ## 2. Plano de Execução Incremental

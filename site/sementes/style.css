@@ -421,10 +421,30 @@ h1 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   RESPONSIVE SYSTEM (Tri-State)
-   ═══════════════════════════════════════════════════════════════════ */
+/* === CARD COMPONENTS (Global "Block" Look) === */
+.scene-card,
+.instruction-box {
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    /* Subtle separation */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    /* Spacious desktop padding */
+    position: relative;
+    overflow: hidden;
+    /* For the ::before gradient */
+}
 
+.instruction-box {
+    background: #F0FDF4;
+    /* Light Green Tint for Instructions */
+    border-left: 4px solid #22C55E;
+    border-radius: 0 12px 12px 0;
+}
+
+/* RESPONSIVE SYSTEM (Tri-State) */
 /* 1. TABLET (768px - 1024px) */
 @media (max-width: 1024px) {
     .main-content {
@@ -504,16 +524,25 @@ h1 {
 
     /* FIX: "Red Text" - Ensure content has breathing room */
     .script-persona-block,
-    .instruction-box,
     .lesson-hero,
     .card-body,
-    .scene-card,
     p,
     li,
     h2,
     h3 {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
+    }
+
+    /* Keep Cards "Boxy" on Mobile, just smaller padding */
+    .scene-card,
+    .instruction-box {
+        padding: 1.5rem !important;
+        border-radius: 12px;
+        /* Slightly smaller radius for mobile */
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        /* Restore subtle shadow */
     }
 
     /* Revert padding kill for internal elements of cards/boxes */
