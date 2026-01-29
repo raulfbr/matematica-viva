@@ -198,3 +198,22 @@ Para fazer o commit "do jeito certo" (limpo e organizado), faremos em duas etapa
 
 **Motivo:** Se precisarmos reverter o código, não perdemos o planejamento.
 
+---
+
+### 🔄 Log de Atualizações (Continuação)
+
+#### [21:30] Bug Report: A "Casinha" Invasora
+**Problema:** O ícone de Home (`.home-btn`) está com `position: fixed`, o que faz ele sobrepor o texto ou criar margens estranhas ("comendo coluna").
+**Observação:** O menu "Hambúrguer" mobile não está visível/ativo atualmente, então a Casinha é a única navegação.
+**Solução Referenciada:**
+1.  **Desktop:** Manter `fixed`, mas aumentar o `padding-left` do container da lição para que o texto nunca encoste nela.
+2.  **Mobile:** Transformar em `position: absolute` relativo ao topo da lição (não fixed), ou garantir que ele fique num canto que não tape o título.
+3.  **Evitar Colisão:** Se ativarmos o hamburger no futuro, decidiremos quem fica. Por enquanto, **salvar a Casinha** de atrapalhar a leitura.
+
+#### [21:36] Inconsistência Estrutural (Lição 00)
+**Problema:** A `MV-S-000` usa um HTML de navegação (`.lesson-header-nav`) diferente do padrão das outras lições (`.lesson-nav` no rodapé).
+**Ação Necessária:** Não basta apenas migrar o CSS. Será necessário **padronizar o HTML** da Lição 00, inserindo o bloco de rodapé padrão para garantir consistência visual e funcional com o restante do curso.
+
+---
+**Status Final (28/01):** Planejamento concluído e revisado. Repositório salvo e sincronizado. Pronto para execução imediata na próxima sessão.
+
