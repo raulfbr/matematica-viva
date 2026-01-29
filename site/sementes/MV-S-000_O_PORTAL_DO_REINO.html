@@ -42,25 +42,23 @@
 
 
 
-            <div class="lesson-header-nav">
-                <div style="width: 33%;">
+            <nav class="lesson-nav-grid" aria-label="Navegação da Lição">
+                <div class="nav-col prev">
                     <!-- No Previous Link for Lesson 000 -->
                 </div>
 
-                <div style="width: 33%; text-align: center;">
-                    <img src="../assets/icon-sementes.png" alt="Sementes" style="height: 32px; opacity: 0.8;"
+                <div class="nav-col logo">
+                    <img src="../assets/icon-sementes.png" alt="Sementes" class="nav-logo-img"
                         onerror="this.style.display='none'">
                 </div>
 
-                <div style="width: 33%; text-align: right;">
-
+                <div class="nav-col next">
                     <a href="MV-S-001_A_TRINDADE_NA_PALMA.html" class="nav-mini-link"
                         style="text-decoration: none; color: #6B7280; font-size: 0.9rem; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem;">
                         <span>A Trindade na Palma</span> <span>→</span>
                     </a>
-
                 </div>
-            </div>
+            </nav>
 
             <div class="scene-card">
 
@@ -92,36 +90,21 @@
 
 
 
-                <div class="materials-box">
-
+                <aside class="materials-box" aria-label="Lista de Materiais">
                     <p><strong>🎯 Essencial:</strong></p>
-                    <ul style="margin-top:0.5rem; margin-left:1rem;">
-
+                    <ul>
                         <li>Luz Amarela (ou seu Sinal de Início escolhido) (1)</li>
-
                         <li>Cards dos 5 Guardiões (5)</li>
-
                         <li>Cards dos 5 Locais (5)</li>
-
                     </ul>
-
-
 
                     <p style="margin-top:1rem;"><strong>📦 Se tiver:</strong></p>
-                    <ul style="margin-top:0.5rem; margin-left:1rem; color:#6B7280;">
-
+                    <ul style="color:#6B7280;">
                         <li>Tapete ou cobertor (Tapete do Reino) (1)</li>
-
                         <li>Baú do Tesouro (ou caixa especial) (1)</li>
-
                         <li>Música ambiente suave (opcional) (1)</li>
-
                     </ul>
-
-
-
-
-                </div>
+                </aside>
 
 
 
@@ -213,7 +196,7 @@
                 <div style="text-align:center; margin-top:2rem;">
                     <p class="local-label">Visualizar</p>
                     <img src="../assets/cards/guardioes/melquior-leao.png"
-                        style="width:120px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card melquior">
                 </div>
 
@@ -252,7 +235,7 @@
                 <div style="text-align:center; margin:1.5rem 0;">
                     <p class="local-label">Mostrar Card</p>
                     <img src="../assets/cards/guardioes/melquior-leao.png"
-                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Melquior Leao">
                 </div>
 
@@ -314,7 +297,7 @@
                 <div style="text-align:center; margin:1.5rem 0;">
                     <p class="local-label">Mostrar Card</p>
                     <img src="../assets/cards/guardioes/melquior-leao.png"
-                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Melquior Leao">
                 </div>
 
@@ -381,7 +364,7 @@
                 <div style="text-align:center; margin:1.5rem 0;">
                     <p class="local-label">Mostrar Card</p>
                     <img src="../assets/cards/guardioes/melquior-leao.png"
-                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Melquior Leao">
                 </div>
 
@@ -446,7 +429,7 @@
                 <div style="text-align:center; margin:1.5rem 0;">
                     <p class="local-label">Mostrar Card</p>
                     <img src="../assets/cards/guardioes/noe-coruja.png"
-                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Noe Coruja">
                 </div>
 
@@ -510,7 +493,7 @@
                 <div style="text-align:center; margin:1.5rem 0;">
                     <p class="local-label">Mostrar Card</p>
                     <img src="../assets/cards/guardioes/celeste-raposa.png"
-                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Celeste Raposa">
                 </div>
 
@@ -574,7 +557,7 @@
                 <div style="text-align:center; margin:1.5rem 0;">
                     <p class="local-label">Mostrar Card</p>
                     <img src="../assets/cards/guardioes/bernardo-urso.png"
-                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Bernardo Urso">
                 </div>
 
@@ -638,7 +621,7 @@
                 <div style="text-align:center; margin:1.5rem 0;">
                     <p class="local-label">Mostrar Card</p>
                     <img src="../assets/cards/guardioes/iris-passarinho.png"
-                        style="width:140px; border-radius:12px; box-shadow:0 6px 12px rgba(0,0,0,0.15); transform: rotate(-2deg); border: 4px solid white;"
+                        class="card-visual-asset rotate-left hover-float"
                         onError="this.src='../assets/cards/guardioes/placeholder.png'" alt="Card Iris Passarinho">
                 </div>
 
@@ -767,7 +750,7 @@
 
 
                         <strong>Passo a Passo:</strong>
-                        <ol style="margin-top:0.5rem; margin-left:1rem;">
+                        <ol>
 
                             <li>
                                 Mantenham-se sentados no tapete por um momento em silêncio
@@ -836,13 +819,9 @@
                 <p><strong>Perguntas do Coração:</strong></p>
                 <ul style="margin-left:1.5rem; margin-top:0.5rem;">
                     <li>O que você achou do Reino Contado?</li>
-
                     <li>Qual guardião você quer conhecer melhor?</li>
-
                     <li>Como é o jardim que você imaginou?</li>
-
                     <li>O que você acha que Celeste encontrou?</li>
-
                 </ul>
 
             </div>

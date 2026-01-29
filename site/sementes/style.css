@@ -935,9 +935,7 @@ li {
     color: #065F46;
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   NOVAS CLASSES - Migração 16/01/2026
-   ═══════════════════════════════════════════════════════════════════ */
+/* === NOVAS CLASSES - Migração 16/01/2026 === */
 
 /* === CORES POR AUTOR (Para a Família) === */
 .bruner-box {
@@ -1044,4 +1042,105 @@ li {
     font-style: italic;
     color: #92400E;
     border-left: 4px solid #F59E0B;
+}
+
+/* === PHASE 6: COMPONENTES DE NARRATIVA (CLEAN UI) === */
+/* 1. NAVEGAÇÃO SEMÂNTICA (Grid) */
+.lesson-nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-col {
+    display: flex;
+    align-items: center;
+}
+
+.nav-col.prev {
+    justify-content: flex-start;
+}
+
+.nav-col.logo {
+    justify-content: center;
+}
+
+.nav-col.next {
+    justify-content: flex-end;
+}
+
+.nav-logo-img {
+    height: 32px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-logo-img:hover {
+    opacity: 1;
+}
+
+/* 2. ESTÉTICA TÁTIL (Organic Cards) */
+.card-visual-asset {
+    width: 140px;
+    /* Default size, often overridden inline or via specific classes if needed, keeping 140px as base */
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 4px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Modificadores de Rotação */
+.rotate-left {
+    transform: rotate(-2deg);
+}
+
+.rotate-right {
+    transform: rotate(2deg);
+}
+
+.rotate-slight {
+    transform: rotate(-1deg);
+}
+
+/* Interatividade */
+.hover-float:hover {
+    transform: translateY(-4px) scale(1.05) rotate(0deg);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+}
+
+/* 3. LISTASLIMPAS (Tipografia) */
+.materials-box ul,
+.instruction-box ol {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.materials-box li,
+.instruction-box li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* 4. UTILITÁRIOS */
+.no-italic {
+    font-style: normal !important;
+}
+
+@media (max-width: 768px) {
+    .lesson-nav-grid {
+        grid-template-columns: 1fr 1fr;
+        /* Logo hides or moves on mobile */
+        gap: 1rem;
+    }
+
+    .nav-col.logo {
+        display: none;
+    }
+
+    /* Hide center logo on tight mobile, or adjust if prefer */
 }
